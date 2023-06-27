@@ -76,7 +76,7 @@ Je peux ensuite l'utiliser dans des commandes, mais il est nécessaire de préci
 
 <br>
 
-Cependant, la **variable** est pour le moment locale, ce qui la rend inutilisable par des scripts/programmes ainsi que dans des sous-shell. Pour changer cela, il faut l'exporter dans l'**environnement**^[L'"**environnement**" est une sorte d'ensemble de **variables** et de **fonctions** qui sont "globale" par rapport au **shell** en question. Toute **variable** exportée dans l'**environnement** sera accessible par n'importe quel processus exécuté au sein de ce **shell** ou de n'importe quel **sous-shell** découlant de ce **shell**.].
+Cependant, la **variable** est pour le moment locale, ce qui la rend inutilisable par des scripts/programmes ainsi que dans des sous-shell. Pour changer cela, il faut l'exporter dans l'**environnement**^[**Environnement** : c'est une sorte d'ensemble de **variables** et de **fonctions** qui sont "globale" par rapport au **shell** en question. Toute **variable** exportée dans l'**environnement** sera accessible par n'importe quel processus exécuté au sein de ce **shell** ou de n'importe quel **sous-shell** découlant de ce **shell**.].
 - On peut exporter n'importe quelle **variable** (ou **fonction**) dans l'**environnement** en tapant :
 	```bash
 	export zebi

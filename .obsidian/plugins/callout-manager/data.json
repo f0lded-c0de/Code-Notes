@@ -1,13 +1,21 @@
 {
   "callouts": {
     "custom": [
-      "walkthrough"
+      "walkthrough",
+      "arg"
     ],
     "settings": {
       "walkthrough": [
         {
           "changes": {
             "icon": "lucide-clipboard-list"
+          }
+        }
+      ],
+      "arg": [
+        {
+          "changes": {
+            "color": "58, 230, 55"
           }
         }
       ]

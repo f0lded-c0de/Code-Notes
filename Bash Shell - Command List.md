@@ -17,7 +17,6 @@ Permet d'effectuer des calculs. Si un `(file)` est précisé, alors `bc` rentrer
 	- `obase` : égal à 10 par défaut. Définit la base numérique dans laquelle il renverra le résultat dans l'**output**.
 	- `last` : égal à 0 par défaut. Est égal à la dernière valeur affichée par `bc`.
 - La syntaxe des opérations que lit `bc` correspond de manière générale à une syntaxe mathématique classique. Pour en vérifier les spécificités, aller voir la section `EXPRESSIONS` du `man bc`.
-    
 
 <br>
 
@@ -54,7 +53,7 @@ Change les droits de `[file]`.
 	- Les trois premiers correspondant à `u`, les trois suivant à `g`, et les trois derniers à `o`.
 	- Un droit inactif affichera `-` à la place de la lettre.
 - On peut rajouter un droit à un groupe avec `groupe+droit`, ou en retirer un avec `groupe-droit` :
->[!example]-
+>[!example]- 
 >Pour donner le droit d'exécuter `[file]` à `o` :
 >```bash
 >chmod o+x [file]
@@ -82,21 +81,27 @@ Change les droits de `[file]`.
 <br>
 
 ```bash
-cp [source] [destination]
+cp (options) [source] [destination]
 ```
 Copie `[source]` dans `[destination]`.
-- Il faut au moins 1 `[source]`, mais l'on peut copier autant de `[source]` que l'on veut. On peut préciser un nouveau nom pour le fichier résultant de la copie si l'on ne copie qu'une seule `[source]`.
-- `[source]` peut s'écrire sous 2 formes :
-	- Juste le nom du fichier à copier si celui ci est dans le répertoire courant
-	- Le **path** y menant si ce n'est pas le cas, avec le nom du fichier à la fin du **path**.
-- `[destination]` peut s'écrire sous 3 formes :
-	- Juste le nom qu'on veut donner au fichier qui résultera de la copie, auquel cas la copie sera effectuée dans le répertoire courant(nécessite une unique `[source]`). 
-	- Juste le **path** menant au répertoire dans lequel la copie sera effectuée, auquel cas le nom restera le même que `[source]` (forcément le cas si on copie plusieurs `[source]` à la fois). 
-	- Les 2, (avec le nom au bout du **path**) auquel cas la copie sera effectué dans le répertoire spécifié, et le nom du fichier créé sera celui spécifié (nécessite une unique `[source]`).
-- `-r` : Permet de copier récursivement un dossier (sans cela l'on ne peut copier de dossier).
-- `-n` : Si `[destination]` existe déjà, ne l'écrase pas.
-- `-i` : Si `[destination]` existe déjà, demande avant de l'écraser.
-- Si `[destination]` existe déjà et que ni `-i` ni `-n` ne sont utilisés, écrase le fichier en question.
+> [!arg]- Options
+> - `-r` : Permet de copier récursivement un dossier (sans cela l'on ne peut copier de dossier).
+> - `-n` : Si `[destination]` existe déjà, ne l'écrase pas.
+> - `-i` : Si `[destination]` existe déjà, demande avant de l'écraser.
+> 
+> Si `[destination]` existe déjà et que ni `-i` ni `-n` ne sont utilisés, écrase le fichier en question.
+
+> [!arg]- Source et Destination
+> Il faut au moins 1 `[source]`, mais l'on peut copier autant de `[source]` que l'on veut. On peut préciser un nouveau nom pour le fichier résultant de la copie si l'on ne copie qu'une seule `[source]`.
+> 
+> `[source]` peut s'écrire sous 2 formes :
+> - Juste le nom du fichier à copier si celui ci est dans le répertoire courant
+> - Le **path** y menant si ce n'est pas le cas, avec le nom du fichier à la fin du **path**.
+> 
+> `[destination]` peut s'écrire sous 3 formes :
+> - Juste le nom qu'on veut donner au fichier qui résultera de la copie, auquel cas la copie sera effectuée dans le répertoire courant(nécessite une unique `[source]`). 
+> - Juste le **path** menant au répertoire dans lequel la copie sera effectuée, auquel cas le nom restera le même que `[source]` (forcément le cas si on copie plusieurs `[source]` à la fois). 
+> - Les 2, (avec le nom au bout du **path**) auquel cas la copie sera effectué dans le répertoire spécifié, et le nom du fichier créé sera celui spécifié (nécessite une unique `[source]`).
 
 <br>
 
@@ -104,30 +109,32 @@ Copie `[source]` dans `[destination]`.
 cut [option] [list] [file]
 ```
 Affiche des sections spécifiques de chaques lignes d'un fichier.
-    
+> [!arg]- Option
+> - `-b` : La `[list]` correspondra à des **octets**. (`--bytes=[list]`)
+> - `-c` : La `[list]` correspondra à des caractères. (`--characters=[list]`)
+> - `-f[list]` : La `[list]` correspondra à des champs délimités par `[delim]`. (`--fields=[list]`)
+> 	- `-d[delim]` : Spécifie le séparateur qu'utilisera `-f` pour délimiter les différents champs. (`--delimiter=[delim]`)
 
-- **[option]** :
-    
-
-- **-b[list]** : La **[list]** correspondra à des _octets_. (**--bytes=[list]**)
-    
-- **-c[list]** : La **[list]** correspondra à des caractères. (**--characters=[list]**)
-    
-- **-f[list]** : La **[list]** correspondra à des champs délimités par **[delim]**. (**--fields=[list]**)
-    
-
-- **-d[delim]** : Spécifie le séparateur qu'utilisera **-f** pour délimiter les différents champs. (**--delimiter=[delim]**)
-    
-
-- **[list]** : Précise le numéro des octes/caractères/champs qu'on veut afficher.
-    
-
-- On peut donner un numéro précis. (**cut -c 2** va afficher le 2e caractère de chaque ligne)
-    
-- On peut aussi donner une plage de numéros, en séparant le premier et le dernier d'un tiret (**-**). (**cut -c 2-4** va afficher le 2e, 3e, et 4e caractère de chaque ligne.)
-    
-- On peut donner plusieurs numéros et/ou plages de numéros en les séparant d'une virgule. (**cut -c 2,4-7,11** va afficher le 2e, 4e, 5e, 6e, 7e, et 11e caractère de chaque ligne)
-    
+> [!arg]- List
+> On précise dans `list` le numéro des **octets**/caractères/champs qu'on veut afficher.
+> - On peut donner un numéro précis.
+> 	> [!example]-
+> 	> ```bash
+> 	> cut -c 2
+> 	> ```
+> 	> Cela va afficher le 2e caractère de chaque ligne.
+> - On peut aussi donner une plage de numéros, en séparant le premier et le dernier d'un tiret (**-**).
+> 	> [!example]-
+> 	> ```bash
+> 	> cut -d: -f 2-4
+> 	> ```
+> 	> Cela va afficher le 2e, 3e, et 4e champ de chaque ligne. Les champs sont délimités par le séparateur ":".
+> - On peut donner plusieurs numéros et/ou plages de numéros en les séparant d'une virgule. 
+> 	> [!example]-
+> 	> ```bash
+> 	> cut -o 2,4-7,11
+> 	> ``` 
+> 	> Cela va afficher le 2e, 4e, 5e, 6e, 7e, et 11e **octet** de chaque ligne.
 
 <br>
 
