@@ -1,0 +1,22 @@
+{
+  "callouts": {
+    "custom": [
+      "walkthrough"
+    ],
+    "settings": {
+      "walkthrough": [
+        {
+          "changes": {
+            "icon": "lucide-clipboard-list"
+          }
+        }
+      ]
+    }
+  },
+  "calloutDetection": {
+    "obsidianFallbackForced": false,
+    "obsidian": true,
+    "theme": true,
+    "snippet": true
+  }
+}

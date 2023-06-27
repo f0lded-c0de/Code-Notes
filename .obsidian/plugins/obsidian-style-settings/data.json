@@ -1,11 +1,18 @@
 {
-  "minimal-style@@active-line-on": true,
+  "minimal-style@@active-line-on": false,
   "minimal-style@@blockquote-border-thickness": 1,
   "minimal-style@@h1-size": "1.7em",
   "minimal-style@@h2-size": "1.4em",
   "minimal-style@@h3-size": "1.2em",
-  "minimal-style@@bold-weight": 700,
+  "minimal-style@@bold-weight": 600,
   "minimal-style@@bold-color@@light": "#000000",
   "minimal-style@@code-background@@light": "#474747",
-  "minimal-style@@code-normal@@light": "#E7E7E7"
+  "minimal-style@@code-normal@@light": "#E7E7E7",
+  "shimmering-focus@@file-line-width": 1000,
+  "shimmering-focus@@uncolored-bold": true,
+  "shimmering-focus@@uncolored-italic": true,
+  "shimmering-focus@@bg-hue-light": 230,
+  "minimal-style@@code-normal@@dark": "#474747",
+  "minimal-style@@code-background@@dark": "#E7E7E7",
+  "minimal-style@@code-size": "12px"
 }

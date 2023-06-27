@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "Table of Contents.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -27,12 +27,24 @@
               "state": {
                 "file": "Bash Shell - Overview.md",
                 "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "cb41d67316cf3eb6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Bash Shell - Command List.md",
+                "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -99,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bash Shell - Overview.md",
+                "file": "Bash Shell - Command List.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bash Shell - Overview.md",
+                "file": "Bash Shell - Command List.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,16 +151,15 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bash Shell - Overview.md"
+                "file": "Bash Shell - Command List.md"
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -161,10 +172,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ecae6d4bb68206b5",
+  "active": "cb41d67316cf3eb6",
   "lastOpenFiles": [
-    "Table of Contents.md",
+    "Markdown Tests.md",
+    "Bash Shell - Command List.md",
     "Bash Shell - Overview.md",
+    "Untitled 2.md",
+    "refi.md",
+    "[.md",
+    "Table.md",
+    "www.gmail.com.md",
+    "Untitled 1.md",
+    "Table of Contents.md",
     "ayoooo.md",
     "CAFXFEFQDqdfqG.md"
   ]
