@@ -379,9 +379,13 @@ sed (option) [action] [file]
 ```
 Transforme de multiples façons différentes le contenu de `[file]`. `sed` fonctionne ligne par ligne.
 > [!walkthrough]- Fonctionnement Général
-> `sed` prend une ligne dans le **pattern space**^[**Pattern space** : dans le cadre de la commande `sed`, le **pattern space** est en quelques sorte la variable temporaire dans laquelle `sed` va stocker le texte sur lequel il travaille. Puisqu'il travaille ligne par ligne, c'est dans le **pattern space** qu'il stock la ligne à laquelle il est rendu.] réalise les actions demandées dessus, puis passe à la prochaine ligne et recommence.
+> 1. `sed` prend une ligne dans le **pattern space**^[**Pattern space** : dans le cadre de la commande `sed`, le **pattern space** est en quelques sorte la variable temporaire dans laquelle `sed` va stocker le texte sur lequel il travaille. Puisqu'il travaille ligne par ligne, c'est dans le **pattern space** qu'il stock la ligne à laquelle il est rendu.] 
+> 2. `sed` réalise les actions demandées dessus.  
+> 3. `sed` passe à la ligne suivante. (il remplace la ligne actuelle dans **pattern space** par la ligne suivante)
+> 4. 
 > Dès que `sed` va passer à la ligne suivante, il affichera automatiquement la ligne sur laquelle il travaillait. C'est le cas qu'il passe à la ligne suivante automatiquement parce qu'il est arrivé à la fin du cycle d'action, ou qu'il le fasse manuellement parce l'action `n` était précisé. Ce n'est pas le cas si la ligne actuelle est supprimée par l'action `d`, et que `sed` passe alors par la force des choses à la ligne suivante.(Ce comportement est annulé si l'option `-n` est précisé)
-> > [!example] 
+> 
+> > [!example]- Example 1 
 > > On a un fichier `test.txt`, qui contient le texte suivant :
 > > ```
 > > C'est la 1ere ligne. Test.
@@ -391,7 +395,7 @@ Transforme de multiples façons différentes le contenu de `[file]`. `sed` fonct
 > > C'est la 5eme ligne. Test.
 > > ```
 > > Si j'utilise la commande :
-> > ```
+> > ```bash
 > > sed 'n;d' test.txt
 > > ```
 > > J'obtiendrais le résultat suivant :
@@ -401,29 +405,77 @@ Transforme de multiples façons différentes le contenu de `[file]`. `sed` fonct
 > > C'est la 5eme ligne. Test.
 > > ```
 > > > [!walkthrough]-
-> > > 1. `sed` prend dans son **pattern space** la première ligne : "*C'est la 1ere ligne. Test.*".
-> > > 2. `sed` réalise la première action : `n`.
+> > > 1. `sed` prend dans son **pattern space** la 1ère ligne : "*C'est la 1ere ligne. Test.*".
+> > > 2. Il réalise la première action : `n`. Il va donc passer à la ligne suivante. Cela implique d'abord d'afficher automatiquement la ligne actuelle (la 1ère), puisque `-n` n'est pas précisé.
+> > > 3. Il continue l'action `n`, il remplace la 1ère ligne dans le **pattern space** par la 2ème : "*C'est la 2eme ligne. Test.*".
+> > > 4. Ayant finit la première action, il passe à la deuxième : `d`. Il va donc supprimer la ligne actuelle du **pattern space**. Celui-ci est donc désormais vide.
+> > > 5. Ayant finit la deuxième et dernière action du cycle, il va passer à la ligne suivante et reprendre le cycle au début. Cela implique d'abord d'afficher automatiquement la ligne actuelle, puisque `-n` n'est pas précisé. Mais le **pattern space** étant vide, il n'y a pas de ligne à afficher. La 2e ligne ne sera donc jamais affiché.
+> > > 6. Il prend alors la 3ème ligne dans son **pattern space** : "*C'est la 3eme ligne. Test.*".
+> > > 7. Il reprend à l'étape 2 avec la ligne actuelle.
+> 
+> > [!example]- Example 2
+> > On a un fichier `test.txt`, qui contient le texte suivant :
+> > ```
+> > C'est la 1ere ligne. Test.
+> > C'est la 2eme ligne. Test.
+> > C'est la 3eme ligne. Test.
+> > C'est la 4eme ligne. Test.
+> > C'est la 5eme ligne. Test.
+> > ```
+> > Si j'utilise la commande :
+> > ```bash
+> > sed '2,5{s/Test/zebi/}' test.txt
+> > ```
+> > J'obtiendrais le résultat suivant :
+> > ```
+> > C'est la 1ere ligne. Test.
+> > C'est la 2eme ligne. zebi.
+> > C'est la 3eme ligne. zebi.
+> > C'est la 4eme ligne. zebi.
+> > C'est la 5eme ligne. zebi.
+> > ```
+> > > [!walkthrough]-
+> > > 1. `sed` prend dans son **pattern space** la 1ère ligne : "*C'est la 1ere ligne. Test.*".
+> > > 2. Il n'a pas d'action à effectuer pour la première ligne, il va passer à la ligne suivante, en commençant par afficher la ligne actuelle.
+> > > 3. Il remplace la 1ère ligne dans le **pattern space** par la 2ème : "*C'est la 2eme ligne. Test.*".
+> > > 4. On est dans le périmètre d'action précisé, il va donc pouvoir réaliser l'action : il va chercher s'il trouve une **string** correspondant au pattern "Test" qu'on lui a donné. Celle-ci se trouve à la fin de la ligne.
+> > > 5. Il remplace la string "Test" trouvée par la string "zebi".
+> > > 6. N'ayant plus d'action, il va passer à la ligne suivante, en commençant par afficher la ligne actuelle.
+> > > 7. Il remplace la 2ère ligne dans le **pattern space** par la 3ème : "*C'est la 3eme ligne. Test.*".
+> > > 8. Il reprend à l'étape 4 avec la ligne actuelle.
 
-- **sed** va lire la première ligne dans le _pattern space_, qui est en quelque sorte la variable temporaire dans laquelle **sed** va stocker le texte sur lequel il travaille sur le moment (ligne par ligne donc).
-    
-- Il va ensuite réaliser des actions dessus. Si **d** est effectué, la ligne actuellement lue dans le _pattern space_ sera supprimée avant l'affichage automatique, la ligne ne sera donc pas affichée automatiquement. Si **n** est effectué, il va remplacer le texte actuellement dans le pattern space par la ligne suivante. Mais ne la supprimant pas, si l'affichage automatique est censé avoir lieu après la commande **n**, **n** va afficher lui même manuellement le _pattern space_ avant de le remplacer (le remplacement empêchant l'affichage automatique de la première ligne, celle-ci n'étant plus dans le _pattern space_ après l'action de **n**).
-    
-- La commande **sed -n 'p;p;p;n'** va procéder comme suit :
-    
-
-1. Lecture de la premiere ligne dans le _pattern space_.
-    
-2. Réalisation des actions : ici on affiche 3 fois la première ligne (**p;p;p**), puis on passe à la ligne suivante, soit la deuxième ligne dans le _pattern space_ (**n**).
-    
-3. Fin du cycle d'action, pas d'affichage automatique **-n** étant précisé, on passe donc à la ligne suivante, lecture de la troisièmee ligne dans le _pattern space_.
-    
-4. Répétition depuis la 2e étape.
-    
-
-- La commande afficher une ligne sur deux 3 fois de suite, en commençant par la première.
-    
-- Si **-n** n'avait pas été précisé, **n** aurait affiché le _pattern space_ avant de le remplacer (à l'étape 2), et à l'étape 3 le _pattern space_ aurait été automatiquement affiché avant de passer à la ligne suivante.
-    
+> [!arg]- Option
+> - `-n` : De base, `sed` affiche automatiquement la ligne actuellement présente dans le **pattern space** avant chaque changement de ligne, soit-il causé par l'arrivée à la fin du cycle d'actions, ou par la présence de l'action `n` qui provoque un changement manuel de ligne. Si `-n` est précisé, ce comportement est annulé.
+> > [!example]-
+> > ```bash
+> > sed 'n;d'
+> > ```
+> > > [!walkthrough]-
+> > > 1. Ici, `sed` va afficher automatiquement la 1e ligne et va passer manuellement à la 2e (`n`).
+> > > 2. Puis va supprimer la 2e ligne (`d`).
+> > > 3. Puis ne va pas afficher automatiquement la 2e ligne (le **pattern space** est vide, il n'y a rien à afficher), mais va quand même passer automatiquement à la ligne 3e (le cycle d'action est terminé).
+> > > 4. Puis va afficher automatiquement la 3e ligne et passer manuellement à la 4e (`n`).
+> > > 5. Puis va supprimer la 4e (`d`)
+> > > 6. Etc...
+> > 
+> > ```bash
+> > sed -n 'p;n'
+> > ```
+> > > [!walkthrough]-
+> > > 1. Ici, `sed` va afficher manuellement la 1e ligne (`p`).
+> > > 2. Puis ne va pas afficher automatiquement la 1e (`-n`), mais va passer manuellement à la 2e (`n`) .
+> > > 3. Puis ne va pas afficher automatiquement la 2e ligne (`-n`), mais va passer automatiquement à la ligne 3e (le cycle d'action est terminé) .
+> > > 4. Puis va afficher manuellement la 3e (`p`).
+> > > 5. Puis ne va pas afficher automatiquement la 3e (`-n`), mais va passer manuellement à la 4e (`n`).
+> > > 6. Puis ne va pas afficher automatiquement la 4e ligne (`-n`) mais va passer automatiquement à la 5e (le cycle d'action est terminé).
+> > > 7. Etc...
+> > 
+> > - Les 2 exemple font la même chose : ils affichent une ligne sur deux d'un texte, en commençant par la 1e.
+> > - Utiliser `p` sans préciser `-n` résultera en l'affichage en double des lignes sur lesquels `p` s'appliquera.
+> 
+> - `-i(suffix)` : Applique les modifications directement sur le fichier source, au lieu de simplement print le résultat dans **stdout**. Si un `(suffix)` est précisé, un fichier backup est créé avec le suffixe précisé ajouté au nom. (Le `(suffix)` peut être directement collé à `-i` sans syntaxe particulière).
+> - `-e [action]` : Permet d'appliquer plusieurs actions différentes. Revient au même que de séparer les différentes actions avec `;`.
+***
 
 - Sans lui donner de pattern, **sed** peut effectuer des actions sur chaques lignes l'une après l'autre, avec des lettres correspondant à une action spécifique.
     
@@ -445,29 +497,9 @@ Transforme de multiples façons différentes le contenu de `[file]`. `sed` fonct
     
 
 - **/[regexp]/[action]** : Applique **[action]** à ce qui correspond en _regex_ à **[regexp]**. **[action]** pouvant être n'importe laquelle des actions spécifiée au dessus.
-    
 
-- **sed** a plusieurs options :
-    
 
-- **-n** : **sed** affiche automatiquement dans _stdout_ chaque ligne en plus de réaliser l'action demandée, sauf si l'option **-n** est précisée.
-    
-
-- e.g. **sed** **'n;d'** va afficher la 1e ligne automatiquement et passer à la suivante (**n**), puis supprimer la 2e ligne (**d**), puis laisser **sed** afficher la 3e en passant à la suivante (**n)**, puis supprimer la 4e (**d**)...
-    
-- e.g. **sed -n 'p;n'** ne va rien afficher de base (**-n**). Il va ensuite afficher la 1e ligne (**p**), puis passer la 2e (**n**), puis afficher la 3e (**p**), puis passer la quatrième (**n**).
-    
-- Les 2 exemple font la même chose : ils affichent une ligne sur deux d'un texte, en commençant par la 1e.
-    
-- Utiliser **p** sans préciser **-n** résultera en l'affichage en double des lignes sur lesquels **p** s'appliquera.
-    
-
-- **-i(suffix)** : Applique les modifications directement sur le fichier source, au lieu de simplement print le résultat dans _stdout_. Si un **(suffix)** est précisé, un fichier backup est créé avec le suffixe précisé ajouté au nom. (Le **(suffix)** peut être directement collé à **-i** sans syntaxe particulière).
-    
-- **-e [command]** : Permet d'appliquer plusieurs commandes differentes. Revient au même que de séparer les différentes commandes avec **;**.
-    
 - On peut spécifier un périmètre d'action spécifique à **sed** en précisant des numéros de lignes devant la commande **sed** :
-    
 
 - **sed '3,7n;d' [file]** va afficher une ligne sur deux en commençant par la 3e et en finissant par la 7e (donc les lignes 3,5, et 7).
     
