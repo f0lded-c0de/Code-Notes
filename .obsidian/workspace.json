@@ -38,7 +38,7 @@
               "type": "markdown",
               "state": {
                 "file": "Bash Shell - Command List.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               }
             }
@@ -174,8 +174,9 @@
   },
   "active": "cb41d67316cf3eb6",
   "lastOpenFiles": [
-    "Bash Shell - Overview.md",
+    "Untitled.md",
     "Bash Shell - Command List.md",
+    "Bash Shell - Overview.md",
     "Markdown Tests.md",
     "Untitled 2.md",
     "refi.md",

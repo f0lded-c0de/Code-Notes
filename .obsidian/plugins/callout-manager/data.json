@@ -2,20 +2,29 @@
   "callouts": {
     "custom": [
       "walkthrough",
-      "arg"
+      "arg",
+      "goodprac"
     ],
     "settings": {
       "walkthrough": [
         {
           "changes": {
-            "icon": "lucide-clipboard-list"
+            "icon": "lucide-clipboard-list",
+            "color": "229, 181, 103"
           }
         }
       ],
       "arg": [
         {
           "changes": {
-            "color": "58, 230, 55"
+            "color": "76, 199, 240"
+          }
+        }
+      ],
+      "goodprac": [
+        {
+          "changes": {
+            "color": "158, 249, 47"
           }
         }
       ]

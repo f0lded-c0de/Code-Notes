@@ -91,13 +91,14 @@ Copie `[source]` dans `[destination]`.
 > 
 > Si `[destination]` existe déjà et que ni `-i` ni `-n` ne sont utilisés, écrase le fichier en question.
 
-> [!arg]- Source et Destination
+> [!arg]- Source
 > Il faut au moins 1 `[source]`, mais l'on peut copier autant de `[source]` que l'on veut. On peut préciser un nouveau nom pour le fichier résultant de la copie si l'on ne copie qu'une seule `[source]`.
 > 
 > `[source]` peut s'écrire sous 2 formes :
-> - Juste le nom du fichier à copier si celui ci est dans le répertoire courant
+> - Juste le nom du fichier à copier si celui ci est dans le répertoire courant.
 > - Le **path** y menant si ce n'est pas le cas, avec le nom du fichier à la fin du **path**.
-> 
+
+> [!arg]- Destination
 > `[destination]` peut s'écrire sous 3 formes :
 > - Juste le nom qu'on veut donner au fichier qui résultera de la copie, auquel cas la copie sera effectuée dans le répertoire courant(nécessite une unique `[source]`). 
 > - Juste le **path** menant au répertoire dans lequel la copie sera effectuée, auquel cas le nom restera le même que `[source]` (forcément le cas si on copie plusieurs `[source]` à la fois). 
@@ -112,294 +113,234 @@ Affiche des sections spécifiques de chaques lignes d'un fichier.
 > [!arg]- Option
 > - `-b` : La `[list]` correspondra à des **octets**. (`--bytes=[list]`)
 > - `-c` : La `[list]` correspondra à des caractères. (`--characters=[list]`)
-> - `-f[list]` : La `[list]` correspondra à des champs délimités par `[delim]`. (`--fields=[list]`)
+> - `-f` : La `[list]` correspondra à des champs délimités par `[delim]`. (`--fields=[list]`)
 > 	- `-d[delim]` : Spécifie le séparateur qu'utilisera `-f` pour délimiter les différents champs. (`--delimiter=[delim]`)
 
 > [!arg]- List
 > On précise dans `list` le numéro des **octets**/caractères/champs qu'on veut afficher.
 > - On peut donner un numéro précis.
 > 	> [!example]-
+> 	> Pour afficher le 2e caractère de chaque ligne :
 > 	> ```bash
 > 	> cut -c 2
 > 	> ```
-> 	> Cela va afficher le 2e caractère de chaque ligne.
 > - On peut aussi donner une plage de numéros, en séparant le premier et le dernier d'un tiret (**-**).
 > 	> [!example]-
+> 	> Pour afficher le 2e, 3e, et 4e champ de chaque ligne, en délimitant les champs par le séparateur ":" :
 > 	> ```bash
 > 	> cut -d: -f 2-4
 > 	> ```
-> 	> Cela va afficher le 2e, 3e, et 4e champ de chaque ligne. Les champs sont délimités par le séparateur ":".
 > - On peut donner plusieurs numéros et/ou plages de numéros en les séparant d'une virgule. 
 > 	> [!example]-
+> 	> Pour afficher le 2e, 4e, 5e, 6e, 7e, et 11e **octet** de chaque ligne :
 > 	> ```bash
 > 	> cut -o 2,4-7,11
 > 	> ``` 
-> 	> Cela va afficher le 2e, 4e, 5e, 6e, 7e, et 11e **octet** de chaque ligne.
 
 <br>
 
 ```bash
-diff [file1] [file2]
+diff (option) [file1] [file2]
 ```
-Affiche un rapport des différences lignes par lignes entre **[file1]** et **[file2]**. Cela sert surtout pour comparer 2 versions différentes d'un même fichier. **[file1]** étant le fichier original et **[file2]** le fichier modifié.
-    
 
-- **-s** : Précise quand les fichiers sont identiques (au lieu de ne rien faire, par défaut).
-    
-- **-y** : Présente les différences sous forme de 2 colonnes.
-    
+^2629f6
+
+Affiche un rapport des différences lignes par lignes entre `[file1]` et `[file2]`. Cela sert surtout pour comparer 2 versions différentes d'un même fichier. `[file1]` étant le fichier original et `[file2]` le fichier modifié.
+> [!arg]- Options
+> - `-s` : Précise quand les fichiers sont identiques (au lieu de ne rien faire, par défaut).
+> - `-y` : Présente les différences sous forme de 2 colonnes.
 
 <br>
 
 ```bash
-echo [string]
+echo (option) [string]
 ```
-Affiche une [**string]**.
-    
-
-- **-n** : Ne rajoute pas le caractère **\n** (newline), correspondant à un saut à la ligne, à la fin de **[string]**.
-    
-- **-e** : Interprète les backslash
-    
-
-- **\n** : _Newline_
-    
-- **\b** : _Backspace_
-    
-- **\e** : _Escape_
-    
-- **\t** : _Horizontal tab_
-    
-- **\v** : _Vertical tab_
-    
+Affiche une `[string]`.
+> [!arg]- Option
+> - **-n** : Ne rajoute pas le caractère **\n** (newline), correspondant à un saut à la ligne, à la fin de **[string]**.
+> - **-e** : Interprète les backslash
+> 	- **\n** : _Newline_
+> 	- **\b** : _Backspace_
+> 	- **\e** : _Escape_
+> 	- **\t** : _Horizontal tab_
+> 	- **\v** : _Vertical tab_
 
 <br>
 
 ```bash
-find
+find (path) (test) (action)
 ```
-Cherche un/des fichiers dans le dossier spécifié, et peut réaliser des actions sur ces derniers.
-    
+Cherche un/des fichiers dans le dossier désigné par `(path)` (si aucun `(path)` n'est spécifié, le dossier par défaut sera le repertoire courant `.`) selon les `(test)` (si aucun `(test)` n'est spécifié, alors tous les fichiers seront concernés), et peut réaliser des `(action)` sur ces derniers (si aucune `(action)` n'est spécifié, une simple liste des fichiers trouvés sera renvoyée en **output**).
+> [!arg]- Tests
+> - `-type [type]` : Spécifie un type de fichier à rechercher parmi les suivants :
+> 	- `d` : Répertoire (directory)
+> 	- `f` : Fichier régulier
+> 	- `l` : Liens symboliques
+> - `-empty` : Le fichier est vide, que ce soit un fichier régulier ou un répertoire. 
+> - `-name [name]` : Le nom correspond au pattern shell `[name]`. (`-iname` pour que ce soit insensible à la casse) 
+> - `-regex [name]` : Le nom correspond au pattern **regex** `[name]`. (`-iregex` pour que ce soit insensible à la casse) 
+> - `-path [path]` : Le chemin correspond au pattern shell `[path]`. (`-ipath` pour que ce soit insensible à la casse)
+> 
+> On peut aussi cumuler des tests en utilisant des opérateurs :
+> > [!arg]- Opérateurs
+> > - `-not [test]` : Inverse le test de `[test]` (`[test]` pouvant être n'importe lequel des tests au dessus). Il ne renvoie **true** que si `[test]` renvoie **false**. 
+> > On peux aussi l'écrire simplement `!`.
+> > > [!example]-
+> > > `-name [name]` va trouver seulement les fichiers dont le nom correspond à `[name]`
+> > > 
+> > > `-not -name [name]` va trouver seulement les fichiers dont le nom ne correspond PAS à `[name]`.
+> > 
+> > - `[test1] -a [test2]` : Revient à écrire `[test1] [test2]`. Ne renvoie **true** que si les 2 tests renvoient **true**.
+> > - `[test 1] -o [test2]` : Inverse de `-a`. Renvoie **true** si au moins un des 2 tests renvoie **true**.
+> > 
+> > > [!goodprac]- Bonne Pratique
+> > > Il est recommandé d'utiliser des parenthèses autour des tests qu'on veut combiner avec des opérateurs, surtout si l'on souhaite leur appliquer des actions spécifiques, afin de clarifier les priorités de ceux-ci.
 
-- Tests :
-    
-
-- **-type** : Spécifie un type de fichier à rechercher :
-    
-
-- **d** : Répertoire (directory)
-    
-- **f** : Fichier régulier
-    
-- **l** : Liens symboliques
-    
-
-- **-empty** : Le fichier est vide, que ce soit un fichier régulier ou un répertoire.
-    
-- **-name [name]** : Le nom correspond au pattern shell **[name]**. (**-iname** pour que ce soit insensible à la casse)
-    
-- **-regex [name]** : Le nom correspond au pattern _regex_ **[name]**. (**-iregex** pour que ce soit insensible à la casse)
-    
-- **-path [path]** : Le chemin correspond au pattern shell **[path]**. (**-ipath** pour que ce soit insensible à la casse)
-    
-
-- Opérateurs :
-    
-
-- **-not** **[test]** : Inverse le test de **[test]** (**[test]** pouvant être n'importe lequel des tests au dessus) (renvoie _true_ seulement si **[test]** renvoie _false_). Exemple :
-    
-
-- "**-name [name]**" va trouver seulement les fichiers dont le nom correspond à **[name]**
-    
-- "**-not -name [name]**" va trouver seulement les fichiers dont le nom ne correspond PAS à **[name]**.
-    
-
-- **[test1] -a [test2]** : Revient à écrire **[test1] [test2]**. Ne renvoie _true_ que si les 2 tests renvoient _true_.
-    
-- **[test 1] -o [test2]** : Inverse de **-a**. Renvoie _true_ si au moins un des 2 tests renvoie _true_.
-    
-
-- Actions :
-    
-
-- **-print** : Affiche la liste des fichiers trouvés.
-    
-- **-delete** : Efface les fichiers trouvés.
-    
-- **-exec [command] {} \;** : Exécute n'importe quelle **[command]** Shell sur les fichiers trouvés.
-    
-
-- **{}** est un _placeholder_ qui sera remplacé par tous les résultats de **find**. (**find** exécutera une fois **[command]** pour chaque résultat) (A utiliser en fonction du synopsis de **[command]**)
-    
-- **;** délimite la fin de **command]** pour **find**, mais il a besoin d'être _échapé_ par un **\**.
-    
-
-- **-prune** : Si le fichier est un répertoire, find ne descendra pas dedans.
-    
+> [!arg]- Actions
+> - `-print` : Affiche la liste des fichiers trouvés.
+> - `-delete` : Efface les fichiers trouvés.
+> - `-exec [command] {} \;` : Exécute n'importe quelle `[command]` Shell sur les fichiers trouvés.
+> 	- `{}` est un **placeholder** qui sera remplacé par tous les résultats de `find`. (`find` exécutera une fois `[command]` pour chaque résultat) (A utiliser en fonction du synopsis de `[command]`)
+> 	- `;` délimite la fin de `[command]` pour `find`, mais il a besoin d'être **échappé** par un `\`.
+> - `-prune` : Si le fichier est un répertoire, find ne descendra pas dedans.
 
 <br>
 
 ```bash
 export (name)
 ```
-Exporte la variable ou fonction **(name)** dans l'environnement. On peut si on le souhaite déclarer la valeur de la variable dans **(name)**. Si **(name)** nest pas précisé, renverra une liste des variables et fonctions déjà exportées dans l'environnement.
-    
+Exporte la variable ou fonction `(name)` dans l'environnement. On peut si on le souhaite déclarer la valeur de la variable dans `(name)` (`export (name)=(value)`). Si `(name)` nest pas précisé, renverra une liste des variables et fonctions déjà exportées dans l'environnement.
 
 <br>
 
 ```bash
-grep [pattern] [file]
+grep (option) [pattern] [file]
 ```
-Cherche dans **[file]** le pattern **[pattern]** en _regex_, et affiche toutes les lignes où il le trouve.
-    
-
-- **-v** : Inverse la recherche, et ne affiche que les lignes ne contenant pas le pattern.
-    
-- **-o** : N'affiche que la partie correspondante au pattern au lieu d'afficher toute la ligne.
-    
-- **-E** : Utilise la version étendue des patterns _regex_.
-    
+Cherche dans `[file]` le pattern `[pattern]` en **regex**, et affiche toutes les lignes où il le trouve.
+> [!arg]- Option
+> - `-v` : Inverse la recherche, et ne affiche que les lignes ne contenant pas le pattern.
+> - `-o` : N'affiche que la partie correspondante au pattern au lieu d'afficher toute la ligne.
+> - `-E` : Utilise la version étendue des patterns **regex**.
 
 <br>
 
 ```bash
-head
+head (option) [file]
 ```
-Affiche les 10 premières lignes d'un fichier. 
-    
-
-- **-n** : Définir le nombre de lignes à afficher.
-    
-- **-c** : N'affiche que le nombre spécifié de caractères en partant du début.
-    
+Affiche les 10 premières lignes de `[file]`.
+> [!arg]- Option
+> - `-n` : Définir le nombre de lignes à afficher.
+> - `-c` : N'affiche que le nombre spécifié de caractères en partant du début.
 
 <br>
 
 ```bash
-id (login)
+id (option) (login)
 ```
-Affiche les _id_ d'utilisateur et de groupes _effectifs_ et _réels_ associés à **(login)**. (si **(login)** non précisé, utilisera le _login_ de l'utilisateur actuel)
-    
-
-- **-g** : Affiche uniquement l'_id_ du groupe _effectif_ en chiffres.
-    
-- **-G** : Affiche les _id_ de tous les groupes en chiffres.
-    
-- **-u** : Affiche l'_id_ de l'utilisateur _effectif_ en chiffres.
-    
-- **-n** : Utilisé avec **-guG** (au moins un), affiche un nom au lieu d'un nombre.
-    
+Affiche les **id** d'utilisateur et de groupes associés à `(login)`. (si `(login)` non précisé, utilisera le `login` de l'utilisateur actuel)
+> [!arg]- Option
+> - `-g` : Affiche uniquement l'**id** du groupe en chiffres.
+> - `-G` : Affiche les **id** de tous les groupes en chiffres.
+> - `-u` : Affiche l'**id** de l'utilisateur en chiffres.
+> - `-n` : Utilisé avec `-guG` (au moins un), affiche un nom au lieu d'un nombre. 
 
 <br>
 
 ```bash
 less
 ```
-Affiche le contenu d'un fichier par pages, comme un **man**. 
-    
+Affiche le contenu d'un fichier par pages, comme un `man`.
 
 <br>
 
 ```bash
-ln [target file] [link]
+ln (option) [target file] [link]
 ```
-Crée un lien **[link]** qui pointe sur **[target file]**.
-    
-
-- **-s** : Crée un lien symbolique (_symbolic link_) au lieu d'un lien physique (_hard link_).
-    
-- **-f** : Fait de **[link]** un lien même si le fichier existe déjà.
-    
+Crée un lien `[link]` qui pointe sur `[target file]`.
+> [!arg]- Option
+> - `-s` : Crée un lien symbolique (**symbolic link**) au lieu d'un lien physique (**hard link**).
+> - `-f` : Fait de `[link]` un lien même si le fichier existe déjà.
 
 <br>
 
 ```bash
-ls
+ls (option)
 ```
 Affiche la liste des fichiers et répertoires dans le répertoire actuel. 
-    
-
-- **-a** : Montrer aussi les fichiers cachés.
-    
-- **-l** : Affiche la liste des fichiers avec des informations concernant le fichier lui même (droit utilisateurs, date de modification, type de fichier, etc...) .
-    
-- **-m** : Sépare les fichiers listés par des virgules.
-    
-- **-t** : Trie par ordre de dernière modification.
-    
-- **-U** : Utilisé avec **-t**, trie par ordre de création au lieu de modification.
-    
-- **-r** : Inverse l'ordre de la liste.
-    
-- **-R** : Liste les sous-dossier récursivement.
-    
-- **-p** : Rajoute un / à la fin des répertoires.
-    
+> [!arg]- Option
+> - `-a` : Montrer aussi les fichiers cachés.
+> - `-l` : Affiche la liste des fichiers avec des informations concernant le fichier lui même (droit utilisateurs, date de modification, type de fichier, etc...) .
+> - `-m` : Sépare les fichiers listés par des virgules.
+> - `-t` : Trie par ordre de dernière modification.
+> - `-U` : Utilisé avec `-t`, trie par ordre de création au lieu de modification.
+> - `-r` : Inverse l'ordre de la liste.
+> - `-R` : Liste les sous-dossier récursivement.
+> - `-p` : Rajoute un / à la fin des répertoires. 
 
 <br>
 
 ```bash
-man [command]
+man (option) [command]
 ```
-Affiche le manuel de **[command]**. 
-    
-
-- **-f** : Affiche une courte description de la commande en question.
-    
+Affiche le manuel de `[command]`. 
+> [!arg]- Option
+> - `-f` : Affiche une courte description de la commande en question.
 
 <br>
 
 ```bash
-mkdir [name]
+mkdir (option) [name]
 ```
-Crée un ou des dossier nommé **[name]**.
-    
-
-- **-p** : permet de créer des sous-dossier (> **mkdir -p test1/test2** va créer le dossier test1, puis le dossier test2 à l'intérieur de ce dernier. Sans le **-p** cette commande ne marcherait que si le dossier test1 existait déjà dans le répertoire courant).
-    
+Crée un ou des dossier nommé `[name]`.
+> [!arg]- Option
+> - `-p` : permet de créer des sous-dossier.
+> > [!example]- 
+> > Afin de créer le dossier *test1*, puis le dossier *test2* à l'intérieur de ce dernier :
+> > ```bash
+> > mkdir -p test1/test2
+> > ```
+> > Sans le `-p` cette commande ne marcherait que si le dossier *test1* existait déjà dans le répertoire courant).
 
 <br>
 
 ```bash
-mv [source] [destination]
+mv (option) [source] [destination]
 ```
 Déplace **[source]** vers **[destination]** et/ou renomme **[source]** en **[destination]**.
-    
+> [!arg]- Option
+> - `-n` : Si `[destination]` existe déjà, ne l'écrase pas.
+> - `-i` : Si `[destination]` existe déjà, demande avant de l'écraser.
+> - Si `[destination]` existe déjà et que ni `-i` ni `-n` ne sont utilisés, écrase le fichier en question.
 
-- **[source]** peut être simplement le nom du fichier à déplacer/renommer si celui ci est dans le répertoire courant, ou aussi inclure  le _path_ y menant si ce n'est pas le cas.
-    
+> [!arg]- Source
+> Il faut au moins 1 `[source]`, mais l'on peut déplacer autant de `[source]` que l'on veut. On peut renommer le fichier déplacé si l'on ne déplace qu'une seule `[source]`.
+> 
+> `[source]` peut s'écrire sous 2 formes :
+> - Juste le nom du fichier à déplacer/renommer si celui ci est dans le répertoire courant.
+> - Le **path** y menant si ce n'est pas le cas, avec le nom du fichier à la fin du **path**.
 
-- Il faut au moins 1 **[source]**, mais l'on peut déplacer autant de **[source]** que l'on veut. On ne peut par contre renommer qu'une seule **[source]**.
-    
-
-- **[destination]** peut être simplement le nom qu'on veut donner à **[source]** si l'on souhaite uniquement le renommer, auquel cas celui-ci ne sera pas déplacé (nécessite une unique **[source]**). Ça peut aussi être simplement le _path_ menant au répertoire dans lequel on veut déplacer **[source]**, auquel cas le nom restera le même que **[source]** (forcémment le cas si on déplace plusieurs **[source]** à la fois). Ça peut aussi être les 2, auquel cas la **[source]** sera déplacée dans le répertoire spécifié et renommée en **[destination]** (nécessite une unique **[source]**).
-    
-- **-n** : Si **[destination]** existe déjà, ne l'écrase pas.
-    
-- **-i** : Si **[destination]** existe déjà, demande avant de l'écraser.
-    
-- Si **[destination]** existe déjà et que ni **-i** ni **-n** ne sont utilisés, écrase le fichier en question.
-    
+> [!arg]- Destination
+> `[destination]` peut s'écrire sous 3 formes :
+> - Si l'on souhaite juste renommer `[source]`, on peut écrire juste le nouveau nom qu'on veut donner à `[source]`, auquel cas le fichier ne sera pas déplacé.
+> - Juste le **path** menant au répertoire dans lequel on souhaite déplacer `[source]`, auquel cas le nom restera le même que `[source]` (forcément le cas si on déplace plusieurs `[source]` à la fois). 
+> - Les 2, (avec le nom au bout du **path**) auquel cas la `[source]` sera déplacée dans le répertoire spécifié et renommée en `[destination]` (nécessite une unique `[source]`).
 
 <br>
 
 ```bash
-patch [file] [patch_file]
+patch (option) [file] [patch_file]
 ```
-Utilise un **[patch_file]** (qu'on obtient avec la commande **diff**) pour appliquer les changements sur **[file]**. (On peut aussi connecter le _stdout_ de **diff** directement à **patch** avec **|**, **[patch_file]** n'est donc plus nécessaire)
-    
-
-- **-b** : Crée un _backup_ de **[file]** avant qu'il soit **patch**.
-    
-- **-R** : Dans le cas ou le **[patch_file]** a été crée en inversant le fichier original et le fichier modifié. Permet d'appliquer les changements a **[file]** même si celui-ci est techniquement le fichier modifié dans le **[patch_file]**.
-    
+Utilise un `[patch_file]` (qu'on obtient avec la commande `diff`<sub>[[Bash Shell - Command List#^2629f6|1]])</sub> pour appliquer les changements sur `[file]`. (On peut aussi connecter le **stdout** de `diff` directement à `patch` avec `|`, `[patch_file]` n'est donc plus nécessaire)
+> [!arg]- Option
+> - `-b` : Crée un **backup** de `[file]` avant qu'il soit `patch`.
+> - `-R` : Dans le cas ou le `[patch_file]` a été crée en inversant le fichier original et le fichier modifié. Permet d'appliquer les changements a `[file]` même si celui-ci est techniquement le fichier modifié dans le `[patch_file]`. 
 
 <br>
 
 ```bash
 pwd
 ```
-
+Affiche le **path** complet du répertoire courant.
 
 <br>
 
@@ -412,46 +353,56 @@ Inverse l'ordre des caractères de chaque ligne.
 <br>
 
 ```bash
-rm [file]
+rm (option) [file]
 ```
-Supprime **[file]**.
-    
-
-- **-i** : Demande confirmation pour chaque élément à supprimer.
-    
-- **-f** : Force la suppression de tout, même s'il peut y avoir un problème.
-    
-- **-v** : _Output_ chaque élément qui est supprimé, en direct.
-    
-- **-d** : Permet de supprimer un répertoire vide.
-    
-- **-r** : Permet de supprimer un répertoire, même s'il n'est pas vide.
-    
+Supprime `[file]`.
+> [!arg]- Option
+> - `-i` : Demande confirmation pour chaque élément à supprimer.
+> - `-f` : Force la suppression de tout, même s'il peut y avoir un problème.
+> - `-v` : **Output** chaque élément qui est supprimé, en direct.
+> - `-d` : Permet de supprimer un répertoire vide.
+> - `-r` : Permet de supprimer un répertoire, même s'il n'est pas vide. 
 
 <br>
 
 ```bash
-rmdir [directory]
+rmdir (option) [directory]
 ```
-Supprime le répertoire **[directory]** seulement s'il est vide.
-    
-
-- **-p** : supprime non seulement le dossier, mais tous ses ancêtres spécifiés dans le chemin écrit.
-    
+Supprime le répertoire `[directory]` seulement s'il est vide.
+> [!arg]- Option
+> - `-p` : Supprime non seulement le dossier, mais tous ses ancêtres spécifiés dans le chemin écrit.
 
 <br>
 
 ```bash
-sed [command] [file]
+sed (option) [action] [file]
 ```
-Transforme de multiples façons différentes du texte. **sed** fonctionne ligne par ligne.
-    
-
-- Fonctionnement général de **sed** :
-    
-
-- **sed** va lire la première ligne, réaliser des actions dessus, et l'afficher si **-n** n'est pas précisé, avant de passer à la prochaine ligne et répéter.
-    
+Transforme de multiples façons différentes le contenu de `[file]`. `sed` fonctionne ligne par ligne.
+> [!walkthrough]- Fonctionnement Général
+> `sed` prend une ligne dans le **pattern space**^[**Pattern space** : dans le cadre de la commande `sed`, le **pattern space** est en quelques sorte la variable temporaire dans laquelle `sed` va stocker le texte sur lequel il travaille. Puisqu'il travaille ligne par ligne, c'est dans le **pattern space** qu'il stock la ligne à laquelle il est rendu.] réalise les actions demandées dessus, puis passe à la prochaine ligne et recommence.
+> Dès que `sed` va passer à la ligne suivante, il affichera automatiquement la ligne sur laquelle il travaillait. C'est le cas qu'il passe à la ligne suivante automatiquement parce qu'il est arrivé à la fin du cycle d'action, ou qu'il le fasse manuellement parce l'action `n` était précisé. Ce n'est pas le cas si la ligne actuelle est supprimée par l'action `d`, et que `sed` passe alors par la force des choses à la ligne suivante.(Ce comportement est annulé si l'option `-n` est précisé)
+> > [!example] 
+> > On a un fichier `test.txt`, qui contient le texte suivant :
+> > ```
+> > C'est la 1ere ligne. Test.
+> > C'est la 2eme ligne. Test.
+> > C'est la 3eme ligne. Test.
+> > C'est la 4eme ligne. Test.
+> > C'est la 5eme ligne. Test.
+> > ```
+> > Si j'utilise la commande :
+> > ```
+> > sed 'n;d' test.txt
+> > ```
+> > J'obtiendrais le résultat suivant :
+> > ```
+> > C'est la 1ere ligne. Test.
+> > C'est la 3eme ligne. Test.
+> > C'est la 5eme ligne. Test.
+> > ```
+> > > [!walkthrough]-
+> > > 1. `sed` prend dans son **pattern space** la première ligne : "*C'est la 1ere ligne. Test.*".
+> > > 2. `sed` réalise la première action : `n`.
 
 - **sed** va lire la première ligne dans le _pattern space_, qui est en quelque sorte la variable temporaire dans laquelle **sed** va stocker le texte sur lequel il travaille sur le moment (ligne par ligne donc).
     

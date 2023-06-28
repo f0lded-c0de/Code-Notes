@@ -16,12 +16,13 @@ Sous Unix, le nom d'un fichier et son contenu sont stockés différemment. Le co
 
 <br>
 
-On peut brancher le **stdout** d'une commande avec le **stdin** d'une autre, en utilisant `|` :
-```bash
-cat file | wc -l
-```
-> [!walkthrough]-
-> Ici `cat` va renvoyer dans **stdout** le contenu de `file`, `|` va le prendre et le redonner au **stdin** de `wc`, qui va compter en compter les lignes, en renvoyer le résultat à nouveau dans **stdout**.
+On peut brancher le **stdout** d'une commande avec le **stdin** d'une autre, en utilisant `|`.
+> [!example]-
+> ```bash
+> cat file | wc -l
+> ```
+> > [!walkthrough]-
+> > Ici `cat` va renvoyer dans **stdout** le contenu de `file`, `|` va le prendre et le redonner au **stdin** de `wc`, qui va compter en compter les lignes, en renvoyer le résultat à nouveau dans **stdout**.
 
 <br>
 
