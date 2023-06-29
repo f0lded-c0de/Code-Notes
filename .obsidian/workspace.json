@@ -56,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bash Shell - Command List.md",
+                "file": "Bash Shell - Wildcards and Regex.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bash Shell - Command List.md",
+                "file": "Bash Shell - Wildcards and Regex.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bash Shell - Command List.md"
+                "file": "Bash Shell - Wildcards and Regex.md"
               }
             }
           }
@@ -184,12 +184,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6b06a060268dc80d",
+  "active": "d39bed3d52defb11",
   "lastOpenFiles": [
+    "Bash Shell - Command List.md",
     "Code Notes - Table of Contents.md",
     "Bash Shell - Wildcards and Regex.md",
     "Bash Shell - Overview.md",
-    "Bash Shell - Command List.md",
     "Markdown Tests.md",
     "Untitled 2.md",
     "refi.md",
