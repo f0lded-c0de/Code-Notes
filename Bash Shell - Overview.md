@@ -1,5 +1,5 @@
 
-# Liens symboliques / Liens physiques (Symbolic link / Hard link)
+# Liens symboliques / Liens physiques (Symbolic link / Hard link) :
 
 Sous Unix, le nom d'un fichier et son contenu sont stockés différemment. Le contenu se voit attribuer un numéro **Inode**, le nom du fichier sera associé à cet **Inode**.
 

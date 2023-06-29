@@ -13,26 +13,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Table of Contents.md",
-                "mode": "preview",
+                "file": "Code Notes - Table of Contents.md",
+                "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "ecae6d4bb68206b5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bash Shell - Overview.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "d5a7f1cd104e41af",
+            "id": "6b06a060268dc80d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -42,9 +30,33 @@
                 "source": true
               }
             }
+          },
+          {
+            "id": "d39bed3d52defb11",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Bash Shell - Wildcards and Regex.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "f30cb0269233b935",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Bash Shell - Overview.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -172,11 +184,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d5a7f1cd104e41af",
+  "active": "6b06a060268dc80d",
   "lastOpenFiles": [
+    "Code Notes - Table of Contents.md",
+    "Bash Shell - Wildcards and Regex.md",
     "Bash Shell - Overview.md",
     "Bash Shell - Command List.md",
-    "Untitled.md",
     "Markdown Tests.md",
     "Untitled 2.md",
     "refi.md",
@@ -184,7 +197,6 @@
     "Table.md",
     "www.gmail.com.md",
     "Untitled 1.md",
-    "Table of Contents.md",
     "ayoooo.md",
     "CAFXFEFQDqdfqG.md"
   ]
