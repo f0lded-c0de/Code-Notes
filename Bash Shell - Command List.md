@@ -330,7 +330,7 @@ Déplace **[source]** vers **[destination]** et/ou renomme **[source]** en **[de
 ```bash
 patch (option) [file] [patch_file]
 ```
-Utilise un `[patch_file]` (qu'on obtient avec la commande `diff`<sub>[[Bash Shell - Command List#^2629f6|1]])</sub> pour appliquer les changements sur `[file]`. (On peut aussi connecter le **stdout** de `diff` directement à `patch` avec `|`, `[patch_file]` n'est donc plus nécessaire)
+Utilise un `[patch_file]` (qu'on obtient avec la commande `diff`<sub>[[Bash Shell - Command List#^2629f6|(diff)]])</sub> pour appliquer les changements sur `[file]`. (On peut aussi connecter le **stdout** de `diff` directement à `patch` avec `|`, `[patch_file]` n'est donc plus nécessaire)
 > [!arg]- Option
 > - `-b` : Crée un **backup** de `[file]` avant qu'il soit `patch`.
 > - `-R` : Dans le cas ou le `[patch_file]` a été crée en inversant le fichier original et le fichier modifié. Permet d'appliquer les changements a `[file]` même si celui-ci est techniquement le fichier modifié dans le `[patch_file]`. 
@@ -475,133 +475,125 @@ Transforme de multiples façons différentes le contenu de `[file]`. `sed` fonct
 > 
 > - `-i(suffix)` : Applique les modifications directement sur le fichier source, au lieu de simplement print le résultat dans **stdout**. Si un `(suffix)` est précisé, un fichier backup est créé avec le suffixe précisé ajouté au nom. (Le `(suffix)` peut être directement collé à `-i` sans syntaxe particulière).
 > - `-e [action]` : Permet d'appliquer plusieurs actions différentes. Revient au même que de séparer les différentes actions avec `;`.
-***
 
-- Sans lui donner de pattern, **sed** peut effectuer des actions sur chaques lignes l'une après l'autre, avec des lettres correspondant à une action spécifique.
-    
-
-- **d** (delete) supprime la ligne en question (ne l'envoie donc pas dans _stdout_).
-    
-- **n** (newline) passe à la ligne suivante sans réaliser d'action particulière, excepté l'impression automatique qui arrive en fin de cycle si **-n** n'a pas été précisé.
-    
-- **p** (print) affiche la ligne en question.
-    
-
-- **sed** peut aussi appliquer une action à une partie spécifique de la ligne, en utilisant un pattern _regex_.
-    
-
-- **s/[regexp]/[replacement]/(g)** : Remplace ce qui correspond en _regex_ à **[regexp]** par **[replacement]**.
-    
-
-- De base, la commande **s** s'effectue sur la première occurrence de **[regexp]** de chaque ligne, et ne s'effectuera pas sur les occurrence suivante d'une même ligne. Sauf si **(g)** est précisé, auqel cas il s'effectuera sur toutes les occurrences de **[regexp]**.
-    
-
-- **/[regexp]/[action]** : Applique **[action]** à ce qui correspond en _regex_ à **[regexp]**. **[action]** pouvant être n'importe laquelle des actions spécifiée au dessus.
-
-
-- On peut spécifier un périmètre d'action spécifique à **sed** en précisant des numéros de lignes devant la commande **sed** :
-
-- **sed '3,7n;d' [file]** va afficher une ligne sur deux en commençant par la 3e et en finissant par la 7e (donc les lignes 3,5, et 7).
-    
-- **sed '6p' [file]** ne va print que la 6e ligne.
-    
-- **sed '3,6{/[pattern]/d}' [file]** va supprimer toutes les lignes comprise entre la 3e et la 6e, et qui contiennent **[pattern]**. Avec la commande **d**, il est nécessaire d'utiliser des **{}** pour donner un périmètre à **sed**.
-    
+> [!arg]- Action
+> `sed` peut réaliser des actions, soit sur toutes les lignes (l'une après l'autre), ou sur des parties spécifiques de celles-ci. En mettant juste des actions parmi celles qui suivent entre `'` et séparées par des `;`, `sed` appliquera toutes les actions l'une après l'autre à chacune des lignes l'une après l'autre.
+> - `d` (delete) supprime la ligne en question (ne l'envoie donc pas dans **stdout**).
+> - `n` (newline) passe à la ligne suivante sans réaliser d'action particulière, excepté l'impression automatique si `-n` n'a pas été précisé.
+> - `p` (print) affiche la ligne en question.
+> 
+> `sed` peut aussi appliquer une action à une partie spécifique de la ligne, en utilisant un pattern **regex**.
+> - Avec la syntaxe suivante, on peut réaliser des `[action]` sur les parties des lignes correspondant au pattern `[regexp]`.
+> 	```bash
+> 	sed '/[regexp]/[action]'
+> 	```
+> 	- Les `[action]` possibles sont celles citées au dessus : `d`, `n`, et `p`.
+> 
+> - On peut aussi remplacer le pattern **regex** trouvé avec l'action `s`, en utilisant la syntaxe suivante :
+> 	```bash
+> 	sed 's/[regexp]/[replacement]/(g)'
+> 	```
+> 	- De base, la commande `s` s'effectue uniquement sur la première occurrence de `[regexp]` de chaque ligne. Sauf si `(g)` est précisé, auquel cas il s'effectuera sur toutes les occurrences de `[regexp]`.
+> 
+> On peut spécifier un périmètre d'action spécifique à una action en précisant des numéros de lignes devant la l'action (à l'interieur des `'`) :
+> - En mettant un chiffre, l'action ne se réalisera que sur cette ligne.
+> - En mettant 2 chiffres séparés de `,`, l'action ne se réalisera que sur les lignes comprises entre les 2 chiffres (ces derniers inclus).
+> - Si l'action se réalise sur un pattern **regex**, et que donc sa syntaxe est celle-ci : `'/[regexp]/[action]'`, il est necessaire d'englober l'action entre `{}`, comme cela :
+> 	```bash
+> 	sed '[range]{/[regexp]/[action]}'
+> 	```
+> 	- Ce n'est pas nécessaire pour `s`, la syntaxe commençant par le `s` et non un `/`.
+> > [!example]-
+> > Pour n'afficher que la 6e ligne de `[file]` :
+> > ```bash
+> > sed -n '6p' [file]
+> > ```
+> > Pour afficher une ligne sur deux  de `[file]` en commençant par la 3e et en finissant par la 7e (donc les lignes 3,5, et 7) :
+> > ```bash
+> > sed '3,7n;d' [file]
+> > ``` 
+> > 
+> > Pour supprimer toutes les lignes de `[file]` qui sont comprise entre la 3e et la 6e, et qui contiennent `[pattern]`. Avec la commande `d`, il est nécessaire d'utiliser des `{}` pour donner un périmètre à `sed` :
+> > ```bash
+> > sed '3,6{/[pattern]/d}' [file]
+> > ```
 
 <br>
 
 ```bash
-sort
+sort (option) [file]
 ```
-Trie les ligne d'un fichier texte par ordre alphabétique.
-    
-
-- **-r** : Inverse le résultat.
-    
-- **-R** : Mélange les lignes aléatoirement au lieu de les trier.
-    
-- **-n** : Trie les lignes qui commencent par un nombre par ordre numérique croissant. Les lignes ne commençant pas par un nombre sont triées par ordre alphabétique et placées en premières.
-    
+Trie les ligne du contenu de `[file]` par ordre alphabétique.
+> [!arg]- Option
+> - `-r` : Inverse le résultat.
+> - `-R` : Mélange les lignes aléatoirement au lieu de les trier.
+> - `-n` : Trie les lignes qui commencent par un nombre par ordre numérique croissant. Les lignes ne commençant pas par un nombre sont triées par ordre alphabétique et placées en premières.
 
 <br>
 
 ```bash
-tail
+tail (option) [file]
 ```
 Affiche les 10 dernières lignes d'un fichier. 
-    
-
-- **-n** : Définir le nombre de lignes à afficher.
-    
-- **-c** : N'affiche que le nombre spécifié de caractères en partant de la fin.
-    
+> [!arg]- Option
+> - `-n` : Définir le nombre de lignes à afficher.
+> - `-c` : N'affiche que le nombre spécifié de caractères en partant de la fin.
 
 <br>
 
 ```bash
-touch [file]
+touch (option) [file]
 ```
-Actualise la date de dernière modification et la date d'accès de **[file]**. Si **[file]** n'existe pas encore, il le créera. Peut donc servir à créer des fichiers vides. 
-    
-
-- **-a** : Change uniquement la date d'accès.
-    
-- **-m** : Change uniquement la date de modification.
-    
-- **-t [AAAAMMLLLhhmm]** : Utilise la date spécifiée au lieu de la date actuelle.
-    
-- **-c** : Ne créé pas de fichier.
-    
-- **-h** : Affecte les liens symboliques au lieu des fichiers spécifiés.
-    
+Actualise la date de dernière modification et la date d'accès de `[file]`. Si `[file]` n'existe pas encore, il le créera. Peut donc servir à créer des fichiers vides. 
+> [!arg]- Option
+> - `-a` : Change uniquement la date d'accès.
+> - `-m` : Change uniquement la date de modification.
+> - `-t [AAAAMMLLLhhmm]` : Attribue la date spécifiée au lieu de la date actuelle.
+> - `-c` : Ne créé pas de fichier.
+> - `-h` : Affecte les liens symboliques au lieu des fichiers spécifiés.
 
 <br>
 
 ```bash
-tr [set1] (set2)
+tr (option) [set1] (set2)
 ```
-Remplace le ou les caractères **[set1]** par le ou les caractères respectif **(set2)**.
-    
+Remplace le ou les caractères `[set1]` par le ou les caractères respectif `(set2)`. Lit la source dans **stdin** et renvoie le résultat dans **stdout**
+> [!example]-
+> Pour remplacer *a* par *1*, *b* par *2*, et *c* par *3* :
+> ```bash
+> tr 'abc' '123'
+> ``` 
 
-- Exemple :
-    
-
-- **tr 'abcde' '12345'** remplacera **a** par **1**, **b** par **2**, et **c** par **3**.
-    
-
-- **-d** : Supprime le ou les caractères **[set1]**.
-    
+> [!arg]- Option
+> `-d` : Supprime le ou les caractères `[set1]`.
 
 <br>
 
 ```bash
-wc [file]
+wc (option) [file]
 ```
-Compte le nombre de lignes, mots, et octets de **[file]**, et les affiche.
-    
-
-- **-l** : Ne compte que les lignes.
-    
-- **-w** : Ne compte que les mots.
-    
-- **-m** : Ne compte que les charactères.
-    
-- **-c** : Ne compte que les octets.
-    
+Compte le nombre de lignes, mots, et **octets** de `[file]`, et les affiche.
+> [!arg]- Option
+> - `-l` : Ne compte que les lignes.
+> - `-w` : Ne compte que les mots.
+> - `-m` : Ne compte que les charactères.
+> - `-c` : Ne compte que les octets. 
 
 <br>
 
 ```bash
 xargs [command]
 ```
-Permet d'éxécuter **[command]** qui ne lit normalement pas _stdin_ comme argument, en prenant quand même _stdin_ comme argument. Exemples de commande ne lisant pas _stdin_ en arguments par défaut :
-    
+Permet d'éxécuter `[command]` qui ne lit normalement pas **stdin** comme argument, en prenant quand même **stdin** comme argument. 
+Exemples de commande ne lisant pas **stdin** en arguments par défaut :
+- `echo`, `rm`, `cp`, `mv`, `mkdir`, `touch`, `chmod`, `grep`, `sed`, `awk`, etc...
 
-- **echo**, **rm**, **cp**, **mv**, **mkdir**, **touch**, **chmod**, **grep**, **sed**, **awk**, etc...
-    
-- Si un argument est aussi tout de même précisé dans **[command]**, **xargs** va rajouter _stdin_ APRÈS l'argument précisé, en les séparant d'un espace. Exemple :
-    
-
-- Si **file** contient la _string_ "bonjour", alors **cat file | xargs echo 'test'** renverra "test bonjour"
+Si un argument est aussi tout de même précisé dans **[command]**, **xargs** va rajouter **stdin** APRÈS l'argument précisé, en les séparant d'un espace.
+> [!example]-
+> `file` contient la **string** "bonjour" : 
+> ```bash
+> cat file | xargs echo 'test'
+> ```
+> Le résultat renvoyé sera "test bonjour"
 
 <br>
