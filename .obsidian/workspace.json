@@ -51,12 +51,44 @@
               "state": {
                 "file": "Bash Shell - Overview.md",
                 "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "4dd2c9219256b079",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Git - Overview.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "0b50c5e1c1e9754d",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "2ab5cd90c58bc7c1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Git - Command List.md",
+                "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -123,7 +155,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bash Shell - Wildcards and Regex.md",
+                "file": "Git - Command List.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +172,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bash Shell - Wildcards and Regex.md",
+                "file": "Git - Command List.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +195,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bash Shell - Wildcards and Regex.md"
+                "file": "Git - Command List.md"
               }
             }
           }
@@ -184,12 +216,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d39bed3d52defb11",
+  "active": "2ab5cd90c58bc7c1",
   "lastOpenFiles": [
-    "Bash Shell - Command List.md",
+    "Git - Command List.md",
     "Code Notes - Table of Contents.md",
-    "Bash Shell - Wildcards and Regex.md",
+    "Git - Overview.md",
+    "Bash Shell - Command List.md",
     "Bash Shell - Overview.md",
+    "Bash Shell - Wildcards and Regex.md",
     "Markdown Tests.md",
     "Untitled 2.md",
     "refi.md",
