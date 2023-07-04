@@ -16,7 +16,9 @@ La notion de "décentralisé" fait référence à l'organisation du travail des 
 
 <br>
 
-## Historique des _commits_ :
+# Commit :
+
+## Historique des commits :
 
 Un **dépôt** git se structure en ce que l'on va appeler une "chaîne de **commits**".
 
@@ -28,9 +30,17 @@ Un **dépôt** git se structure en ce que l'on va appeler une "chaîne de **comm
 - **HEAD** :
     - Le **commit HEAD** est le commit actuel, celui sur lequel on travaille actuellement.
 
+## Faire un commit :
+
+Il y a 2 étapes quand on veut faire un **commit**, qui peuvent être représentée par les 2 commandes qui permettent de les réaliser.
+
+- `git add` : Ajoute toutes les modifications qu'on veut inclure dans le **commit** à l'**index**. ^543278
+	- L'**index** est la "zone de préparation au **commit**. C'est là que sont stockée toutes les modifications qui seront inclues dans le prochain **commit**. Toute modification n'étant pas dans l'**index** ne fera pas parti du prochain **commit**.
+- `git commit` : Créé un nouveau **commit** incorporant tous les changements contenu dans l'**index**.
+
 <br>
 
-## Branches :
+# Branches :
 
 Les **branches** permettent de travailler sur différentes parties du projets sans que celles-ci rentrent en conflit. On peut voir les branches comme des lignes de développements séparées. C'est, de manière plus générale, le système qui nous permet de naviguer entre les commits.
 
