@@ -26,7 +26,7 @@
               "type": "markdown",
               "state": {
                 "file": "Bash Shell - Command List.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": true
               }
             }
@@ -62,7 +62,7 @@
               "type": "markdown",
               "state": {
                 "file": "Git - Overview.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               }
             }
@@ -210,9 +210,9 @@
   },
   "active": "2ab5cd90c58bc7c1",
   "lastOpenFiles": [
-    "Bash Shell - Command List.md",
-    "Git - Command List.md",
     "Git - Overview.md",
+    "Git - Command List.md",
+    "Bash Shell - Command List.md",
     "Bash Shell - Wildcards and Regex.md",
     "Bash Shell - Overview.md",
     "Code Notes - Table of Contents.md",

@@ -6,6 +6,28 @@ Ajoute `[file]` à l'**index**<sub>[[Git - Overview#^543278|index]]</sub>. `[fil
 <br>
 
 ```bash
+git branch (option) (branch)
+```
+Effectue diverses actions en rapport avec les **branches**. Si aucun argument n'est donné, va simplement renvoyer une liste des **branches** présentes localement. Si `(branch)` est précisé, toujours sans autre arguments, créé la **branche**. Si elle existe, ne fait rien.
+> [!arg]- Option
+> - `-a` : Sans `(branch)` de précisé, liste aussi les **branches** distantes en plus des locales.
+> - `-r` : Idem, sans les **branches** locales.
+> - `--merged` : Ne liste que les **branches** qui ont été **merge** dans la **branche** actuelle.
+> - `--no-merged` : Ne liste que les **branches** qui n'ont pas été **merge** dans la **branche** actuelle.
+> - `-d` : Supprime `(branch)`, seulement si tous les changements ont déjà été **merge** dans d'autres **branches**.
+> - `-D` : Supprime `(branch)` même si tous les changements n'ont pas été **merge** dans d'autres **branches**.
+> - `-m [old_name] [new_name]` : Renomme la **branche** `[old_name]` en `[new_name]`.
+
+<br>
+
+```bash
+git checkout (option) (branch)/(commit)
+```
+Permet de se déplacer sur la **branche** `(branch)`, ou le **commit** `(commit)`.
+> [!arg]- Option
+> - `-b` : Créé `(branch)` puis se déplace dessus. Revient à faire `git branch (branch)` puis `git checkout (branch)`.
+
+```bash
 git commit (option)
 ```
 Créé un nouveau **commit** incorporant tous les changements contenu dans l'**index**. Ce **commit** descendra directement du **commit** *HEAD* (**commit** sur lequel nous étions au moment de créer le nouveau/à partir duquel on créé le nouveau). HEAD descendra donc sur le nouveau **commit**, et la **branche** (si l'on est dans une **branche**) se déplacera pour pointer sur ce nouveau **commit**. Associer un "message de **commit**" est fortement recommandé. En l'absence d'options spécifiques modifiant le comportement de la commande par rapport au message de **commit**, `git commit` ouvrira un éditeur de texte dans lequel on pourra l'écrire.
@@ -20,7 +42,7 @@ Créé un nouveau **commit** incorporant tous les changements contenu dans l'**i
 ```bash
 git fetch
 ```
-blablablah
+Met à jour la **remote-tracking branch**<sub>[[Git - Overview#Remote-tracking branch|remote-tracking branch]]</sub> avec les dernières modifications du **dépôt distant**, sans les appliquer sur notre **branche** locale.
 
 <br>
 
@@ -78,9 +100,16 @@ Affiche la liste des fichiers du répertoire git.
 <br>
 
 ```bash
+git merge [source_branch]
+```
+Incorpore les changements qui ont été effectués sur la **branche** `[source_branch]` depuis le dernier **commit** en commun entre la **branche** actuelle et la **branche** `[source_branch]` à la **branche actuelle**. Créé un **commit** de **merge** possédant 2 **commits** parents.
+
+<br>
+
+```bash
 git pull
 ```
-blablablah
+Combine un `git fetch` et un `git merge`. Applique directement les modifications que `fetch` rapporte.
 
 <br>
 
@@ -108,6 +137,17 @@ Permet de gérer le (ou les) **dépôt(s) git** distants associés à notre **d�
 <br>
 
 ```bash
+git restore (option) (file)
+```
+Restaure `(file)` à sa version dans le dernier commit. Par défaut, ne restaure que le fichier dans le **répertoire de travail**, mais ne touche pas à l'**index**.
+> [!arg]- Option
+> - `--staged` : Inverse le comportement par défaut : ne restaurera le fichier que dans l'**index**. Cela annulera les modifications enregistrée dans l'**index** qui auraient été incluses dans le prochain **commit**, mais ne touche pas au fichier dans le **répertoire de travail**.
+> - `--worktree` : À utiliser avec `--staged` si on veut restaurer le fichier à la fois dans l'**index** et à la fois dans le **répertoire de travail**.
+> - `-s (commit)/(branch)` : Utilise la version de `(file)` du **commit** `(commit)` ou de la **branche** `(branch)` au lieu d'utiliser le dernier **commit** comme réference. (`--source=(commit)/(branch)`)
+
+<br>
+
+```bash
 git rm (option) [file]
 ```
 Supprime `[file]` du répertoire de travail et ajoute la suppression de `[file]` à l'**index** (revient à faire `rm [file]` puis `git add [file]`).
@@ -130,16 +170,3 @@ Affiche l'état du répertoire de travail.
 
 
 
-
-
-- **git checkout**
-    
-- **git merge**
-    
-- **git rebase**
-    
-- **git restore**
-    
-- **git branch**
-    
-- **git reset**

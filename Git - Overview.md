@@ -42,6 +42,8 @@ Il y a 2 étapes quand on veut faire un **commit**, qui peuvent être représent
 
 # Branches :
 
+## Fonctionnement général des branches :
+
 Les **branches** permettent de travailler sur différentes parties du projets sans que celles-ci rentrent en conflit. On peut voir les branches comme des lignes de développements séparées. C'est, de manière plus générale, le système qui nous permet de naviguer entre les commits.
 
 - On va avoir une **branche** centrale, (généralement **master**), qui va représenter l'état actuel global "officiel" du projet, et son historique. De cette **branche master** découleront différentes **branches**, concentrées sur une partie spécifique du projet.
@@ -97,3 +99,7 @@ Intéressons nous au fonctionnement des **branches** sur le plan technique. Bien
 	> - *branch a* va donc se déplacer pour pointer sur le *commit (b7_x)_a5*.
 
 Puisque chaque **commit** pointe déjà par définition sur ses **commits parents**, il n'est nécessaire pour répertorier et naviguer entre les différentes **branches** et leur historique que de pointer sur le dernier **commit** en date de la **branche** en question. Tous les **commits** antérieurs seront par définition accessible depuis le dernier **commit**.
+
+## Remote-tracking branch :
+
+Lorsqu'on travaille sur une copie locale du **dépôt distant**, on va en général créer des **remote-tracking branch**. En créant un "**remote**", généralement "**origin**", on connecte notre **dépôt local** au **dépôt distant**. Ensuite, si l'on travaille par exemple sur la branche *master*, on va pouvoir connecter notre **branche** locale *master* avec la **branche** distante *master*. Cela va créer une "**remote-tracking branch**", qui va s'appeler *origin/master*, et qui va représenter une copie de l'état de la branche *master* distante la dernière fois qu'on l'a actualisé. C'est cette **remote-tracking branch** qui va permettre à git de comparer avec notre **dépôt de travail** afin de suivre les modifications, cela même sans être connecté en permanence au **dépôt distant**. Cela permet aussi quand on doit mettre à jour notre **branche** locale de vérifier les modifications et s'il y a des conflits avant de les appliquer. En effet, `git fetch` va simplement mettre à jour la **remote-tracking branch**, nous permettant d'observer les changements, et de choisir après de **merge** ou non, ou de changer des choses avant de **merge**. `git pull`, lui, va directement combiner `git fetch` et `git merge` et appliquer directement les changements.
