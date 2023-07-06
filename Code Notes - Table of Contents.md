@@ -5,4 +5,8 @@
 
 # Git :
 - [[Git - Overview|Overview]]
+- [[Git - Command List|Command List]]
+
+# C :
+- [[C - Overview|Overview]]
 - 
