@@ -2,6 +2,8 @@
 
 Les **fonctions** sont des sortes de "bloc de code", qui vont avoir pour but de réaliser une (ou des) actions spécifiques. C'est le cœur de la programmation en C : tout le code sera dans différentes **fonctions**. On peut ensuite appeler les **fonctions** qu'on a déjà déclaré et défini dans d'autres **fonctions**. En gardant des **fonctions** courtes avec des objectifs spécifiques, cela permet de segmenter le code en différents blocs logiques.
 
+## Fonction 'main' :
+
 Avant de parler des **fonctions** en général, il faut parler de la **fonction** `main`. C'est la **fonction** principale, ce qu'on appelle le "**point d'entrée**" du **programme**. Lorsqu'on exécutera un **programme** en C, il commencera toujours par la **fonction** `main`, et s'arrêtera une fois qu'il aura atteint le `return 0;` de celle-ci. Elle s'écrit comme suit :
 ```C
 int main(void) 
@@ -15,6 +17,8 @@ int main(void)
 - `void` indique que la **fonction** n'attend pas d'argument. Elle est juste censée être appelée pour lancer le **programme**.
 - `//[actual code]` sera le code du **programme** lui-même.
 - `return 0;` marque la fin du code. Le **programme** se ferme, en retournant la valeur `0` pour indiquer qu'il a bien atteint la fin du code sans soucis.
+
+## Déclaration de fonctions :
 
 On peut maintenant voir la déclaration des autres **fonctions** :
 ```C
@@ -32,6 +36,42 @@ type ft_name(par1_type par1, par2_type par2, etc...) {}
 	- `{}` délimite le **scope** de la **fonction**.
 		- Tout le code de la **fonction** se trouvera entre ces accolades.
 		- Toute **variable** déclarée dans la **fonction** (y compris les **paramètres**) seront limitées à ce **scope**. C'est à dire qu'elle n'existeront qu'à l'intérieur de celui-ci. Concrètement, la **variable** sera créée au moment ou la **fonction** sera appelée, et elle sera détruite au moment ou la **fonction** se terminera.
+
+## Inclusion et appel de fonctions :
+
+Pour appeler une **fonction** qu'on a déclaré, à moins qu'elle ne soit déclaré dans le même fichier plus haut, il faudra faire savoir au programme que cette **fonction** existe. Pour cela on utilisera un **prototype**, qu'on placera tout en haut du fichier.
+
+Le **prototype** est quasiment identique à la déclaration de la **fonction**, à l'exception qu'au lieu d'ouvrir le **scope** de la fonction à la fin de la ligne, on va juste mettre un `;`, et les **paramètres** ne nécessiteront que le type de **variable**, pas le nom.
+
+> [!example]-
+> Si on a déclaré une **fonction** `ftputchar` comme suit :
+> ```C
+> void ft_putchar(char a) {
+> 	//Code of the function
+> 	}
+> ```
+> 
+> Et qu'on veut l'utiliser dans un autre fichier ou elle n'est pas déclaré, on va devoir mettre ce prototype tout en haut du fichier :
+> ```C
+> void ft_putchar(char);
+> ```
+
+On pourra ensuite l'appeler avec son nom et ses paramètres normalement.
+
+> [!example]+
+> En reprenant l'exemple plus haut, on pourra utiliser `ft_putchar` comme suit :
+> ```C
+> void ft_putchar(char);
+> 
+> int main(void)
+> 	{
+> 	ft_putchar("b");
+> 	
+> 	return 0
+> 	}
+> ```
+> 
+> Le programme exécutera la `ft_putchar` avec comme paramètre le `char` "b".
 
 <br>
 
@@ -228,3 +268,10 @@ Les **boucles** permettent de répéter une action un certain nombre de fois.
     
 
 - Un _pointeur_ servira notamment à modifier des variables qu'on enverra dans des _fonctions_. En effet, puisque celle-ci utilisent une copie de la _variable_ qu'on lui donne et la supprime à la fin, si on lui envoie un _pointeur_, et qu'il manipule la _variable_ pointée par le _pointeur_ donné en paramètre, cela nous permettra de modifier cette _variable_. Puisque même si l'on fait une copie du _pointeur_, celle ci pointera vers la même _adresse_, ainsi modifiera la vraie _variable_ tout de même.
+
+<br>
+
+# To-do (sujets à aborder ici) :
+
+- `static`
+- `const`

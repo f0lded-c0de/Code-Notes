@@ -19,6 +19,19 @@
               }
             },
             "group": "d510b9b66fc72221"
+          },
+          {
+            "id": "bb3d2a5f19c263b1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "C - Function List.md",
+                "mode": "source",
+                "source": true
+              }
+            },
+            "group": "4d218ea9d4b54d60"
           }
         ]
       },
@@ -38,6 +51,19 @@
               }
             },
             "group": "d510b9b66fc72221"
+          },
+          {
+            "id": "3fc9c6c165e4d7de",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "C - Function List.md",
+                "mode": "preview",
+                "source": true
+              }
+            },
+            "group": "4d218ea9d4b54d60"
           }
         ]
       }
@@ -169,8 +195,9 @@
   },
   "active": "3ecf57606926b963",
   "lastOpenFiles": [
-    "git_log.txt",
+    "C - Function List.md",
     "C - Overview.md",
+    "git_log.txt",
     "Code Notes - Table of Contents.md",
     "Untitled.canvas",
     "Untitled 2.canvas",
