@@ -4,49 +4,42 @@
     "type": "split",
     "children": [
       {
-        "id": "dbb593203792ce21",
-        "type": "split",
+        "id": "316e2074e2de9e8d",
+        "type": "tabs",
         "children": [
           {
-            "id": "316e2074e2de9e8d",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "989864ba162d7a98",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "C - Overview.md",
-                    "mode": "source",
-                    "source": true
-                  }
-                },
-                "group": "d649dff822bd37e2"
+            "id": "989864ba162d7a98",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "C - Overview.md",
+                "mode": "source",
+                "source": true
               }
-            ]
-          },
-          {
-            "id": "5f3c6058ec28d6de",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "e8bf44af740cffb8",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "C - Overview.md",
-                    "mode": "preview",
-                    "source": true
-                  }
-                },
-                "group": "d649dff822bd37e2"
-              }
-            ]
+            },
+            "group": "d510b9b66fc72221"
           }
-        ],
-        "direction": "horizontal"
+        ]
+      },
+      {
+        "id": "e38d11627bf1bfdd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3ecf57606926b963",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "C - Overview.md",
+                "mode": "preview",
+                "source": true
+              }
+            },
+            "group": "d510b9b66fc72221"
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -174,7 +167,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e8bf44af740cffb8",
+  "active": "3ecf57606926b963",
   "lastOpenFiles": [
     "git_log.txt",
     "C - Overview.md",

@@ -1,3 +1,40 @@
+# Les fonctions :
+
+Les **fonctions** sont des sortes de "bloc de code", qui vont avoir pour but de réaliser une (ou des) actions spécifiques. C'est le cœur de la programmation en C : tout le code sera dans différentes **fonctions**. On peut ensuite appeler les **fonctions** qu'on a déjà déclaré et défini dans d'autres **fonctions**. En gardant des **fonctions** courtes avec des objectifs spécifiques, cela permet de segmenter le code en différents blocs logiques.
+
+Avant de parler des **fonctions** en général, il faut parler de la **fonction** `main`. C'est la **fonction** principale, ce qu'on appelle le "**point d'entrée**" du **programme**. Lorsqu'on exécutera un **programme** en C, il commencera toujours par la **fonction** `main`, et s'arrêtera une fois qu'il aura atteint le `return 0;` de celle-ci. Elle s'écrit comme suit :
+```C
+int main(void) 
+	{
+	//[actual code]
+	return 0;
+	}
+```
+- `int` indique que la **fonction** va retourner un **entier**. En effet, en C, on attend que le **programme** retourne `0` si tout s'est bien passé.
+- `main()` est le nom de la **fonction**.
+- `void` indique que la **fonction** n'attend pas d'argument. Elle est juste censée être appelée pour lancer le **programme**.
+- `//[actual code]` sera le code du **programme** lui-même.
+- `return 0;` marque la fin du code. Le **programme** se ferme, en retournant la valeur `0` pour indiquer qu'il a bien atteint la fin du code sans soucis.
+
+On peut maintenant voir la déclaration des autres **fonctions** :
+```C
+type ft_name(par1_type par1, par2_type par2, etc...) {}
+```
+- `type` correspond au type de valeur que la **fonction** va retourner. Cela veut dire que lorsqu'on appellera cette **fonction**, si elle retourne une valeur, celle-ci remplacera la **fonction** à l'endroit du code ou elle est appelée.
+	- Cela peut être un `int` (comme la fonction `main` par exemple), un `char`, etc... 
+	- La **fonction** peut aussi ne rien avoir à retourner, auquel cas on utilisera le type `void`.
+- `ft_name` correspond au nom de la **fonction**. C'est celui-ci qu'on utilisera pour l'appeler plus tard.
+- `()` : On trouve entre les parenthèses les **paramètres** que prendra la **fonction** lorsqu'elle sera appelée. Les **paramètres** sont des **variables** qui sont déclarées entre ces `()` et auxquelles ont affecte une valeur lorsqu'on appelle la **fonction**, en remplaçant leur nom dans `()` par la valeur que l'on souhaite qu'elle prennent.
+	- `par1_type` est le type de **variable** que sera ce **paramètre**.
+	- `par1` est le nom de la **variable** qu'on utilisera dans la **fonction**.
+	- On peut déclarer plusieurs **paramètres** en les séparant de `, `.
+	- Si la **fonction** ne prend pas de paramètres, on écrira `(void)` (comme la fonction `main`).
+	- `{}` délimite le **scope** de la **fonction**.
+		- Tout le code de la **fonction** se trouvera entre ces accolades.
+		- Toute **variable** déclarée dans la **fonction** (y compris les **paramètres**) seront limitées à ce **scope**. C'est à dire qu'elle n'existeront qu'à l'intérieur de celui-ci. Concrètement, la **variable** sera créée au moment ou la **fonction** sera appelée, et elle sera détruite au moment ou la **fonction** se terminera.
+
+<br>
+
 # Les variables :
 
 Les **variables** sont des espaces qui nous permettent de stocker des valeurs. 
@@ -158,42 +195,6 @@ Les **boucles** permettent de répéter une action un certain nombre de fois.
 - Dans `3`, on va incrémenter ou décrémenter notre **variable**.
     - `i`++
 - Ici, `for` réalisera donc `{code}` 5 fois.
-
-<br>
-
-# Les fonctions :
-
-- Les _fonctions_ sont des sortes de "bout de code", que l'on peut appeler dans un programme où même dans une autre _fonction_, pour effectuer des actions. On peut aussi leur donner des _paramètres_.
-    
-- Une fonction se déclare en trois partie :
-    
-
-- **void    ft_putchar(char a)** 
-    
-- Ici **void** déclare le type de la _fonction_. C'est le type de la _variable_ qu'elle devra retourner.
-    
-
-- Une _fonction_ peut retourner une _variable_, c'est à dire que quand on l'appellera, elle renverra à la place de là où on l'a appelée une _variable_.
-    
-- Ici cette fonction ne retournera rien : elle exécutera son code avant de retourner **void**, soit rien.
-    
-- Si l'on doit retourner une variable, on écrira en dernière ligne de notre fonction "**return (var);**", avec var étant soit le nom de la variable, soit une valeur directement.
-    
-
-- **ft_putchar** est le nom de notre _fonction_. Lorsqu'on l'appellera, c'est ce nom qu'on utilisera.
-    
-- **(char a)** est le _paramètre_ que notre _fonction_ prend. On aurait pu lui donner plusieurs _paramètres_, toujours à l'intérieur des parenthèses, séparés par '**,** ' :
-    
-
-- Un _paramètre_ est une _variable_ que l'on peut envoyer à la _fonction_ pour soit agir dessus, soit s'en servir pour agir.
-    
-- Lorsqu'on envoie une _variable_ en _paramètre_ à une _fonction_, elle va créer une copie de cette _variable_, dans laquelle elle va stocker la même valeur.
-    
-
-- On ne peut donc pas agir directement sur une _variable_ avec une _fonction_, pour cela il faut utiliser des _pointeurs_.
-    
-
-- Lorsqu'on déclare une _fonction_, il faut déclarer le type de _variable_ qu'on devra mettre en _paramètre_.
 
 <br>
 
