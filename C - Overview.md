@@ -73,6 +73,9 @@ On pourra ensuite l'appeler avec son nom et ses paramètres normalement.
 > 
 > Le programme exécutera la `ft_putchar` avec comme paramètre le `char` "b".
 
+> [!info]-
+> Si l'on souhaite appeler une **fonction** qui ne prend pas de paramètres, (déclarée et prototypée avec `void`), on doit tout de même inclure les `()` à la fin, même si elles sont vide.
+
 <br>
 
 # Les variables :

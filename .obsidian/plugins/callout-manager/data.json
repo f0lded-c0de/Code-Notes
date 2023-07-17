@@ -3,7 +3,9 @@
     "custom": [
       "walkthrough",
       "arg",
-      "goodprac"
+      "goodprac",
+      "declaration",
+      "list"
     ],
     "settings": {
       "walkthrough": [
@@ -25,6 +27,35 @@
         {
           "changes": {
             "color": "158, 249, 47"
+          }
+        }
+      ],
+      "header": [
+        {
+          "changes": {
+            "color": "49, 200, 211"
+          }
+        }
+      ],
+      "info": [
+        {
+          "changes": {
+            "color": "16, 218, 87"
+          }
+        }
+      ],
+      "declaration": [
+        {
+          "changes": {
+            "color": "230, 76, 158"
+          }
+        }
+      ],
+      "list": [
+        {
+          "changes": {
+            "icon": "lucide-list",
+            "color": "185, 234, 62"
           }
         }
       ]

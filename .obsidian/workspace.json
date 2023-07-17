@@ -8,19 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "989864ba162d7a98",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "C - Overview.md",
-                "mode": "source",
-                "source": true
-              }
-            },
-            "group": "d510b9b66fc72221"
-          },
-          {
             "id": "bb3d2a5f19c263b1",
             "type": "leaf",
             "state": {
@@ -32,6 +19,19 @@
               }
             },
             "group": "4d218ea9d4b54d60"
+          },
+          {
+            "id": "989864ba162d7a98",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "C - Overview.md",
+                "mode": "source",
+                "source": true
+              }
+            },
+            "group": "d510b9b66fc72221"
           }
         ]
       },
@@ -39,19 +39,6 @@
         "id": "e38d11627bf1bfdd",
         "type": "tabs",
         "children": [
-          {
-            "id": "3ecf57606926b963",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "C - Overview.md",
-                "mode": "preview",
-                "source": true
-              }
-            },
-            "group": "d510b9b66fc72221"
-          },
           {
             "id": "3fc9c6c165e4d7de",
             "type": "leaf",
@@ -64,6 +51,19 @@
               }
             },
             "group": "4d218ea9d4b54d60"
+          },
+          {
+            "id": "3ecf57606926b963",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "C - Overview.md",
+                "mode": "preview",
+                "source": true
+              }
+            },
+            "group": "d510b9b66fc72221"
           }
         ]
       }
@@ -132,7 +132,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "C - Overview.md",
+                "file": "C - Function List.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +149,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "C - Overview.md",
+                "file": "C - Function List.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -172,7 +172,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "C - Overview.md"
+                "file": "C - Function List.md"
               }
             }
           }
@@ -193,20 +193,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3ecf57606926b963",
+  "active": "3fc9c6c165e4d7de",
   "lastOpenFiles": [
-    "C - Function List.md",
     "C - Overview.md",
-    "git_log.txt",
     "Code Notes - Table of Contents.md",
+    "Git - Command List.md",
+    "Git - Overview.md",
+    "Bash Shell - Wildcards and Regex.md",
+    "Bash Shell - Command List.md",
+    "C - Function List.md",
+    "Bash Shell - Overview.md",
+    "git_log.txt",
     "Untitled.canvas",
     "Untitled 2.canvas",
     "Untitled 1.canvas",
-    "Git - Command List.md",
-    "Git - Overview.md",
-    "Bash Shell - Command List.md",
-    "Bash Shell - Wildcards and Regex.md",
-    "Bash Shell - Overview.md",
     "Markdown Tests.md",
     "Untitled 2.md",
     "refi.md",
