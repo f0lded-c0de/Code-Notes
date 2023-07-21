@@ -13,9 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Git - Command List.md",
-                "mode": "source",
-                "source": false
+                "file": "C - Function List.md",
+                "mode": "preview",
+                "source": true
               }
             }
           }
@@ -85,7 +85,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Git - Command List.md",
+            "file": "C - Function List.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Git - Command List.md",
+            "file": "C - Function List.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -114,7 +114,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Git - Command List.md"
+            "file": "C - Function List.md"
           }
         }
       }
@@ -133,7 +133,9 @@
   },
   "active": "8c7d241537d98b5e",
   "lastOpenFiles": [
-    "C - Overview.md",
-    "C - Function List.md"
+    "Bash Shell - Command List.md",
+    "C - Function List.md",
+    "Git - Command List.md",
+    "C - Overview.md"
   ]
 }
