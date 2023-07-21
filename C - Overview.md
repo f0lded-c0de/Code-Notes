@@ -58,7 +58,7 @@ Le **prototype** est quasiment identique à la déclaration de la **fonction**, 
 
 On pourra ensuite l'appeler avec son nom et ses paramètres normalement.
 
-> [!example]+
+> [!example]-
 > En reprenant l'exemple plus haut, on pourra utiliser `ft_putchar` comme suit :
 > ```C
 > void ft_putchar(char);
