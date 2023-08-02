@@ -223,7 +223,6 @@ Le **ternaire** permet de faire plus ou moins la même chose que `if` mais sur u
 # Les boucles :
 
 Les **boucles** permettent de répéter une action un certain nombre de fois.
-    
 
 `while() {code}` va répéter `{code}` tant que la condition entre les `()` est vraie.
 - Fonctionne globalement comme le **if**, excepté qu'il répète tant que la condition est vraie, et qu'il n'y a pas de **else**.
@@ -243,34 +242,18 @@ Les **boucles** permettent de répéter une action un certain nombre de fois.
 
 # Les pointeurs :
 
-- Pour comprendre les _pointeurs_, il faut comprendre le stockage des _variables_ :
-    
-
-- Les _variables_ stockent leurs valeurs dans des cases de la mémoire, correspondant à un numéro.
-    
-- Si on initialise un **int i** à 465, 465 sera stocké sur une case de la mémoire correspondant à un numéro spécifique, qui permet de la retrouver.
-    
-- On appelle ce numéro spécifique _l'adresse_ de **i**.
-    
-
-- Un _pointeur_ est une variable qui stockera comme valeur l'_adresse_ d'une autre variable. C'est donc une _variable_ qui va "pointer" sur une autre _variable_.
-    
-
-- Un _pointeur_ se déclare et s'utilise selon  une syntaxe particulière.
-    
-- Si l'on veut déclarer un _pointeur_, il faudra le déclarer comme suit :
-    
-
-- **int *p_i;**
-    
-- C'est un type **int**, puisqu'il stocke une _adresse_, donc un nombre. Mais ce n'est pas un simple type **int**, avec l'"*****", on indique que c'est un _pointeur_ vers une _variable_.
-    
-- Pour lui assigner l'_adresse_ d'une _variable_, on utilise **&**. **&i** correspond à l'_adresse_ à laquelle est stockée la valeur de **i**. Donc ici, on pourra lui assigner cela comme suit : **p_i = &i;**.
-    
-- Ensuite, si l'on manipule **p_i**, on manipule l'_adresse_ qu'il stock. pour manipuler la _variable_ pointée par **p_i**, on utilisera ***p_i**.
-    
-
-- Un _pointeur_ servira notamment à modifier des variables qu'on enverra dans des _fonctions_. En effet, puisque celle-ci utilisent une copie de la _variable_ qu'on lui donne et la supprime à la fin, si on lui envoie un _pointeur_, et qu'il manipule la _variable_ pointée par le _pointeur_ donné en paramètre, cela nous permettra de modifier cette _variable_. Puisque même si l'on fait une copie du _pointeur_, celle ci pointera vers la même _adresse_, ainsi modifiera la vraie _variable_ tout de même.
+- Pour comprendre les **pointeurs**, il faut comprendre le stockage des **variables** :
+    - Les **variables** stockent leurs valeurs dans des cases de la mémoire, correspondant à un numéro.
+    - Si on initialise un `int i` à 465, 465 sera stocké sur une case de la mémoire correspondant à un numéro spécifique, qui permet de la retrouver.
+    - On appelle ce numéro spécifique l'**adresse** de `i`.
+- Un **pointeur** est une variable qui stockera comme valeur l'**adresse** d'une autre variable. C'est donc une **variable** qui va "pointer" sur une autre **variable**.
+	- Un **pointeur** se déclare et s'utilise selon  une syntaxe particulière.
+	- Si l'on veut déclarer un **pointeur**, il faudra le déclarer comme suit :
+		- `int *p_i;`
+		- C'est un type `int`, puisqu'il stocke une **adresse**, donc un nombre. Mais ce n'est pas un simple type `int`, avec l'"`*`", on indique que c'est un **pointeur** vers une **variable**.
+		- Pour lui assigner l'**adresse** d'une **variable**, on utilise `&`. `&i` correspond à l'**adresse** à laquelle est stockée la valeur de `i`. Donc ici, on pourra lui assigner cela comme suit : `p_i = &i;`.
+		- Ensuite, si l'on manipule `p_i`, on manipule l'**adresse** qu'il stock. pour manipuler la **variable** pointée par `p_i`, on utilisera `*p_i`.
+- Un **pointeur** servira notamment à modifier des variables qu'on enverra dans des **fonctions**. En effet, puisque celle-ci utilisent une copie de la **variable** qu'on lui donne et la supprime à la fin, si on lui envoie un **pointeur**, et qu'il manipule la **variable** pointée par le **pointeur** donné en paramètre, cela nous permettra de modifier cette **variable**. Puisque même si l'on fait une copie du **pointeur**, celle ci pointera vers la même **adresse**, ainsi modifiera la vraie **variable** tout de même.
 
 <br>
 
