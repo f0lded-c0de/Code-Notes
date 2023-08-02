@@ -60,6 +60,29 @@ void ft_putnbr(int i);
 
 <br>
 
+```C
+void ft_putstr(char *str);
+```
+`ft_putstr` affiche dans le **stdout** la **string** dont le premier charactère est pointée par `char *str`.
+> [!declaration]-
+> ```C
+> void ft_putstr(char *str)
+> {
+> 	int i;
+> 
+> 	i = 0;
+>     while (str[i] != '\0')
+>     {
+>         write(1, &str[i], 1);
+>         i++;
+>     }
+> }
+> ```
+> > [!list]- Fonctions utilisées
+> > **Librairie** : [[C - Function List#<unistd.h >|<unistd.h>]] :
+> > - [[C - Function List#^5a0e90|write()]]
+
+<br>
 # Existing Libraries
 ## \<unistd.h\>
 
