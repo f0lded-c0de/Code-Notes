@@ -65,7 +65,8 @@
             },
             "group": "d510b9b66fc72221"
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -193,15 +194,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3fc9c6c165e4d7de",
+  "active": "bb3d2a5f19c263b1",
   "lastOpenFiles": [
     "C - Overview.md",
+    "C - Function List.md",
     "Code Notes - Table of Contents.md",
     "Git - Command List.md",
     "Git - Overview.md",
     "Bash Shell - Wildcards and Regex.md",
     "Bash Shell - Command List.md",
-    "C - Function List.md",
     "Bash Shell - Overview.md",
     "git_log.txt",
     "Untitled.canvas",
