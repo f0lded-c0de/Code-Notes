@@ -3,6 +3,9 @@
 ```C
 void ft_putchar(char c);
 ```
+
+^62035e
+
 `ft_putchar` affiche dans le **stdout** le `char c` spécifié.
 > [!declaration]-
 > ```C
@@ -12,6 +15,46 @@ void ft_putchar(char c);
 > }
 > ```
 > > [!list]- Fonctions utilisées
+> > **Librairie** : [[C - Function List#<unistd.h >|<unistd.h>]] :
+> > - [[C - Function List#^5a0e90|write()]]
+
+<br>
+
+```C
+void ft_putnbr(int i);
+```
+`ft_putnbr` affiche dans le **stdout** le `int i` spécifié. 
+> [!declaration]-
+> ```C
+> void ft_putnbr(int nb)
+> {
+> 	if (nb > 9 || nb < -9)
+> 	{
+> 		if (nb < 0)
+> 		{
+> 			ft_putchar('-');
+> 			ft_putnbr((nb / 10) * -1);
+> 			ft_putnbr((nb % 10) * -1);
+> 		}
+> 		else
+> 		{
+> 			ft_putnbr(nb / 10);
+> 			ft_putnbr(nb % 10);
+> 		}
+> 	}
+> 	else if (nb < 0)
+> 	{
+> 		ft_putchar('-');
+> 		ft_putchar((nb * -1) + 48);
+> 	}
+> 	else
+> 		ft_putchar(nb + 48);
+> }
+> ```
+> > [!list]- Fonctions utilisées
+> > **Custom** :
+> > - [[C - Function List#^62035e|ft_putchar()]]
+> > 
 > > **Librairie** : [[C - Function List#<unistd.h >|<unistd.h>]] :
 > > - [[C - Function List#^5a0e90|write()]]
 

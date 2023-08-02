@@ -17,6 +17,7 @@ Effectue diverses actions en rapport avec les **branches**. Si aucun argument n'
 > - `-d` : Supprime `(branch)`, seulement si tous les changements ont déjà été **merge** dans d'autres **branches**.
 > - `-D` : Supprime `(branch)` même si tous les changements n'ont pas été **merge** dans d'autres **branches**.
 > - `-m [old_name] [new_name]` : Renomme la **branche** `[old_name]` en `[new_name]`.
+> - `--set-upstream-to=(remote)/(remote_branch) (local_branch)` : Créer une **remote-tracking-branch** qui permettra de comparer `(local_branch)` à `(remote_branch)`.
 
 <br>
 
@@ -119,7 +120,7 @@ git push (option) (remote) (branch)
 Applique sur la **branche** `branch` du **dépôt** distant `remote`, tous les changements effectués en local sur `branch`. `remote` ne devient optionnel que si cela a été configuré auparavant, par exemple avec `-u`. Si `branch` n'est pas spécifié, Git prendra la **branche** courante par défaut.
 > [!arg]- Option
 > - `--all` : Push toutes les **branches** au lieu de seulement celle spécifiée.
-> - `-u` : Configure un lien entre `branch` locale et `branch` sur `remote`. Après cela, on peut push `branch` sur `remote` en étant dessus et en tapant just "git push".
+> - `-u` : Configure une **remote-tracking-branch** entre `branch` locale et `branch` sur `remote`. Après cela, on peut push `branch` sur `remote` en étant dessus et en tapant just "git push".
 
 <br>
 
