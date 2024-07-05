@@ -5,7 +5,8 @@
       "arg",
       "goodprac",
       "declaration",
-      "list"
+      "list",
+      "header"
     ],
     "settings": {
       "walkthrough": [
@@ -62,7 +63,6 @@
     }
   },
   "calloutDetection": {
-    "obsidianFallbackForced": false,
     "obsidian": true,
     "theme": true,
     "snippet": true
