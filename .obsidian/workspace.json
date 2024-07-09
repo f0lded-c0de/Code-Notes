@@ -13,7 +13,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Git - Overview.md",
+                "file": "Git - Command List.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "107a338fed9afd6a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4afaa259efee4a41",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Git - Command List.md",
                 "mode": "preview",
                 "source": true
               }
@@ -86,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Git - Overview.md",
+                "file": "Git - Command List.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Git - Overview.md",
+                "file": "Git - Command List.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Git - Overview.md"
+                "file": "Git - Command List.md"
               }
             }
           }
@@ -148,11 +166,11 @@
       "callout-manager:Insert Callout": false
     }
   },
-  "active": "9ced4cc66ff3ed97",
+  "active": "4afaa259efee4a41",
   "lastOpenFiles": [
+    "Git - Overview.md",
     "Git - Command List.md",
     "Bash Shell - Command List.md",
-    "Git - Overview.md",
     "Bash Shell - Overview.md",
     "C - Function List.md",
     "C - Overview.md",
