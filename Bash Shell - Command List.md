@@ -548,7 +548,7 @@ Actualise la date de dernière modification et la date d'accès de `[file]`. Si 
 > [!arg]- Option
 > - `-a` : Change uniquement la date d'accès.
 > - `-m` : Change uniquement la date de modification.
-> - `-t [AAAAMMLLLhhmm]` : Attribue la date spécifiée au lieu de la date actuelle.
+> - `-t [AAAAMMJJhhmm]` : Attribue la date spécifiée au lieu de la date actuelle.
 > - `-c` : Ne créé pas de fichier.
 > - `-h` : Affecte les liens symboliques au lieu des fichiers spécifiés.
 
