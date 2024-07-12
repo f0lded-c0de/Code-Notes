@@ -181,7 +181,7 @@ Cherche un/des fichiers dans le dossier désigné par `(path)` (si aucun `(path)
 > 	- `l` : Liens symboliques
 > - `-empty` : Le fichier est vide, que ce soit un fichier régulier ou un répertoire. 
 > - `-name [name]` : Le nom correspond au pattern shell `[name]`. (`-iname` pour que ce soit insensible à la casse) 
-> - `-regex [name]` : Le nom correspond au pattern **regex**<sub>[[Bash Shell - Wildcards and Regex#Extended Regular Expression (ERE, regexp)|more]]</sub> `[name]`. (`-iregex` pour que ce soit insensible à la casse) 
+> - `-regex [name]` : Le nom correspond au pattern [[Bash Shell - Wildcards and Regex#Extended Regular Expression (ERE, regexp)|regex]]</sub> `[name]`. (`-iregex` pour que ce soit insensible à la casse) 
 > - `-path [path]` : Le chemin correspond au pattern shell `[path]`. (`-ipath` pour que ce soit insensible à la casse)
 > 
 > On peut aussi cumuler des tests en utilisant des opérateurs :
@@ -219,7 +219,7 @@ Exporte la variable ou fonction `(name)` dans l'environnement. On peut si on le 
 ```bash
 grep (option) [pattern] [file]
 ```
-Cherche dans `[file]` le pattern `[pattern]` en **regex**<sub>[[Bash Shell - Wildcards and Regex#Extended Regular Expression (ERE, regexp)|more]]</sub>, et affiche toutes les lignes où il le trouve.
+Cherche dans `[file]` le pattern `[pattern]` en [[Bash Shell - Wildcards and Regex#Extended Regular Expression (ERE, regexp)|regex]], et affiche toutes les lignes où il le trouve.
 > [!arg]- Option
 > - `-v` : Inverse la recherche, et ne affiche que les lignes ne contenant pas le pattern.
 > - `-o` : N'affiche que la partie correspondante au pattern au lieu d'afficher toute la ligne.
@@ -495,7 +495,7 @@ Transforme de multiples façons différentes le contenu de `[file]`. `sed` fonct
 > - `n` (newline) passe à la ligne suivante sans réaliser d'action particulière, excepté l'impression automatique si `-n` n'a pas été précisé.
 > - `p` (print) affiche la ligne en question.
 > 
-> `sed` peut aussi appliquer une action à une partie spécifique de la ligne, en utilisant un pattern **regex**<sub>[[Bash Shell - Wildcards and Regex#Extended Regular Expression (ERE, regexp)|more]</sub>.
+> `sed` peut aussi appliquer une action à une partie spécifique de la ligne, en utilisant un pattern [[Bash Shell - Wildcards and Regex#Extended Regular Expression (ERE, regexp)|regex]].
 > - Avec la syntaxe suivante, on peut réaliser des `[action]` sur les parties des lignes correspondant au pattern `[regexp]`.
 > 	```bash
 > 	sed '/[regexp]/[action]'
