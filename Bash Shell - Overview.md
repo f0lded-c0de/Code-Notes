@@ -32,7 +32,7 @@ On peut brancher le **stdout** d'une commande avec le **stdin** d'une autre, en 
 
 On peut rediriger le **stdout** ou le **stderr** vers un fichier :
 
-- Pour rediriger le **stdout** vers un fichier, en utilisant `>` pour remplacer le contenu, et `>>` pour rajouter le contenu :
+- Pour rediriger le **stdout** vers un fichier, on utilise `>` pour remplacer le contenu, et `>>` pour rajouter le contenu :
 	```bash
 	cat file >> output.txt
 	```

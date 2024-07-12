@@ -48,7 +48,7 @@
             "group": "9aeb3cc01b2450a4"
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       },
       {
         "id": "107a338fed9afd6a",
@@ -95,7 +95,7 @@
             "group": "9aeb3cc01b2450a4"
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -161,7 +161,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bash Shell - Command List.md",
+                "file": "Bash Shell - Overview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,7 +178,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bash Shell - Command List.md",
+                "file": "Bash Shell - Overview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -201,7 +201,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bash Shell - Command List.md"
+                "file": "Bash Shell - Overview.md"
               }
             }
           }
@@ -223,10 +223,10 @@
       "callout-manager:Insert Callout": false
     }
   },
-  "active": "44db6039c4916c08",
+  "active": "507bf08efb156b9d",
   "lastOpenFiles": [
-    "Bash Shell - Overview.md",
     "Bash Shell - Command List.md",
+    "Bash Shell - Overview.md",
     "Git - Command List.md",
     "Bash Shell - Wildcards and Regex.md",
     "Git - Overview.md",
