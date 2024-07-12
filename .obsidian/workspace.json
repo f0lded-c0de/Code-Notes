@@ -6,7 +6,7 @@
       {
         "id": "5c8c0d1355a52649",
         "type": "tabs",
-        "dimension": 12.690355329949238,
+        "dimension": 42.82994923857868,
         "children": [
           {
             "id": "9ced4cc66ff3ed97",
@@ -33,6 +33,19 @@
               }
             },
             "group": "965632834836cca2"
+          },
+          {
+            "id": "507bf08efb156b9d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Bash Shell - Overview.md",
+                "mode": "source",
+                "source": true
+              }
+            },
+            "group": "9aeb3cc01b2450a4"
           }
         ],
         "currentTab": 1
@@ -40,7 +53,7 @@
       {
         "id": "107a338fed9afd6a",
         "type": "tabs",
-        "dimension": 87.30964467005076,
+        "dimension": 57.17005076142132,
         "children": [
           {
             "id": "4afaa259efee4a41",
@@ -67,6 +80,19 @@
               }
             },
             "group": "965632834836cca2"
+          },
+          {
+            "id": "5aea5ff4b3af05bd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Bash Shell - Overview.md",
+                "mode": "preview",
+                "source": false
+              }
+            },
+            "group": "9aeb3cc01b2450a4"
           }
         ],
         "currentTab": 1
