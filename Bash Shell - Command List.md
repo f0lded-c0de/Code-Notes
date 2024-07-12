@@ -39,6 +39,9 @@ Change le répertoire courant pour le répertoire désigné par `[path]`. On peu
 ```bash
 chmod [permissions] [file]
 ```
+
+^f0dff3
+
 Change les droits de `[file]`.
 - Il y a trois entités différentes qui possèdent des droits :
 	- `u` pour user (l'utilisateur)
@@ -256,9 +259,9 @@ Affiche le contenu d'un fichier par pages, comme un `man`.
 ```bash
 ln (option) [target file] [link]
 ```
-Crée un lien `[link]` qui pointe sur `[target file]`.
+Crée un [[Bash Shell - Overview#^8284e6|lien]] `[link]` qui pointe sur `[target file]`.
 > [!arg]- Option
-> - `-s` : Crée un lien symbolique (**symbolic link**) au lieu d'un lien physique (**hard link**).
+> - `-s` : Crée un [[Bash Shell - Overview#^b81883|lien symbolique]] (**symbolic link**) au lieu d'un [[Bash Shell - Overview#^be2df3|lien physique]] (**hard link**).
 > - `-f` : Fait de `[link]` un lien même si le fichier existe déjà.
 
 <br>
@@ -270,6 +273,16 @@ Affiche la liste des fichiers et répertoires dans le répertoire actuel. 
 > [!arg]- Option
 > - `-a` : Montrer aussi les fichiers cachés.
 > - `-l` : Affiche la liste des fichiers avec des informations concernant le fichier lui même (droit utilisateurs, date de modification, type de fichier, etc...) .
+> > [!arg]- Décomposition des infos
+> > Exemple de résultat d'un `ls -l` :
+> > `-rwx--xr-- 1 XX XX 4 Jun 1 21:46 test1`
+> > - Le premier caractère représente le type de fichier. Ici l'absence de lettre indique un fichier normal. Un `d` à la place du `-` représenterait un dossier, et un `l` un [[Bash Shell - Overview#^b81883|lien symbolique]].
+> > - Les 9 caractères suivants correspondent aux permissions associés à ce fichier. Voir commande [[Bash Shell - Command List#^f0dff3|chmod]].
+> > - Le nombre qui suit correspond au nombre de [[Bash Shell - Overview#^be2df3|liens physiques]] associés au fichier.
+> > - Les 2 `XX` qui suivent correspondent, pour le premier, au propriétaire du fichier, et pour le second, au groupe associé au fichier.
+> > - Le chiffre qui suit représente la taille du fichier en **bytes**. 
+> > - Puis vient la date de la dernière modification. Voir commande [[Bash Shell - Command List#^31f0ab|touch]].
+> > - Et enfin le nom du fichier. Si c'est un [[Bash Shell - Overview#^b81883|lien symbolique]], sera affiché le nom du lien, puis une flèche pointant vers le nom du fichier sur lequel pointe le lien.
 > - `-m` : Sépare les fichiers listés par des virgules.
 > - `-t` : Trie par ordre de dernière modification.
 > - `-U` : Utilisé avec `-t`, trie par ordre de création au lieu de modification.
@@ -544,6 +557,9 @@ Affiche les 10 dernières lignes d'un fichier. 
 ```bash
 touch (option) [file]
 ```
+
+^31f0ab
+
 Actualise la date de dernière modification et la date d'accès de `[file]`. Si `[file]` n'existe pas encore, il le créera. Peut donc servir à créer des fichiers vides. 
 > [!arg]- Option
 > - `-a` : Change uniquement la date d'accès.
