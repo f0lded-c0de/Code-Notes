@@ -1,7 +1,7 @@
 ```bash
 git add [file]
 ```
-Ajoute `[file]` à l'**index**<sub>[[Git - Overview#^543278|more]]</sub>. `[file]` peut être aussi bien un fichier qu'un répertoire.
+Ajoute `[file]` à l'[[Git - Overview#^543278|index]]. `[file]` peut être aussi bien un fichier qu'un répertoire.
 
 <br>
 
@@ -45,7 +45,7 @@ Créé un nouveau **commit** incorporant tous les changements contenu dans l'**i
 ```bash
 git fetch
 ```
-Met à jour la **remote-tracking branch**<sub>[[Git - Overview#Remote-tracking branch|more]]</sub> avec les dernières modifications du **dépôt distant**, sans les appliquer sur notre **branche** locale.
+Met à jour la [[Git - Overview#Remote-tracking branch|remote-tracking branch]] avec les dernières modifications du **dépôt distant**, sans les appliquer sur notre **branche** locale.
 
 <br>
 

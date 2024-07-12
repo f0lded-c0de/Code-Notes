@@ -40,14 +40,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bash Shell - Overview.md",
+                "file": "Git - Overview.md",
                 "mode": "source",
                 "source": true
               }
             },
             "group": "9aeb3cc01b2450a4"
           }
-        ]
+        ],
+        "currentTab": 2
       },
       {
         "id": "107a338fed9afd6a",
@@ -86,14 +87,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bash Shell - Overview.md",
+                "file": "Git - Overview.md",
                 "mode": "preview",
                 "source": false
               }
             },
             "group": "9aeb3cc01b2450a4"
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -159,7 +161,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Git - Command List.md",
+                "file": "Git - Overview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -176,7 +178,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Git - Command List.md",
+                "file": "Git - Overview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -199,7 +201,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Git - Command List.md"
+                "file": "Git - Overview.md"
               }
             }
           }
@@ -221,15 +223,15 @@
       "callout-manager:Insert Callout": false
     }
   },
-  "active": "9ced4cc66ff3ed97",
+  "active": "507bf08efb156b9d",
   "lastOpenFiles": [
-    "Bash Shell - Command List.md",
-    "Git - Command List.md",
-    "Bash Shell - Overview.md",
-    "Git - Overview.md",
     "C - Overview.md",
     "C - Function List.md",
     "Bash Shell - Wildcards and Regex.md",
+    "Bash Shell - Overview.md",
+    "Bash Shell - Command List.md",
+    "Git - Command List.md",
+    "Git - Overview.md",
     "Markdown Tests.md",
     "A Table of  Contents for Code Notes.md",
     "git_log.txt",
