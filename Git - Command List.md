@@ -28,6 +28,8 @@ Permet de se déplacer sur la **branche** `(branch)`, ou le **commit** `(commit)
 > [!arg]- Option
 > - `-b` : Créé `(branch)` puis se déplace dessus. Revient à faire `git branch (branch)` puis `git checkout (branch)`.
 
+<br>
+
 ```bash
 git commit (option)
 ```
