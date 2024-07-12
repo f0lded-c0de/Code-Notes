@@ -273,15 +273,15 @@ Affiche la liste des fichiers et répertoires dans le répertoire actuel. 
 > [!arg]- Option
 > - `-a` : Montrer aussi les fichiers cachés.
 > - `-l` : Affiche la liste des fichiers avec des informations concernant le fichier lui même (droit utilisateurs, date de modification, type de fichier, etc...) .
-> > [!arg]- Décomposition des infos
+> > [!walkthrough]-
 > > Exemple de résultat d'un `ls -l` :
 > > `-rwx--xr-- 1 XX XX 4 Jun 1 21:46 test1`
 > > - Le premier caractère représente le type de fichier. Ici l'absence de lettre indique un fichier normal. Un `d` à la place du `-` représenterait un dossier, et un `l` un [[Bash Shell - Overview#^b81883|lien symbolique]].
-> > - Les 9 caractères suivants correspondent aux permissions associés à ce fichier. Voir commande [[Bash Shell - Command List#^f0dff3|chmod]].
+> > - Les 9 caractères suivants correspondent aux permissions associés à ce fichier. Voir commande `chmod`<sub>[[Bash Shell - Command List#^f0dff3|more]]</sub>.
 > > - Le nombre qui suit correspond au nombre de [[Bash Shell - Overview#^be2df3|liens physiques]] associés au fichier.
 > > - Les 2 `XX` qui suivent correspondent, pour le premier, au propriétaire du fichier, et pour le second, au groupe associé au fichier.
 > > - Le chiffre qui suit représente la taille du fichier en **bytes**. 
-> > - Puis vient la date de la dernière modification. Voir commande [[Bash Shell - Command List#^31f0ab|touch]].
+> > - Puis vient la date de la dernière modification. Voir commande `touch`<sub>[[Bash Shell - Command List#^31f0ab|more]]</sub>.
 > > - Et enfin le nom du fichier. Si c'est un [[Bash Shell - Overview#^b81883|lien symbolique]], sera affiché le nom du lien, puis une flèche pointant vers le nom du fichier sur lequel pointe le lien.
 > - `-m` : Sépare les fichiers listés par des virgules.
 > - `-t` : Trie par ordre de dernière modification.

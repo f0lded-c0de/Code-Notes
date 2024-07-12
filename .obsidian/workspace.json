@@ -48,7 +48,7 @@
             "group": "9aeb3cc01b2450a4"
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "107a338fed9afd6a",
@@ -95,7 +95,7 @@
             "group": "9aeb3cc01b2450a4"
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -161,7 +161,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bash Shell - Overview.md",
+                "file": "Bash Shell - Command List.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,7 +178,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bash Shell - Overview.md",
+                "file": "Bash Shell - Command List.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -201,7 +201,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bash Shell - Overview.md"
+                "file": "Bash Shell - Command List.md"
               }
             }
           }
@@ -223,15 +223,15 @@
       "callout-manager:Insert Callout": false
     }
   },
-  "active": "507bf08efb156b9d",
+  "active": "44db6039c4916c08",
   "lastOpenFiles": [
-    "Bash Shell - Command List.md",
     "Bash Shell - Overview.md",
-    "Git - Command List.md",
-    "Bash Shell - Wildcards and Regex.md",
+    "Bash Shell - Command List.md",
     "Git - Overview.md",
-    "C - Function List.md",
+    "Git - Command List.md",
     "C - Overview.md",
+    "C - Function List.md",
+    "Bash Shell - Wildcards and Regex.md",
     "Markdown Tests.md",
     "A Table of  Contents for Code Notes.md",
     "git_log.txt",
