@@ -16,11 +16,11 @@ On a un _File1_ associé à un numéro **Inode** x, et l'on veut créer un lien 
 
 # stdin, stdout, stderr :
 
-**Stdin**  est l'entrée standard d'une commande (en général, ce que l'on aura tapé nous même). **Stdout** est sa sortie standard de cette commande, et **stderr** la sortie standard des erreurs.
+**Stdin**  est l'entrée standard d'une **commande** (en général, ce que l'on aura tapé nous même). **Stdout** est sa sortie standard de cette **commande**, et **stderr** la sortie standard des erreurs.
 
 <br>
 
-On peut brancher le **stdout** d'une commande avec le **stdin** d'une autre, en utilisant `|`.
+On peut brancher le **stdout** d'une **commande** avec le **stdin** d'une autre, en utilisant `|`.
 > [!example]-
 > ```bash
 > cat file | wc -l
@@ -49,7 +49,7 @@ On peut rediriger le **stdout** ou le **stderr** vers un fichier :
 
 <br>
 
-Sans redirection vers une commande ou un fichier, le **stdout** et le **stderr** seront affichés dans l'**interface de commande en ligne**.
+Sans redirection vers une **commande** ou un fichier, le **stdout** et le **stderr** seront affichés dans l'**interface de commande en ligne**.
 
 <br>
 
@@ -68,7 +68,7 @@ On peut déclarer n'importe quelle **variable** dans le shell, en tapant simplem
 
 <br>
 
-Je peux ensuite l'utiliser dans des commandes, mais il est nécessaire de préciser qu'on désigne une **variable** en mettant `$` devant le nom de celle-ci. 
+Je peux ensuite l'utiliser dans des **commandes**, mais il est nécessaire de préciser qu'on désigne une **variable** en mettant `$` devant le nom de celle-ci. 
 - Si je tape :
 	```bash
 	echo zebi
@@ -90,6 +90,28 @@ Cependant, la **variable** est pour le moment locale, ce qui la rend inutilisabl
 
 <br>
 
-On peut accéder à la liste de toutes les **variables** présentes dans l'**environnement** avec la commande `env`, ou seulement à la liste des **variables** qui ont été exportées dans l'**environnement** (et non pas des **variables** d'**environnement** système par exemple) avec la commande `export` sans arguments.
+On peut accéder à la liste de toutes les **variables** présentes dans l'**environnement** avec la **commande** `env`, ou seulement à la liste des **variables** qui ont été exportées dans l'**environnement** (et non pas des **variables** d'**environnement** système par exemple) avec la **commande** `export` sans arguments.
 
+<br>
 
+# Types de fichiers et Fichiers Magiques :
+
+En utilisant la **commande** `file`<sub>[[Bash Shell - Command List#^f77746|more]]</sub> on peut connaître le **type** de n'importe quel fichier. La **commande** de base nous donnera déjà beaucoup d'informations avec les critères par défaut (si c'est un dossier, un fichier texte, si c'est un fichier contenant du code, à quel langage correspond il, etc...). Mais on peut aller plus loin.
+## Fichiers Magiques :
+On peut créer ses propres critères pour créer ses propres **types de fichiers**, avec les **fichiers magiques**, ou `magic files`. Généralement ce sera un **pattern** à chercher dans le fichier.
+Les `magic files` sont de simple fichiers textes comprenant les critères de définition du/des **types de fichiers** que nous voulons créer, écrit selon une convention spécifique :
+```bash
+offset type test description
+```
+> [!walkthrough]-
+> - `offset` : Définit où dans le fichier commencer à chercher le **pattern**. Généralement un nombre, indiquant à quel **octet** aller. `0` indiquerai de commencer à chercher dès le début du fichier, `10` de chercher à partir du 10<sup>e</sup> **octet**.
+> - `type` : Spécifie le **type de donnée** que l'on va tester à `offset` pour trouver le **pattern**. On précise à la **commande** comment interpréter les **données** qu'on lui demande de tester. Des **types de données** fréquemment utilisés : **string**, **long**, **byte**, **short**, ou encore **search**.
+> - `test` : Correspond au **pattern** que l'on veut tester.
+> - `description` : On décrit ici le **type de fichier** que l'on veut créer. Peut s'interpréter comme le nom de ce dernier.
+
+> [!example]-
+> Si le `magic file` contient le texte suivant :
+> ```
+> 25 string pattern test file
+> ```
+> Et qu'on utilise la **commande** `file -m [magic file] [target file]`, celle-ci va chercher dans `[target file]` si à partir du 25<sup>e</sup> **octet** se trouve bien la **string** "pattern". Si c'est le cas, la **commande** nous renverra que c'est un fichier de **type** `test file`.

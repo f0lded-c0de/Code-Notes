@@ -171,6 +171,25 @@ Affiche une `[string]`.
 <br>
 
 ```bash
+export (name)
+```
+Exporte la variable ou fonction `(name)` dans l'environnement. On peut si on le souhaite déclarer la valeur de la variable dans `(name)` (`export (name)=(value)`). Si `(name)` nest pas précisé, renverra une liste des variables et fonctions déjà exportées dans l'environnement.
+
+<br>
+
+```bash
+file (option) [target file]
+```
+
+^f77746
+
+Renvoie le [[Bash Shell - Overview#Types de fichiers et Fichiers Magiques|type de fichier]] de `[target file]`.
+> [!arg]- Option
+> - `-m [magic file]` : Permet d'utiliser les critères d'un `[magic file]`<sub>[[Bash Shell - Overview#Fichiers Magiques|more]]</sub> pour déterminer le type de fichier.
+
+<br>
+
+```bash
 find (path) (test) (action)
 ```
 Cherche un/des fichiers dans le dossier désigné par `(path)` (si aucun `(path)` n'est spécifié, le dossier par défaut sera le repertoire courant `.`) selon les `(test)` (si aucun `(test)` n'est spécifié, alors tous les fichiers seront concernés), et peut réaliser des `(action)` sur ces derniers (si aucune `(action)` n'est spécifié, une simple liste des fichiers trouvés sera renvoyée en **output**).
@@ -206,13 +225,6 @@ Cherche un/des fichiers dans le dossier désigné par `(path)` (si aucun `(path)
 > 	- `{}` est un **placeholder** qui sera remplacé par tous les résultats de `find`. (`find` exécutera une fois `[command]` pour chaque résultat) (A utiliser en fonction du synopsis de `[command]`)
 > 	- `;` délimite la fin de `[command]` pour `find`, mais il a besoin d'être **échappé** par un `\`.
 > - `-prune` : Si le fichier est un répertoire, find ne descendra pas dedans.
-
-<br>
-
-```bash
-export (name)
-```
-Exporte la variable ou fonction `(name)` dans l'environnement. On peut si on le souhaite déclarer la valeur de la variable dans `(name)` (`export (name)=(value)`). Si `(name)` nest pas précisé, renverra une liste des variables et fonctions déjà exportées dans l'environnement.
 
 <br>
 
@@ -346,7 +358,7 @@ patch (option) [file] [patch_file]
 Utilise un `[patch_file]` (qu'on obtient avec la commande `diff`<sub>[[Bash Shell - Command List#^2629f6|more]]</sub>) pour appliquer les changements sur `[file]`. (On peut aussi connecter le **stdout** de `diff` directement à `patch` avec `|`, `[patch_file]` n'est donc plus nécessaire)
 > [!arg]- Option
 > - `-b` : Crée un **backup** de `[file]` avant qu'il soit `patch`.
-> - `-R` : Dans le cas ou le `[patch_file]` a été crée en inversant le fichier original et le fichier modifié. Permet d'appliquer les changements a `[file]` même si celui-ci est techniquement le fichier modifié dans le `[patch_file]`. 
+> - `-R` : Dans le cas ou le `[patch_file]` a été crée en inversant le fichier original et le fichier modifié. Permet d'appliquer les changements à `[file]` même si celui-ci est techniquement le fichier modifié dans le `[patch_file]`. 
 
 <br>
 

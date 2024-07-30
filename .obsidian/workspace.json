@@ -4,98 +4,126 @@
     "type": "split",
     "children": [
       {
-        "id": "5c8c0d1355a52649",
-        "type": "tabs",
-        "dimension": 42.82994923857868,
+        "id": "5f97ed608e53c027",
+        "type": "split",
+        "dimension": 52.34584450402144,
         "children": [
           {
-            "id": "9ced4cc66ff3ed97",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Git - Command List.md",
-                "mode": "source",
-                "source": true
+            "id": "107a338fed9afd6a",
+            "type": "tabs",
+            "dimension": 25.49019607843137,
+            "children": [
+              {
+                "id": "44db6039c4916c08",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Bash Shell - Overview.md",
+                    "mode": "source",
+                    "source": true
+                  }
+                },
+                "group": "ad7bb21c25d21cf9"
+              },
+              {
+                "id": "4afaa259efee4a41",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Bash Shell - Command List.md",
+                    "mode": "source",
+                    "source": true
+                  }
+                },
+                "group": "64eb0e5b8b269d1e"
               }
-            },
-            "group": "84189ac005462ef1"
+            ]
           },
           {
-            "id": "1084398270e589d2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bash Shell - Command List.md",
-                "mode": "source",
-                "source": true
+            "id": "f68691be5dc13184",
+            "type": "tabs",
+            "dimension": 74.50980392156863,
+            "children": [
+              {
+                "id": "fced1e6e868f9157",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Bash Shell - Command List.md",
+                    "mode": "source",
+                    "source": true
+                  }
+                },
+                "group": "235734de8c0950b2"
               }
-            },
-            "group": "965632834836cca2"
-          },
-          {
-            "id": "507bf08efb156b9d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Git - Overview.md",
-                "mode": "source",
-                "source": true
-              }
-            },
-            "group": "9aeb3cc01b2450a4"
+            ]
           }
         ],
-        "currentTab": 2
+        "direction": "horizontal"
       },
       {
-        "id": "107a338fed9afd6a",
-        "type": "tabs",
-        "dimension": 57.17005076142132,
+        "id": "e44588113eab4493",
+        "type": "split",
+        "dimension": 47.65415549597855,
         "children": [
           {
-            "id": "4afaa259efee4a41",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Git - Command List.md",
-                "mode": "preview",
-                "source": true
+            "id": "b57e985ca09c3e92",
+            "type": "tabs",
+            "dimension": 25.49019607843137,
+            "children": [
+              {
+                "id": "edada2fcbae7c543",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Bash Shell - Overview.md",
+                    "mode": "preview",
+                    "source": false
+                  }
+                },
+                "group": "ad7bb21c25d21cf9"
+              },
+              {
+                "id": "5aea5ff4b3af05bd",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Bash Shell - Command List.md",
+                    "mode": "preview",
+                    "source": false
+                  }
+                },
+                "group": "64eb0e5b8b269d1e"
               }
-            },
-            "group": "84189ac005462ef1"
+            ]
           },
           {
-            "id": "44db6039c4916c08",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bash Shell - Command List.md",
-                "mode": "preview",
-                "source": false
+            "id": "6aa587088bc87f94",
+            "type": "tabs",
+            "dimension": 74.50980392156863,
+            "children": [
+              {
+                "id": "f5e5e47a5891061f",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Bash Shell - Command List.md",
+                    "mode": "preview",
+                    "source": false
+                  }
+                },
+                "group": "235734de8c0950b2"
               }
-            },
-            "group": "965632834836cca2"
-          },
-          {
-            "id": "5aea5ff4b3af05bd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Git - Overview.md",
-                "mode": "preview",
-                "source": false
-              }
-            },
-            "group": "9aeb3cc01b2450a4"
+            ]
           }
         ],
-        "currentTab": 2
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -145,7 +173,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "545e850854699868",
@@ -161,7 +190,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Git - Overview.md",
+                "file": "Bash Shell - Command List.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,7 +207,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Git - Overview.md",
+                "file": "Bash Shell - Command List.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -201,7 +230,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Git - Overview.md"
+                "file": "Bash Shell - Command List.md"
               }
             }
           }
@@ -223,15 +252,52 @@
       "callout-manager:Insert Callout": false
     }
   },
-  "active": "507bf08efb156b9d",
+  "floating": {
+    "id": "384320b50d9ba091",
+    "type": "floating",
+    "children": [
+      {
+        "id": "11018ee7d7e83f35",
+        "type": "window",
+        "children": [
+          {
+            "id": "ba1ac72b80d0ecf3",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "e11cd31bb3f26620",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Bash Shell - Overview.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 256,
+        "y": 8,
+        "width": 1024,
+        "height": 800,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "fced1e6e868f9157",
   "lastOpenFiles": [
-    "C - Overview.md",
-    "C - Function List.md",
-    "Bash Shell - Wildcards and Regex.md",
     "Bash Shell - Overview.md",
     "Bash Shell - Command List.md",
     "Git - Command List.md",
     "Git - Overview.md",
+    "C - Overview.md",
+    "C - Function List.md",
+    "Bash Shell - Wildcards and Regex.md",
     "Markdown Tests.md",
     "A Table of  Contents for Code Notes.md",
     "git_log.txt",
