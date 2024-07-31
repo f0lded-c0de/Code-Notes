@@ -17,6 +17,8 @@ Permet d'effectuer des calculs. Si un `(file)` est précisé, alors `bc` rentrer
 	- `obase` : égal à 10 par défaut. Définit la base numérique dans laquelle il renverra le résultat dans l'**output**.
 	- `last` : égal à 0 par défaut. Est égal à la dernière valeur affichée par `bc`.
 - La syntaxe des opérations que lit `bc` correspond de manière générale à une syntaxe mathématique classique. Pour en vérifier les spécificités, aller voir la section `EXPRESSIONS` du `man bc`.
+	- On notera tout de même que l'on peut enchainer des opérations en les séparant d'un `;`. Celles-ci seront réalisées dans l'ordre.
+	- Si l'on souhaite, dans la même ligne, changer les valeurs de plusieurs variables, faire attention à `ibase`. Cette variable change la base numérique dans laquelle sera lu **n'importe quelle input**, y compris l'assignation des autres variables. Pour éviter tout problème, à moins d'avoir une raison spécifique, il est recommandé d'assigner `ibase` en dernier avant les opérations.
 
 <br>
 
