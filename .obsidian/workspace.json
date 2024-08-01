@@ -4,29 +4,8 @@
     "type": "split",
     "children": [
       {
-        "id": "f68691be5dc13184",
-        "type": "tabs",
-        "dimension": 49.73190348525469,
-        "children": [
-          {
-            "id": "fced1e6e868f9157",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bash Shell - Command List.md",
-                "mode": "source",
-                "source": true
-              }
-            },
-            "group": "235734de8c0950b2"
-          }
-        ]
-      },
-      {
         "id": "6aa587088bc87f94",
         "type": "tabs",
-        "dimension": 50.26809651474531,
         "children": [
           {
             "id": "f5e5e47a5891061f",
@@ -34,21 +13,50 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bash Shell - Command List.md",
-                "mode": "preview",
-                "source": false
+                "file": "C - Function List.md",
+                "mode": "source",
+                "source": true
               }
-            },
-            "group": "235734de8c0950b2"
+            }
           },
           {
-            "id": "6753a0ca9dc591e6",
+            "id": "7fadc3f70f87e328",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bash Shell - Overview.md",
-                "mode": "source",
+                "file": "C - Overview.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9cfeeb2fe1be1131",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Git - Command List.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "41c49d7bbe567e61",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9a5eea3f2ebc82fa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "C - Function List.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -120,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bash Shell - Command List.md",
+                "file": "C - Function List.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -137,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bash Shell - Command List.md",
+                "file": "C - Function List.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -160,7 +168,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bash Shell - Command List.md"
+                "file": "C - Function List.md"
               }
             }
           }
@@ -184,13 +192,13 @@
   },
   "active": "f5e5e47a5891061f",
   "lastOpenFiles": [
-    "Bash Shell - Wildcards and Regex.md",
-    "Bash Shell - Command List.md",
-    "Bash Shell - Overview.md",
+    "C - Overview.md",
     "Git - Command List.md",
     "Git - Overview.md",
-    "C - Overview.md",
     "C - Function List.md",
+    "Bash Shell - Command List.md",
+    "Bash Shell - Overview.md",
+    "Bash Shell - Wildcards and Regex.md",
     "Markdown Tests.md",
     "A Table of  Contents for Code Notes.md",
     "git_log.txt",

@@ -24,7 +24,7 @@ void ft_putchar(char c);
 void ft_putnbr(int i);
 ```
 `ft_putnbr` affiche dans le **stdout** le `int i` spécifié. 
-> [!declaration]-
+> [!declaration]- Declaration 1
 > ```C
 > void ft_putnbr(int nb)
 > {
@@ -58,6 +58,37 @@ void ft_putnbr(int i);
 > > **Librairie** : [[C - Function List#<unistd.h >|<unistd.h>]] :
 > > - [[C - Function List#^5a0e90|write()]]
 
+> [!declaration]- Declaration 2
+> ```C
+> void    ft_putnbr(int nb)
+> {
+> 	if (nb < -9 || nb > 9)
+> 	{
+> 		ft_putnbr(nb / 10);
+> 		if (nb > 0)
+> 			ft_putnbr(nb % 10);
+> 		else
+> 			ft_putnbr((nb % -10) * -1);
+> 	}
+> 	else
+> 	{
+> 		if (nb < 0)
+> 		{
+> 			ft_putchar('-');
+> 			nb *= -1;
+> 		}
+> 		ft_putchar(nb + 48);
+> 	}
+> }
+> ```
+> > [!list]- Fonctions utilisées
+> > **Custom** :
+> > - [[C - Function List#^62035e|ft_putchar()]]
+> > 
+> > **Librairie** : [[C - Function List#<unistd.h >|<unistd.h>]] :
+> > - [[C - Function List#^5a0e90|write()]]
+
+
 <br>
 
 ```C
@@ -83,7 +114,10 @@ void ft_putstr(char *str);
 > > - [[C - Function List#^5a0e90|write()]]
 
 <br>
+
 # Existing Libraries
+
+Pour inclure une librairie spécifique : `#include <library.h>` en haut du fichier.
 ## \<unistd.h\>
 
 ^92b549
@@ -94,7 +128,7 @@ write(int fd, truc, size_t count)
 
 ^5a0e90
 
-`wite` permet d'envoyer un `truc` de taille `count` au `fd` spécifié.
+`write` permet d'envoyer un `truc` de taille `count` au `fd` spécifié.
 - `int fd` nous permet de choisir à quel [[C - Overview#File Descriptor (ou Descripteur)|File Descriptor]] renvoyer `truc`.
 	- Si l'on veut simplement afficher `truc` à l'écran, comme un `printf()`, on doit donc choisir `1`, pour **stdout**.
 - `truc` peut être différentes choses :
