@@ -33,8 +33,21 @@
               }
             },
             "group": "1a1131bf8cbcdba5"
+          },
+          {
+            "id": "476f1750e8a7b3f5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Bash Shell - Wildcards and Regex.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "41c49d7bbe567e61",
@@ -66,6 +79,18 @@
               }
             },
             "group": "1a1131bf8cbcdba5"
+          },
+          {
+            "id": "f7589aec25bf0b65",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Bash Shell - Command List.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -134,7 +159,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "C - Function List.md",
+                "file": "C - Overview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +176,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "C - Function List.md",
+                "file": "C - Overview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +199,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "C - Function List.md"
+                "file": "C - Overview.md"
               }
             }
           }
@@ -196,15 +221,15 @@
       "callout-manager:Insert Callout": false
     }
   },
-  "active": "f5e5e47a5891061f",
+  "active": "7fadc3f70f87e328",
   "lastOpenFiles": [
-    "C - Overview.md",
     "C - Function List.md",
+    "Bash Shell - Command List.md",
+    "Bash Shell - Wildcards and Regex.md",
+    "C - Overview.md",
     "Git - Command List.md",
     "Git - Overview.md",
-    "Bash Shell - Command List.md",
     "Bash Shell - Overview.md",
-    "Bash Shell - Wildcards and Regex.md",
     "Markdown Tests.md",
     "A Table of  Contents for Code Notes.md",
     "git_log.txt",

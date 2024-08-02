@@ -116,6 +116,25 @@ void ft_putstr(char *str);
 
 ## ft_str_manipulation()
 
+```C
+int ft_strlen(char *str)
+```
+`ft_strlen()` renvoie le nombre de caractères qui composent la **string** pointée par `str`.
+
+> [!declaration]-
+> ```C
+> int	ft_strlen(char *str)
+> {
+> 	int	i;
+> 
+> 	i = 0;
+> 	while (str[i] != 0)
+> 		i++;
+> 	return (i);
+> }
+> ```
+
+<br>
 
 ```C
 char *ft_strcpy(char *src, char *dest);
