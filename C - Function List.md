@@ -1,12 +1,14 @@
 # Custom Functions :
 
+## ft_put()
+
 ```C
 void ft_putchar(char c);
 ```
 
 ^62035e
 
-`ft_putchar` affiche dans le **stdout** le `char c` spécifié.
+`ft_putchar()` affiche dans le **stdout** le `char c` spécifié.
 > [!declaration]-
 > ```C
 > void ft_putchar(char c)
@@ -23,7 +25,7 @@ void ft_putchar(char c);
 ```C
 void ft_putnbr(int i);
 ```
-`ft_putnbr` affiche dans le **stdout** le `int i` spécifié. 
+`ft_putnbr()` affiche dans le **stdout** le `int i` spécifié. 
 > [!declaration]- Declaration 1
 > ```C
 > void ft_putnbr(int nb)
@@ -94,7 +96,7 @@ void ft_putnbr(int i);
 ```C
 void ft_putstr(char *str);
 ```
-`ft_putstr` affiche dans le **stdout** la **string** dont le premier charactère est pointée par `char *str`.
+`ft_putstr()` affiche dans le **stdout** la **string** pointée par `*str`.
 > [!declaration]-
 > ```C
 > void ft_putstr(char *str)
@@ -112,10 +114,61 @@ void ft_putstr(char *str);
 
 <br>
 
+## ft_str_manipulation()
+
+
+```C
+char *ft_strcpy(char *src, char *dest);
+```
+`ft_strcpy()` copie le contenu de la **string** pointée par `src` dans la **string** pointée par `dest`. 
+- Si `*src` est plus petit que `*dest`, `ft_strcpy` n'agira que jusqu'au `\0` de `*src`.
+- `ft_strcpy()` ne gère pas le cas où `*dest` serait plus petit que `*src`.
+
+> [!declaration]-
+> ```C
+> char *ft_strcpy(char *src, char *dest)
+> {
+> 	int	i;
+> 
+> 	i = 0;
+> 	while (src[i] != '\0')
+> 		dest[i++] = src[i];
+> 	dest[i] = '\0';
+> 	return (dest);
+> }
+> ```
+
+<br>
+
+```C
+char *ft_strncpy(char *src, char *dest, unsigned int n);
+```
+`ft_strcpy()` copie les `n` premiers caractères du contenu de la **string** pointée par `src` dans la **string** pointée par `dest`. 
+- Si `*src` est plus petit que `n`, la fin de `*dest` sera remplie de `\0`.
+- **Attention**! S'il n'y a pas de `\0` dans les `n` premiers caractères de `*src`, alors `*dest` n'en contiendra pas.
+
+> [!declaration]-
+> ```C
+> char	*ft_strncpy(char *dest, char *src, unsigned int n)
+> {
+> 	int	i;
+> 
+> 	i = 0;
+> 	while (src[i] != '\0' && i < n)
+> 		dest[i++] = src[i];
+> 	while (i < n)
+> 		dest[i++] = '\0';
+> 	return (dest);
+> }
+> ```
+
+<br><br><br>
+
 # Existing Libraries
 
 Pour inclure une librairie spécifique : `#include <library.h>` en haut du fichier.
-## \<unistd.h\>
+
+### \<unistd.h\>
 
 ^92b549
 
