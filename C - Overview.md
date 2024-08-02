@@ -2,6 +2,8 @@
 
 Les **fonctions** sont des sortes de "bloc de code", qui vont avoir pour but de réaliser une (ou des) actions spécifiques. C'est le cœur de la programmation en C : tout le code sera dans différentes **fonctions**. On peut ensuite appeler les **fonctions** qu'on a déjà déclaré et défini dans d'autres **fonctions**. En gardant des **fonctions** courtes avec des objectifs spécifiques, cela permet de segmenter le code en différents blocs logiques.
 
+<br>
+
 ## Fonction 'main' :
 
 Avant de parler des **fonctions** en général, il faut parler de la **fonction** `main`. C'est la **fonction** principale, ce qu'on appelle le "**point d'entrée**" du **programme**. Lorsqu'on exécutera un **programme** en C, il commencera toujours par la **fonction** `main`, et s'arrêtera une fois qu'il aura atteint le `return 0;` de celle-ci. Elle s'écrit comme suit :
@@ -17,6 +19,8 @@ int main(void)
 - `void` indique que la **fonction** n'attend pas d'argument. Elle est juste censée être appelée pour lancer le **programme**.
 - `//[actual code]` sera le code du **programme** lui-même.
 - `return 0;` marque la fin du code. Le **programme** se ferme, en retournant la valeur `0` pour indiquer qu'il a bien atteint la fin du code sans soucis.
+
+<br>
 
 ## Déclaration de fonctions :
 
@@ -37,9 +41,11 @@ type ft_name(par1_type par1, par2_type par2, etc...) {}
 		- Tout le code de la **fonction** se trouvera entre ces accolades.
 		- Toute **variable** déclarée dans la **fonction** (y compris les **paramètres**) seront limitées à ce **scope**. C'est à dire qu'elle n'existeront qu'à l'intérieur de celui-ci. Concrètement, la **variable** sera créée au moment ou la **fonction** sera appelée, et elle sera détruite au moment ou la **fonction** se terminera.
 
+<br>
+
 ## Inclusion et appel de fonctions :
 
-Pour appeler une **fonction** qu'on a déclaré, à moins qu'elle ne soit déclaré dans le même fichier plus haut, il faudra faire savoir au programme que cette **fonction** existe. Pour cela on utilisera un **prototype**, qu'on placera tout en haut du fichier.
+Pour appeler une **fonction** qu'on a déclaré, à moins qu'elle ne soit déclaré dans le même fichier plus haut, il faudra faire savoir au programme que cette **fonction** existe. Pour cela on utilisera un **prototype**, qu'on placera tout en haut du fichier. 
 
 Le **prototype** est quasiment identique à la déclaration de la **fonction**, à l'exception qu'au lieu d'ouvrir le **scope** de la fonction à la fin de la ligne, on va juste mettre un `;`, et les **paramètres** ne nécessiteront que le type de **variable**, pas le nom.
 
@@ -76,7 +82,7 @@ On pourra ensuite l'appeler avec son nom et ses paramètres normalement.
 > [!info]-
 > Si l'on souhaite appeler une **fonction** qui ne prend pas de paramètres, (déclarée et prototypée avec `void`), on doit tout de même inclure les `()` à la fin, même si elles sont vide.
 
-<br>
+<br><br><br>
 
 # Les variables :
 
@@ -109,7 +115,7 @@ Les _variables_ peuvent etre `signed`, ou `unsigned`. On prendra ici l'exemple d
 - `signed char` pourra prendre une valeur positive ou negative, allant donc de -128 a 127. Le premier bit, au lieu de correspondre a 128, indiquera donc si la suite sera en negatif ou en positif.
 Les **variables** stockent des valeurs. Le `char` stock une valeur, mais lorsqu'on l'affiche, il va renvoyer le caractère correspondant dans l **table  ASCII**.
 
-<br>
+<br><br><br>
 
 # File Descriptor (ou Descripteur) :
 
@@ -129,7 +135,7 @@ Le **file descriptor**, ou "`fd`" est un `int` qui renvoie a un fichier. Les tro
 
 Le `fd` peut aussi renvoyer a des fichiers, si l'on va au dessus de `2`.
 
-<br>
+<br><br><br>
 
 # Les opérateurs :
 
@@ -176,7 +182,7 @@ On peut aussi noter l'**opérateur d'affectation** :
 - `=` : Il ne représente pas une égalité, ce n'est pas le "égal" mathématique (c'est bien `==` qui rempli ce rôle). Il affecte la valeur à sa droite à ce qui se trouve à sa gauche.
 	- Donc si l'on veut assigner une valeur à une **variable**, on est obligé de mettre la **variable** à gauche et la valeur à droite, l'inverse ne voudrait rien dire.
 
-<br>
+<br><br><br>
 
 # Les conditions :
 
@@ -218,7 +224,7 @@ Le **ternaire** permet de faire plus ou moins la même chose que `if` mais sur u
 - `var1 = (var2 > 13) ? 1 : 0`
     - Si (`if`) var2 est supérieur à 13, on va assigner la valeur 1 à var1, sinon (`else`) on va lui assigner 0.
 
-<br>
+<br><br><br>
 
 # Les boucles :
 
@@ -238,7 +244,7 @@ Les **boucles** permettent de répéter une action un certain nombre de fois.
     - `i`++
 - Ici, `for` réalisera donc `{code}` 5 fois.
 
-<br>
+<br><br><br>
 
 # Les pointeurs :
 
@@ -255,7 +261,7 @@ Les **boucles** permettent de répéter une action un certain nombre de fois.
 		- Ensuite, si l'on manipule `p_i`, on manipule l'**adresse** qu'il stock. pour manipuler la **variable** pointée par `p_i`, on utilisera `*p_i`.
 - Un **pointeur** servira notamment à modifier des variables qu'on enverra dans des **fonctions**. En effet, puisque celle-ci utilisent une copie de la **variable** qu'on lui donne et la supprime à la fin, si on lui envoie un **pointeur**, et qu'il manipule la **variable** pointée par le **pointeur** donné en paramètre, cela nous permettra de modifier cette **variable**. Puisque même si l'on fait une copie du **pointeur**, celle ci pointera vers la même **adresse**, ainsi modifiera la vraie **variable** tout de même.
 
-<br>
+<br><br><br>
 
 # To-do (sujets à aborder ici) :
 
