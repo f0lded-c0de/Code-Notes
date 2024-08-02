@@ -17,7 +17,8 @@
                 "mode": "source",
                 "source": true
               }
-            }
+            },
+            "group": "b70035f74a53df0b"
           },
           {
             "id": "7fadc3f70f87e328",
@@ -59,7 +60,8 @@
                 "mode": "preview",
                 "source": false
               }
-            }
+            },
+            "group": "b70035f74a53df0b"
           }
         ]
       }
@@ -190,12 +192,12 @@
       "callout-manager:Insert Callout": false
     }
   },
-  "active": "f5e5e47a5891061f",
+  "active": "9a5eea3f2ebc82fa",
   "lastOpenFiles": [
     "C - Overview.md",
+    "C - Function List.md",
     "Git - Command List.md",
     "Git - Overview.md",
-    "C - Function List.md",
     "Bash Shell - Command List.md",
     "Bash Shell - Overview.md",
     "Bash Shell - Wildcards and Regex.md",
