@@ -29,14 +29,14 @@ On peut maintenant voir la déclaration des autres **fonctions** :
 type ft_name(par1_type par1, par2_type par2, etc...) {}
 ```
 - `type` correspond au type de valeur que la **fonction** va retourner. Cela veut dire que lorsqu'on appellera cette **fonction**, si elle retourne une valeur, celle-ci remplacera la **fonction** à l'endroit du code ou elle est appelée.
-	- Cela peut être un `int` (comme la fonction `main` par exemple), un `char`, etc... 
+	- Cela peut être un `int` (comme la **fonction** `main` par exemple), un `char`, etc... 
 	- La **fonction** peut aussi ne rien avoir à retourner, auquel cas on utilisera le type `void`.
 - `ft_name` correspond au nom de la **fonction**. C'est celui-ci qu'on utilisera pour l'appeler plus tard.
 - `()` : On trouve entre les parenthèses les **paramètres** que prendra la **fonction** lorsqu'elle sera appelée. Les **paramètres** sont des **variables** qui sont déclarées entre ces `()` et auxquelles ont affecte une valeur lorsqu'on appelle la **fonction**, en remplaçant leur nom dans `()` par la valeur que l'on souhaite qu'elle prennent.
 	- `par1_type` est le type de **variable** que sera ce **paramètre**.
 	- `par1` est le nom de la **variable** qu'on utilisera dans la **fonction**.
 	- On peut déclarer plusieurs **paramètres** en les séparant de `, `.
-	- Si la **fonction** ne prend pas de paramètres, on écrira `(void)` (comme la fonction `main`).
+	- Si la **fonction** ne prend pas de paramètres, on écrira `(void)` (comme la **fonction** `main`).
 	- `{}` délimite le **scope** de la **fonction**.
 		- Tout le code de la **fonction** se trouvera entre ces accolades.
 		- Toute **variable** déclarée dans la **fonction** (y compris les **paramètres**) seront limitées à ce **scope**. C'est à dire qu'elle n'existeront qu'à l'intérieur de celui-ci. Concrètement, la **variable** sera créée au moment ou la **fonction** sera appelée, et elle sera détruite au moment ou la **fonction** se terminera.
@@ -47,7 +47,7 @@ type ft_name(par1_type par1, par2_type par2, etc...) {}
 
 Pour appeler une **fonction** qu'on a déclaré, à moins qu'elle ne soit déclaré dans le même fichier plus haut, il faudra faire savoir au programme que cette **fonction** existe. Pour cela on utilisera un **prototype**, qu'on placera tout en haut du fichier. 
 
-Le **prototype** est quasiment identique à la déclaration de la **fonction**, à l'exception qu'au lieu d'ouvrir le **scope** de la fonction à la fin de la ligne, on va juste mettre un `;`, et les **paramètres** ne nécessiteront que le type de **variable**, pas le nom.
+Le **prototype** est quasiment identique à la déclaration de la **fonction**, à l'exception qu'au lieu d'ouvrir le **scope** de la **fonction** à la fin de la ligne, on va juste mettre un `;`, et les **paramètres** ne nécessiteront que le type de **variable**, pas le nom.
 
 > [!example]-
 > Si on a déclaré une **fonction** `ftputchar` comme suit :
@@ -125,7 +125,7 @@ Le **file descriptor**, ou "`fd`" est un `int` qui renvoie a un fichier. Les tro
 - `2` = **stderr**
 
 > [!example]-
-> La fonction `write` s'écrit comme suit :
+> La **fonction** `write` s'écrit comme suit :
 > ```C
 > write(int fd, const void *buf, size_t count)
 > ```
@@ -192,33 +192,33 @@ On peut aussi noter l'**opérateur d'affectation** :
 Les **conditions** permettent de réaliser des actions si une ou des conditions sont validées.
 
 `if() {code}` va tester la condition se trouvant entre les `()`, en utilisant les **opérateurs de comparaisons**, et réaliser tout ce qui se trouve entre les `{}`, soit `{code}` si celle ci est vraie.
+>[!info]
+> `if` effectue en fait un test **booléen** : la condition est-elle vraie ou fausse.
+> Or, en C, on utilise `0` (**<font color="#c0504d">Faux</font>**) et `1` (**<font color="#c0504d">Vrai</font>**) pour cela. En fait, les **opérateurs de comparaison** ne font que tester immédiatement leur expression, puis renvoie `0` ou `1` en fonction du résultat. Et `if` n'attend que `0` et `1`.
+> Donc, si on fait une **fonction** qui renvoi un `int`, et qu'on lui fait renvoyer soit `0` soit `1`, on peut tout à fait mettre une **fonction** en condition. Exemple :
+> ```C
+> if (ft_test(param)) {
+> ```
+
 > [!example]-
 > `if(var <= 7)` va tester si la **variable** `var` est inférieure ou égale à 7.
 
 > [!example]-
 >  `if(var < 18 && var > 11)` va tester si la **variable** **var** est comprise entre 11 et 18 non inclus.
 
-> [!example]-
-> On peut aussi faire un test **boléen**, où 1 correspond à **true**, et 0 à **false**.
-> - `if(var)` teste si `var` est égal à 1 (donc **true**).
-> - `if(!var)` teste si `var` est égal à 0 (donc **false**) (pas égal à 1).
-
 - On peut rajouter en dessous un `else {}`, qui revient à un "sinon", qu'on utilisera exactement de la même façon que le `if` (sans les parenthèses puisqu'il ne teste rien), et l'on pourra donc écrire entre les `{}` ce qu'il faut réaliser si le test renvoie **false**.
 	- On peut même imbriquer des `if` sur des `else` immédiatement avec `else if`.
 
 	> [!example]-
 	> ```C
-	> if(var <= 5)
-	> 	{
-	> 		[action1]
-	> 	} 
-	> 	else
-	> 	{
-	> 		[action2]
-	> 	}
-	> 	
+	> if (var <= 5)
+	> 	[action1]
+	> else if (var > 10)
+	> 	[action2]
+	> else
+	> 	[action3]
 	> ```
-	> Ici, si `var` est inférieur ou égale à 5, on réalisera `[action1]`, sinon, si `var` est supérieur à 5, on réalisera `[action2]`.
+	> Ici, si `var` est inférieur ou égale à 5, on réalisera `[action1]`, sinon, si `var` est supérieur à 10, on réalisera `[action2]`, sinon, donc si `var` est compris entre 6 et 10, on réalisera `[action3]`.
 
 
 Le **ternaire** permet de faire plus ou moins la même chose que `if` mais sur une seule ligne.
@@ -234,11 +234,13 @@ Le **ternaire** permet de faire plus ou moins la même chose que `if` mais sur u
 Les **boucles** permettent de répéter une action un certain nombre de fois.
 
 `while() {code}` va répéter `{code}` tant que la condition entre les `()` est vraie.
-- Fonctionne globalement comme le **if**, excepté qu'il répète tant que la condition est vraie, et qu'il n'y a pas de **else**.
+-  `while` va d'abord tester la condition entre parenthèse. Si elle est vraie, il va ensuite réaliser le code entre brackets. Puis il va de nouveau tester la condition, et si elle est de nouveau vraie, il va de nouveau réaliser le code, etc.
+- Fonctionne globalement comme le `if`, excepté la répétition (duh), et qu'il n'y a pas de `else`.
+- Comme `if`, on peut tout à fait mettre une fonction en condition, qui renverra 0 pour invalider la condition, et 1 pour la valider.
 
 `do {code} while()` permet à peu près la même chose, sauf qu'il réalise `{code}` au moins une fois, puisque qu'il effectue son test après.
 
-`for (1, 2,  3) {code}` permet de répéter `{code}` selon des conditions particulières.
+`for (1, 2, 3) {code}` permet de répéter `{code}` selon des conditions particulières.
 - Dans `1`, on va initialiser une **variable** (qu'on aura déclaré au préalable).
     - `i` = 0
 - Dans `2`, on va établir une condition.
