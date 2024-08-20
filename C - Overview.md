@@ -1,4 +1,4 @@
-# Les fonctions :
+- # Les fonctions :
 
 Les **fonctions** sont des sortes de "bloc de code", qui vont avoir pour but de réaliser une (ou des) actions spécifiques. C'est le cœur de la programmation en C : tout le code sera dans différentes **fonctions**. On peut ensuite appeler les **fonctions** qu'on a déjà déclaré et défini dans d'autres **fonctions**. En gardant des **fonctions** courtes avec des objectifs spécifiques, cela permet de segmenter le code en différents blocs logiques.
 
@@ -177,6 +177,9 @@ Il existe aussi des **opérateurs de comparaison** :
     - `&&` : Et
     - `||` : Ou
     - `!` : Not
+
+> [!info]-
+> L'opérateur `&&` a la priorité sur l'opérateur `||`.
 
 On peut aussi noter l'**opérateur d'affectation** :
 - `=` : Il ne représente pas une égalité, ce n'est pas le "égal" mathématique (c'est bien `==` qui rempli ce rôle). Il affecte la valeur à sa droite à ce qui se trouve à sa gauche.

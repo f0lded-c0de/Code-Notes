@@ -102,4 +102,18 @@ Puisque chaque **commit** pointe déjà par définition sur ses **commits parent
 
 ## Remote-tracking branch :
 
-Lorsqu'on travaille sur une copie locale du **dépôt distant**, on va en général créer des **remote-tracking branch**. En créant un "**remote**", généralement "**origin**", on connecte notre **dépôt local** au **dépôt distant**. Ensuite, si l'on travaille par exemple sur la branche *master*, on va pouvoir connecter notre **branche** locale *master* avec la **branche** distante *master*. Cela va créer une "**remote-tracking branch**", qui va s'appeler *origin/master*, et qui va représenter une copie de l'état de la branche *master* distante la dernière fois qu'on l'a actualisé. C'est cette **remote-tracking branch** qui va permettre à git de comparer avec notre **dépôt de travail** afin de suivre les modifications, cela même sans être connecté en permanence au **dépôt distant**. Cela permet aussi quand on doit mettre à jour notre **branche** locale de vérifier les modifications et s'il y a des conflits avant de les appliquer. En effet, `git fetch` va simplement mettre à jour la **remote-tracking branch**, nous permettant d'observer les changements, et de choisir après de **merge** ou non, ou de changer des choses avant de **merge**. `git pull`, lui, va directement combiner `git fetch` et `git merge` et appliquer directement les changements.
+Lorsqu'on travaille sur une copie locale du **dépôt distant**, on va en général créer des **remote-tracking branch**. En créant un "**remote**", généralement "**origin**", on connecte notre **dépôt local** au **dépôt distant**. 
+
+Ensuite, si l'on travaille par exemple sur la branche *master*, on va pouvoir connecter notre **branche** locale *master* avec la **branche** distante *master*. Cela va créer une "**remote-tracking branch**", qui va s'appeler *origin/master*, et qui va représenter une copie de l'état de la branche *master* distante la dernière fois qu'on l'a actualisé. 
+C'est avec cette **remote-tracking branch** que git va comparer notre **dépôt de travail** afin de suivre les modifications, cela même sans être connecté en permanence au **dépôt distant**. 
+
+On peut vérifier à quelle **remote-tracking branch** notre **dépôt de travail** est connecté avec `git branch -r`<sub>[[Git - Command List#^89e56d|more]]</sub>. Le résultat ressemblera à ça :
+```bash
+/> git branch -r
+origin/HEAD -> origin/master
+origin/master
+```
+La première ligne nous indique que la branche *HEAD* (la branche principale) du **remote** **origin** est la branche *master*.
+La deuxième ligne désigne la **remote-tracking branch**, qui va donc suivre la branche *master* du **remote origin**.
+
+Cela permet aussi quand on doit mettre à jour notre **branche** locale de vérifier les modifications et s'il y a des conflits avant de les appliquer. En effet, `git fetch` va simplement mettre à jour la **remote-tracking branch**, nous permettant d'observer les changements, et de choisir après de **merge** ou non, ou de changer des choses avant de **merge**. `git pull`, lui, va directement combiner `git fetch` et `git merge` et appliquer directement les changements.

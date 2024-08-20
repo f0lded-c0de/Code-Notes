@@ -4,93 +4,40 @@
     "type": "split",
     "children": [
       {
-        "id": "6aa587088bc87f94",
-        "type": "tabs",
-        "dimension": 48.525469168900806,
-        "children": [
-          {
-            "id": "f5e5e47a5891061f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "C - Function List.md",
-                "mode": "source",
-                "source": true
-              }
-            },
-            "group": "b70035f74a53df0b"
-          },
-          {
-            "id": "7fadc3f70f87e328",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "C - Overview.md",
-                "mode": "source",
-                "source": true
-              }
-            },
-            "group": "1a1131bf8cbcdba5"
-          },
-          {
-            "id": "476f1750e8a7b3f5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bash Shell - Wildcards and Regex.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
         "id": "41c49d7bbe567e61",
         "type": "tabs",
-        "dimension": 51.474530831099194,
         "children": [
-          {
-            "id": "9a5eea3f2ebc82fa",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "C - Function List.md",
-                "mode": "preview",
-                "source": false
-              }
-            },
-            "group": "b70035f74a53df0b"
-          },
           {
             "id": "e72a3040a392889c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C - Overview.md",
-                "mode": "preview",
-                "source": false
+                "file": "Git - Command List.md",
+                "mode": "source",
+                "source": true
               }
             },
-            "group": "1a1131bf8cbcdba5"
-          },
+            "group": "b03a970435627872"
+          }
+        ]
+      },
+      {
+        "id": "c0231e81161423c7",
+        "type": "tabs",
+        "children": [
           {
-            "id": "f7589aec25bf0b65",
+            "id": "4759e0564ae14642",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bash Shell - Command List.md",
+                "file": "Git - Command List.md",
                 "mode": "preview",
                 "source": false
               }
-            }
+            },
+            "group": "b03a970435627872"
           }
         ]
       }
@@ -142,8 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "545e850854699868",
@@ -159,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "C - Overview.md",
+                "file": "Git - Command List.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -176,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "C - Overview.md",
+                "file": "Git - Command List.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -199,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "C - Overview.md"
+                "file": "Git - Command List.md"
               }
             }
           }
@@ -221,15 +167,15 @@
       "callout-manager:Insert Callout": false
     }
   },
-  "active": "7fadc3f70f87e328",
+  "active": "e72a3040a392889c",
   "lastOpenFiles": [
+    "Git - Overview.md",
+    "C - Overview.md",
+    "Bash Shell - Overview.md",
     "C - Function List.md",
+    "Git - Command List.md",
     "Bash Shell - Command List.md",
     "Bash Shell - Wildcards and Regex.md",
-    "C - Overview.md",
-    "Git - Command List.md",
-    "Git - Overview.md",
-    "Bash Shell - Overview.md",
     "Markdown Tests.md",
     "A Table of  Contents for Code Notes.md",
     "git_log.txt",

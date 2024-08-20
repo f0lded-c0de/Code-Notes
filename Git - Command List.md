@@ -8,6 +8,9 @@ Ajoute `[file]` à l'[[Git - Overview#^543278|index]]. `[file]` peut être aussi
 ```bash
 git branch (option) (branch)
 ```
+
+^89e56d
+
 Effectue diverses actions en rapport avec les **branches**. Si aucun argument n'est donné, va simplement renvoyer une liste des **branches** présentes localement. Si `(branch)` est précisé, toujours sans autre arguments, créé la **branche**. Si elle existe, ne fait rien.
 > [!arg]- Option
 > - `-a` : Sans `(branch)` de précisé, liste aussi les **branches** distantes en plus des locales.
@@ -33,11 +36,17 @@ Permet de se déplacer sur la **branche** `(branch)`, ou le **commit** `(commit)
 ```bash
 git commit (option)
 ```
-Créé un nouveau **commit** incorporant tous les changements contenu dans l'**index**. Ce **commit** descendra directement du **commit** *HEAD* (**commit** sur lequel nous étions au moment de créer le nouveau/à partir duquel on créé le nouveau). HEAD descendra donc sur le nouveau **commit**, et la **branche** (si l'on est dans une **branche**) se déplacera pour pointer sur ce nouveau **commit**. Associer un "message de **commit**" est fortement recommandé. En l'absence d'options spécifiques modifiant le comportement de la commande par rapport au message de **commit**, `git commit` ouvrira un éditeur de texte dans lequel on pourra l'écrire.
+Créé un nouveau **commit** incorporant tous les changements contenu dans l'**index** et descendant directement du **commit** *HEAD*. 
+Associer un "message de **commit**" est fortement recommandé. En l'absence d'options précisant le comportement à ce sujet là, `git commit` ouvrira un éditeur de texte dans lequel on pourra l'écrire. La première ligne correspondra au titre et les suivantes au corp du texte.
 > [!arg]- Option
 > - `-a` : Effectue l'équivalent d'un `git add` pour tous les fichiers modifiés ou supprimés. N'ajoutera pas de fichiers n'étant pas encore suivis par git, mais en dehors de ça, permet de simplifier le processus de **commit** en réunissant l'étape d'ajout des changements à l'**index** et l'étape de création d'un **commit** pour ces changements en une seule ligne de commande.
 > - `--amend` : Permet de modifier le dernier **commit** effectué. À utiliser avec parcimonie : cela remplace le **commit** par un nouveau, changeant notamment le **commit hash**. Permet d'intégrer les changements ajouté à l'**index** au **commit** en question, ainsi que de modifier le message de **commit**.
-> - `-m "[commit message]"` : Permet d'écrire le message de **commit** directement dans la ligne de commande. Permet moins de flxibilité quand à la structure du message, mais pour des message simple/court, cette manière de fonctionner est elle-même plus simple et courte que normalement.
+> - `-m "[commit message]"` : Permet d'écrire le message de **commit** directement dans la ligne de commande. Permet moins de flexibilité quand à la structure du message, mais pour des message simple/court, cette manière de fonctionner est elle-même plus simple et courte que normalement.
+> > [!info]-
+> > On peut enchaîner 2 `-m` pour le titre et le corp du message.
+> > ```bash
+> > git commit -m "commit title" -m "commit message"
+> > ```
 > - `-e` : Ouvre un éditeur pour écrire le message de **commit** (fonctionnement de base de la commande).
 
 <br>
