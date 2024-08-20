@@ -1,6 +1,7 @@
 - # Les fonctions :
 
-Les **fonctions** sont des sortes de "bloc de code", qui vont avoir pour but de réaliser une (ou des) actions spécifiques. C'est le cœur de la programmation en C : tout le code sera dans différentes **fonctions**. On peut ensuite appeler les **fonctions** qu'on a déjà déclaré et défini dans d'autres **fonctions**. En gardant des **fonctions** courtes avec des objectifs spécifiques, cela permet de segmenter le code en différents blocs logiques.
+Les **fonctions** sont des sortes de "bloc de code", qui vont avoir pour but de réaliser une (ou des) actions spécifiques. C'est le cœur de la programmation en C : tout le code sera dans différentes **fonctions**. 
+On peut ensuite appeler les **fonctions** (qu'on a déjà déclaré et défini) dans d'autres **fonctions**. En gardant des **fonctions** courtes avec des objectifs spécifiques, cela permet de segmenter le code en différents blocs logiques.
 
 <br>
 
@@ -28,18 +29,21 @@ On peut maintenant voir la déclaration des autres **fonctions** :
 ```C
 type ft_name(par1_type par1, par2_type par2, etc...) {}
 ```
-- `type` correspond au type de valeur que la **fonction** va retourner. Cela veut dire que lorsqu'on appellera cette **fonction**, si elle retourne une valeur, celle-ci remplacera la **fonction** à l'endroit du code ou elle est appelée.
-	- Cela peut être un `int` (comme la **fonction** `main` par exemple), un `char`, etc... 
-	- La **fonction** peut aussi ne rien avoir à retourner, auquel cas on utilisera le type `void`.
-- `ft_name` correspond au nom de la **fonction**. C'est celui-ci qu'on utilisera pour l'appeler plus tard.
-- `()` : On trouve entre les parenthèses les **paramètres** que prendra la **fonction** lorsqu'elle sera appelée. Les **paramètres** sont des **variables** qui sont déclarées entre ces `()` et auxquelles ont affecte une valeur lorsqu'on appelle la **fonction**, en remplaçant leur nom dans `()` par la valeur que l'on souhaite qu'elle prennent.
-	- `par1_type` est le type de **variable** que sera ce **paramètre**.
-	- `par1` est le nom de la **variable** qu'on utilisera dans la **fonction**.
-	- On peut déclarer plusieurs **paramètres** en les séparant de `, `.
-	- Si la **fonction** ne prend pas de paramètres, on écrira `(void)` (comme la **fonction** `main`).
-	- `{}` délimite le **scope** de la **fonction**.
-		- Tout le code de la **fonction** se trouvera entre ces accolades.
-		- Toute **variable** déclarée dans la **fonction** (y compris les **paramètres**) seront limitées à ce **scope**. C'est à dire qu'elle n'existeront qu'à l'intérieur de celui-ci. Concrètement, la **variable** sera créée au moment ou la **fonction** sera appelée, et elle sera détruite au moment ou la **fonction** se terminera.
+`type` correspond au type de valeur que la **fonction** va retourner. Cela veut dire que lorsqu'on appellera cette **fonction**, si elle retourne une valeur, celle-ci remplacera la **fonction** à l'endroit du code ou elle est appelée.
+- Cela peut être un `int` (comme la **fonction** `main` par exemple), un `char`, etc... 
+- La **fonction** peut aussi ne rien avoir à retourner, auquel cas on utilisera le type `void`.
+
+`ft_name` correspond au nom de la **fonction**. C'est celui-ci qu'on utilisera pour l'appeler plus tard.
+
+`()` : On trouve entre les parenthèses les **paramètres** que prendra la **fonction** lorsqu'elle sera appelée. Les **paramètres** sont des **variables** qui sont déclarées entre ces `()` et auxquelles ont affecte une valeur lorsqu'on appelle la **fonction**, en remplaçant leur nom dans `()` par la valeur que l'on souhaite qu'elle prennent.
+- `par1_type` est le type de **variable** que sera ce **paramètre**.
+- `par1` est le nom de la **variable** qu'on utilisera dans la **fonction**.
+- On peut déclarer plusieurs **paramètres** en les séparant de `, `.
+- Si la **fonction** ne prend pas de paramètres, on écrira `(void)` (comme la **fonction** `main`).
+
+`{}` délimite le **scope** de la **fonction**.
+- Tout le code de la **fonction** se trouvera entre ces accolades.
+- Toute **variable** déclarée dans la **fonction** (y compris les **paramètres**) seront limitées à ce **scope**. C'est à dire qu'elle n'existeront qu'à l'intérieur de celui-ci. Concrètement, la **variable** sera créée au moment ou la **fonction** sera appelée, et elle sera détruite au moment ou la **fonction** se terminera.
 
 <br>
 
@@ -52,9 +56,10 @@ Le **prototype** est quasiment identique à la déclaration de la **fonction**, 
 > [!example]-
 > Si on a déclaré une **fonction** `ftputchar` comme suit :
 > ```C
-> void ft_putchar(char a) {
+> void ft_putchar(char a) 
+> {
 > 	//Code of the function
-> 	}
+> }
 > ```
 > 
 > Et qu'on veut l'utiliser dans un autre fichier ou elle n'est pas déclaré, on va devoir mettre ce prototype tout en haut du fichier :
@@ -70,11 +75,11 @@ On pourra ensuite l'appeler avec son nom et ses paramètres normalement.
 > void ft_putchar(char);
 > 
 > int main(void)
-> 	{
+> {
 > 	ft_putchar("b");
-> 	
+> 
 > 	return 0
-> 	}
+> }
 > ```
 > 
 > Le programme exécutera la `ft_putchar` avec comme paramètre le `char` "b".
@@ -89,16 +94,13 @@ On pourra ensuite l'appeler avec son nom et ses paramètres normalement.
 Les **variables** sont des espaces qui nous permettent de stocker des valeurs. 
 	Celles-ci les stockent en bits (en binaire) et ont un espace de stockage limité (1, 2, ou encore 4 octets). 
 
-Il y'a différents types de **variables**, et chaque type, pour être affiché dans un `printf()` correspond à un `%`,  :
-- **`char`** : caractère. 
-	- `%c`
-- `int` : entier. 
-	- `%d`
-- `float` : nombres en virgule flottante. 
-	- `%f`
+Il y'a différents types de **variables**, (et chaque type, pour être affiché dans un `printf()`, correspond à un `%`) :
+- `char` : caractère. (`%c`)
+- `int` : entier. (`%d`)
+- `float` : nombres en virgule flottante. `%f`)
 	- `%.xf` : précise que l'on veut `x` chiffres après la virgule. 
-- `string` : chaîne de caractères. 
-	- `%s`
+- `string` : chaîne de caractères. (`%s`)
+- Il existe aussi les [[C - Overview#Les pointeurs|pointeurs]], qui ont leur propre section dédiée, mais qui en principe sont des variables classiques.
 
 Pour déclarer une **variable** : 
 - `int nom (= valeur)` 
@@ -145,26 +147,23 @@ On va pouvoir utiliser 5 **opérateurs** de base en C :
 - `*` : Multiplication
 - `/` : Division
 - `%` : Modulo
-	- Le reste d'une division euclidienne.
-	> [!example]-
-	> 5 % 2 = 1
+	- Le reste d'une division euclidienne. (5 % 2 = 1)
 
-Il existe des raccourcis pour réaliser ces opérations lorsqu'on les affecte à des **variables** :
-- Lorsqu'on souhaite faire n'importe quelle opération sur une **variable** :
+Il existe des raccourcis pour réaliser ces opérations lorsqu'on les affecte à des **variables**.
+Lorsqu'on souhaite faire n'importe quelle opération sur une **variable** :
     - `var = var + 1`
 	    - `var += 1`
     - `var = var * 7`
 	    - `var *= 7`
     - `var1 = var1 % var2`
 	    - `var1 %= var2`
-- Lorsqu'on souhaite incrémenter (+ 1) ou décrémenter (- 1) une **variable** :
-- `var += 1`
-    - `var++`
-    - `++var`
-- `var -= 1`
-    - `var--`
-    - `--var`
-    
+Il existe aussi la *post-incrémentation* et la *pré-incrémentation* (et idem pour la décrémentation). Avec cette syntaxe, on peut incrémenter ou décrémenter une **variable** tout en l'utilisant dans une expression plus large. Le choix *post* ou *pré* determine à quelle moment l'*incrémentation* a lieu. 
+- Avec la *post-incrémentation*, on va d'abord utiliser la valeur initiale de la **variable** pour effectuer l'opération, **<font color="#c0504d">puis</font>** on va l'*incrémenter*. 
+	- `var++` = var += 1
+	- `var--` = var -= 1
+- Avec la *pré-incrémentation*, on va *incrémenter* la **variable** avant, **<font color="#c0504d">puis</font>** on va effectuer l'opération.
+	- `++var` = var += 1
+	- `--var` = var -= 1
 
 Il existe aussi des **opérateurs de comparaison** :
 - `==` : Égal
@@ -206,8 +205,8 @@ Les **conditions** permettent de réaliser des actions si une ou des conditions 
 > [!example]-
 >  `if(var < 18 && var > 11)` va tester si la **variable** **var** est comprise entre 11 et 18 non inclus.
 
-- On peut rajouter en dessous un `else {}`, qui revient à un "sinon", qu'on utilisera exactement de la même façon que le `if` (sans les parenthèses puisqu'il ne teste rien), et l'on pourra donc écrire entre les `{}` ce qu'il faut réaliser si le test renvoie **false**.
-	- On peut même imbriquer des `if` sur des `else` immédiatement avec `else if`.
+On peut rajouter en dessous un `else {}`, qui revient à un "sinon", qu'on utilisera exactement de la même façon que le `if` (sans les parenthèses puisqu'il ne teste rien), et l'on pourra donc écrire entre les `{}` ce qu'il faut réaliser si le test renvoie **false**.
+- On peut même imbriquer des `if` sur des `else` immédiatement avec `else if`.
 
 	> [!example]-
 	> ```C
