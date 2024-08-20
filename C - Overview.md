@@ -253,18 +253,23 @@ Les **boucles** permettent de répéter une action un certain nombre de fois.
 
 # Les pointeurs :
 
-- Pour comprendre les **pointeurs**, il faut comprendre le stockage des **variables** :
-    - Les **variables** stockent leurs valeurs dans des cases de la mémoire, correspondant à un numéro.
-    - Si on initialise un `int i` à 465, 465 sera stocké sur une case de la mémoire correspondant à un numéro spécifique, qui permet de la retrouver.
-    - On appelle ce numéro spécifique l'**adresse** de `i`.
-- Un **pointeur** est une variable qui stockera comme valeur l'**adresse** d'une autre variable. C'est donc une **variable** qui va "pointer" sur une autre **variable**.
-	- Un **pointeur** se déclare et s'utilise selon  une syntaxe particulière.
-	- Si l'on veut déclarer un **pointeur**, il faudra le déclarer comme suit :
-		- `int *p_i;`
-		- C'est un type `int`, puisqu'il stocke une **adresse**, donc un nombre. Mais ce n'est pas un simple type `int`, avec l'"`*`", on indique que c'est un **pointeur** vers une **variable**.
-		- Pour lui assigner l'**adresse** d'une **variable**, on utilise `&`. `&i` correspond à l'**adresse** à laquelle est stockée la valeur de `i`. Donc ici, on pourra lui assigner cela comme suit : `p_i = &i;`.
-		- Ensuite, si l'on manipule `p_i`, on manipule l'**adresse** qu'il stock. pour manipuler la **variable** pointée par `p_i`, on utilisera `*p_i`.
-- Un **pointeur** servira notamment à modifier des variables qu'on enverra dans des **fonctions**. En effet, puisque celle-ci utilisent une copie de la **variable** qu'on lui donne et la supprime à la fin, si on lui envoie un **pointeur**, et qu'il manipule la **variable** pointée par le **pointeur** donné en paramètre, cela nous permettra de modifier cette **variable**. Puisque même si l'on fait une copie du **pointeur**, celle ci pointera vers la même **adresse**, ainsi modifiera la vraie **variable** tout de même.
+Pour comprendre les **pointeurs**, il faut comprendre le stockage des **variables** :
+- Les **variables** stockent leurs valeurs dans des cases de la mémoire, correspondant à un numéro.
+- Si on initialise un `int i` à 465, 465 sera stocké sur une case de la mémoire correspondant à un numéro spécifique, qui permet de la retrouver.
+- On appelle ce numéro spécifique l'**adresse** de `i`.
+
+Un **pointeur** est une variable qui stockera comme valeur l'**adresse** d'une autre variable. C'est donc une **variable** qui va "pointer" sur une autre **variable**.
+>[!info]-
+>Une **adresse** n'est rien d'autre qu'un entier non-négatif classique. Tout comme un `char` ne va contenir qu'un simple entier, qu'on peut ensuite interpréter en un charactère grâce à la table *ASCII*, les pointeurs contiennent un un simple entier non-négatif, qu'on peut ensuite interpréter en adresse.
+
+Un **pointeur** se déclare et s'utilise selon  une syntaxe particulière.
+- Si l'on veut déclarer un **pointeur**, il faudra le déclarer comme suit :
+	- `int *p_i;`
+- C'est un type `int`, puisqu'il stocke une **adresse**, donc un nombre. Mais ce n'est pas un simple type `int`, avec l'"`*`", on indique que c'est un **pointeur** vers une **variable**.
+	- Pour lui assigner l'**adresse** d'une **variable**, on utilise `&`. `&i` correspond à l'**adresse** à laquelle est stockée la valeur de `i`. Donc ici, on pourra lui assigner cela comme suit : `p_i = &i;`.
+	- Ensuite, si l'on manipule `p_i`, on manipule l'**adresse** qu'il stock. pour manipuler la **variable** pointée par `p_i`, on utilisera `*p_i`.
+
+Un **pointeur** servira notamment à modifier des variables qu'on enverra dans des **fonctions**. En effet, puisque celle-ci utilisent une copie de la **variable** qu'on lui donne et la supprime à la fin, si on lui envoie un **pointeur**, et qu'il manipule la **variable** pointée par le **pointeur** donné en paramètre, cela nous permettra de modifier cette **variable**. Puisque même si l'on fait une copie du **pointeur**, celle ci pointera vers la même **adresse**, ainsi modifiera la vraie **variable** tout de même.
 
 <br><br><br>
 
