@@ -28,6 +28,13 @@ Expressions courantes :
 - `^` : Correspond au début de la **string** ou de la ligne.
 - `$` : Correspond à la fin de la **string** ou de la ligne.
 	- Astuce : Si l'on cherche une ligne ou une **string** vide, le pattern `^$` fonctionne, puisque qu'il cherche une ligne ou une **string** dont le début et la fin sont collés, sans caractères entre les 2.
+- `|` : Représente l'opérateur "**OU**" logique, pour désigner soit un pattern, soit un autre.
+> [!example]-
+> `abc|def` : Correspond soit à `abc`, soit à `def`.
+- `()` : Permet de grouper/capturer une expression, par exemple pour mettre un **ou** à l'intérieur d'un pattern, ou pour appliquer les quantificateurs (voir ci-dessous) sur une expression de plusieurs caractères plutôt que sur un simple caractère.
+> [!example]-
+> - `a(bc|de)f` : Correspond soit à `abcf`, soit à `adef`.
+> - `(abc)+` : Correspond à 1 ou plus d'occurences de l'expression `abc`. (Par exemple `abcabcabc`).
 
 On peut aussi y ajouter des **quantificateurs**, qui nous permettent de préciser combien on cherche du caractère précédent directement le **quantificateur** :
 - `*` : Correspond à 0 ou plus d'occurences du caractère précédent.
@@ -39,3 +46,4 @@ On peut aussi y ajouter des **quantificateurs**, qui nous permettent de précise
 > - `a{1,10}` : Correspond à entre 1 et 10 occurences de `a`.
 > - `a{,10}` : Correspond à jusqu'à 10 occurences de `a` (de 0 à 10).
 > - `a{6,}` : Correspond à au moins 6 occurences de `a` (de 6 à l'infini).
+
