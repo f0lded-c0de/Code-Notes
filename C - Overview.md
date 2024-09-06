@@ -264,7 +264,7 @@ Un **pointeur** est une variable qui stockera comme valeur l'**adresse** d'une a
 Un **pointeur** se déclare et s'utilise selon  une syntaxe particulière.
 - Si l'on veut déclarer un **pointeur**, il faudra le déclarer comme suit :
 	- `int *p_i;`
-- C'est un type `int`, puisqu'il stocke une **adresse**, donc un nombre. Mais ce n'est pas un simple type `int`, avec l'"`*`", on indique que c'est un **pointeur** vers une **variable**.
+- Ici, on déclare un variable de type **pointeur** sur `int`, c'est donc une variable qui va stocker l'adresse d'une autre variable, qui elle va stocker un `int`.
 	- Pour lui assigner l'**adresse** d'une **variable**, on utilise `&`. `&i` correspond à l'**adresse** à laquelle est stockée la valeur de `i`. Donc ici, on pourra lui assigner cela comme suit : `p_i = &i;`.
 	- Ensuite, si l'on manipule `p_i`, on manipule l'**adresse** qu'il stock. pour manipuler la **variable** pointée par `p_i`, on utilisera `*p_i`.
 
