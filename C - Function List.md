@@ -75,7 +75,7 @@ void ft_putnbr(int i);
 > 	else if (nb < 0)
 > 	{
 > 		ft_putchar('-');
-> 		ft_putchar((nb * -1) + 48)
+> 		ft_putchar((nb * -1) + 48);
 > 	}
 > 	else
 > 		ft_putchar(nb + 48);
@@ -94,7 +94,7 @@ void ft_putnbr(int i);
 ```C
 void ft_putstr(char *str);
 ```
-`ft_putstr()` affiche dans le **stdout** la **string** pointée par `*str`.
+`ft_putstr()` affiche dans le **stdout** la **string** `*str`.
 > [!declaration]-
 > ```C
 > void ft_putstr(char *str)
@@ -117,7 +117,7 @@ void ft_putstr(char *str);
 ```C
 int ft_strlen(char *str)
 ```
-`ft_strlen()` renvoie le nombre de caractères qui composent la **string** pointée par `str`.
+`ft_strlen()` renvoie le nombre de caractères qui composent la **string** `str`.
 
 > [!declaration]-
 > ```C
@@ -137,7 +137,7 @@ int ft_strlen(char *str)
 ```C
 char *ft_strcpy(char *src, char *dest);
 ```
-`ft_strcpy()` copie le contenu de la **string** pointée par `src` dans la **string** pointée par `dest`. 
+`ft_strcpy()` copie le contenu de la **string** `src` dans la **string** `dest`. 
 - Si `*src` est plus petit que `*dest`, `ft_strcpy` n'agira que jusqu'au `\0` de `*src`.
 - `ft_strcpy()` ne gère pas le cas où `*dest` serait plus petit que `*src`.
 
@@ -160,7 +160,7 @@ char *ft_strcpy(char *src, char *dest);
 ```C
 char *ft_strncpy(char *src, char *dest, unsigned int n);
 ```
-`ft_strcpy()` copie les `n` premiers caractères du contenu de la **string** pointée par `src` dans la **string** pointée par `dest`. 
+`ft_strcpy()` copie les `n` premiers caractères de la **string** `src` dans la **string** `dest`. 
 - Si `*src` est plus petit que `n`, la fin de `*dest` sera remplie de `\0`.
 - **Attention**! S'il n'y a pas de `\0` dans les `n` premiers caractères de `*src`, alors `*dest` n'en contiendra pas.
 
@@ -178,6 +178,47 @@ char *ft_strncpy(char *src, char *dest, unsigned int n);
 > 	return (dest);
 > }
 > ```
+
+<br>
+
+```C
+int     ft_atoi(char *str);
+```
+`ft_atoi()` convertie la **string** `str` en `int`.
+- `str` peut commencer par un nombre arbitraire de **white space** (comme defini par `isspace(3)`)
+- `str` peut ensuite être suivi par un nombre arbitraire de signe `+` et de signe `-`. Le signe `-` fera changer le signe de l’`int` retourné en fonction du nombre de signe `-` et si celui ci est pair ou impair.
+- Pour finir `str` sera composée de chiffre de la base 10.
+- `ft_atoi()` lira `str` tant que celle ci suit les règles au dessus et elle retournera le nombre trouvé jusque là.
+- `ft_atoi()` ne gère pas les **overflows** ou les **underflows**.
+
+> [!declaration]-
+> ```C
+> int     ft_atoi(char *str)
+> {
+>	int             i;
+>	int             n;
+>	int             nbr;
+>
+>	i = 0;
+>	n = 0;
+>	nbr = 0;
+>	while (str[i] >= 9 && str[i] <= 13 || str[i] == 32)
+>		i++;
+>	while (str[i] == 43 || str[i] == 45)
+>		if (str[i++] == 45)
+>			n++;
+>	while (str[i] >= 48 && str[i] <= 57)
+>	{
+>		nbr *= 10;
+>		nbr += (str[i] - 48);
+>		i++;
+>	}
+>	if (n % 2)
+>		nbr *= -1;
+>	return (nbr);
+> }
+> ```
+
 
 <br><br><br>
 
