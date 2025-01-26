@@ -2,6 +2,14 @@
 <details>
 <summary>Test</summary>
 test
+```C
+int	main(void)
+{
+	int	test;
+
+ 	test = 0;
+  	return (test);
+}
 toust
 
 tust
