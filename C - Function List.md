@@ -1,10 +1,13 @@
 # Custom Functions :
 
 ## ft_put()
-
-```C
-void ft_putchar(char c);
-```
+<details>
+<summary>Test</summary>
+	toust
+	void ft_putchar(char c);
+	
+tust
+</details>
 
 ^62035e
 

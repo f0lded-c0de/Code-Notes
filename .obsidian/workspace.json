@@ -13,10 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C - Function List.md",
-                "mode": "preview",
+                "file": "C - Overview.md",
+                "mode": "source",
                 "source": true
-              }
+              },
+              "icon": "lucide-file",
+              "title": "C - Overview"
             }
           }
         ]
@@ -39,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -54,7 +58,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,15 +68,16 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "545e850854699868",
@@ -86,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "C - Function List.md",
+                "file": "C - Overview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +101,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for C - Overview"
             }
           },
           {
@@ -103,10 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "C - Function List.md",
+                "file": "C - Overview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from C - Overview"
             }
           },
           {
@@ -117,7 +128,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -126,8 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "C - Function List.md"
-              }
+                "file": "C - Overview.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of C - Overview"
             }
           }
         ]
@@ -150,10 +165,10 @@
   },
   "active": "4759e0564ae14642",
   "lastOpenFiles": [
+    "C - Function List.md",
     "Bash Shell - Command List.md",
     "Bash Shell - Wildcards and Regex.md",
     "C - Overview.md",
-    "C - Function List.md",
     "A Table of  Contents for Code Notes.md",
     "Git - Command List.md",
     "Markdown Tests.md",
