@@ -1,5 +1,11 @@
 - # Les fonctions :
+<details>
+<summary>Test</summary>
+test
+toust
 
+tust
+</details>
 Les **fonctions** sont des sortes de "bloc de code", qui vont avoir pour but de réaliser une (ou des) actions spécifiques. C'est le cœur de la programmation en C : tout le code sera dans différentes **fonctions**. 
 On peut ensuite appeler les **fonctions** (qu'on a déjà déclaré et défini) dans d'autres **fonctions**. En gardant des **fonctions** courtes avec des objectifs spécifiques, cela permet de segmenter le code en différents blocs logiques.
 
