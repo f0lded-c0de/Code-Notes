@@ -1,8 +1,10 @@
 Git est un logiciel de gestions de versions de projet décentralisé. Il permet de conserver l'historique des différentes versions/modifications d'un projet. Il permet aussi avec son système de **branches** de travailler sur différentes parties spécifiques d'un projet de manière isolée pour éviter toute sortes de conflits.
 
 # "Décentralisé" ou fonctionnement des dépôts Git :
-
+<details>
+<summary>Test</summary>
 La structure de Git repose autour d'un **dépôt git** (ou **git repository**), qui représente l'ensemble du code du projet, et surtout l'ensemble de l'historique des versions de celui-ci. Il inclut l'état actuel du projet dans son intégralité, ainsi que l'intégralité de toutes les versions précedentes. Et ce pour chaques branches : la totalité de "l'arbre" est enregistré sur ce **dépôt**.
+</details>
 
 La notion de "décentralisé" fait référence à l'organisation du travail des différents développeurs sur le projet. En effet, contrairement à ce que "décentralisé" pourrait laisser entendre, Git fonctionne avec un **dépôt** central, généralement géré sur un serveur distant, accessible par tous les développeurs qui travaillent sur le projet. Ce **dépôt** est une sorte de référence commune, la version officielle du projet. C'est comme ça que fonctionne la plupart des systèmes de gestion de versions. La différence entre Git (en tant que système "décentralisé") par rapport à des systèmes dit "centralisés" se situe au niveau du rapport des développeurs à ce **dépôt** central :
 - Dans un système dit **centralisé**, les développeurs travaillent toujours directement sur ce **dépôt** central. Le terme central n'est même plus réellement pertinent, puisque c'est le seul **dépôt** existant.  Cela amène quelques avantages par rapport à un système décentralisé, dont en voici une liste non-exhaustive :
