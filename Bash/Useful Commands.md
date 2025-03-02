@@ -59,6 +59,8 @@ Change les droits de `[file]`.
 	- Un droit inactif affichera `-` à la place de la lettre.
 - On peut rajouter un droit à un groupe avec `groupe+droit`, ou en retirer un avec `groupe-droit` :
 > [!NOTE] 
+> <details>
+> <summary>Example</summary>
 > Pour donner le droit d'exécuter `[file]` à `o` :
 > ```bash
 > chmod o+x [file]
@@ -67,6 +69,7 @@ Change les droits de `[file]`.
 > ```bash
 > chmod g-w [file]
 > ```
+> </details>
 - La méthode la plus optimale reste de convertir `rwx` | `rwx` | `rwx` (respectivement `u` | `g` | `o`) en _421_ | _421_ | _421_ (chaque lettre correspondant à un chiffre).
 	- Si un droit n'est pas actif, son chiffre respectif sera _0_.
 	- On va ensuite additionner pour chacune des 3 entités les 3 chiffres correspondants aux 3 droits. Ce qui va nous donner un nombre à 3 chiffre.
