@@ -13,9 +13,9 @@ Permet d'effectuer des calculs. Si un `(file)` est précisé, alors `bc` rentrer
 - En **mode interactif**, si `bc` n'a pas d'**input** à traiter (ou plus, s'il a fini de traiter les **inputs** fournis par `(file)`), il attendra que l'utilisateur lui en donne par le biais du **prompt**. Pour quitter le **mode interactif**, il suffit de lui envoyer `quit`.
 - 4 **variables** existent par défauts dans `bc`.
 	- `scale` : égal à 0 par défaut. Définit le nombre de chiffres après la virgule qui seront traités/affichée.
+	- `last` : égal à 0 par défaut. Est égal à la dernière valeur affichée par `bc`.
 	- `ibase` : égal à 10 par défaut. Définit la base numérique dans laquelle il lira l'**input**.
 	- `obase` : égal à 10 par défaut. Définit la base numérique dans laquelle il renverra le résultat dans l'**output**.
-	- `last` : égal à 0 par défaut. Est égal à la dernière valeur affichée par `bc`.
 > [!CAUTION]
 > Attention, si on définit `ibase` dans une ligne de commande, l'effet sera immédiat, y compris pour la suite de cette même ligne de commande. 
 > Ainsi, si on définit `ibase` puis `obase`, même sur la même ligne, alors la valeur qu'on entrera pour `obase` sera lu dans la base définit juste avant pour `ibase`.<br>
@@ -44,9 +44,6 @@ Change le répertoire courant pour le répertoire désigné par `[path]`. On peu
 ```bash
 chmod [permissions] [file]
 ```
-
-^f0dff3
-
 Change les droits de `[file]`.
 - Il y a trois entités différentes qui possèdent des droits :
 	- `u` pour user (l'utilisateur)
@@ -61,15 +58,15 @@ Change les droits de `[file]`.
 	- Les trois premiers correspondant à `u`, les trois suivant à `g`, et les trois derniers à `o`.
 	- Un droit inactif affichera `-` à la place de la lettre.
 - On peut rajouter un droit à un groupe avec `groupe+droit`, ou en retirer un avec `groupe-droit` :
->[!example]- 
->Pour donner le droit d'exécuter `[file]` à `o` :
->```bash
->chmod o+x [file]
->```
->Pour retirer le droit de modifier `[file]` à `g` :
->```bash
->chmod g-w [file]
->```
+> [!NOTE] 
+> Pour donner le droit d'exécuter `[file]` à `o` :
+> ```bash
+> chmod o+x [file]
+> ```
+> Pour retirer le droit de modifier `[file]` à `g` :
+> ```bash
+> chmod g-w [file]
+> ```
 - La méthode la plus optimale reste de convertir `rwx` | `rwx` | `rwx` (respectivement `u` | `g` | `o`) en _421_ | _421_ | _421_ (chaque lettre correspondant à un chiffre).
 	- Si un droit n'est pas actif, son chiffre respectif sera _0_.
 	- On va ensuite additionner pour chacune des 3 entités les 3 chiffres correspondants aux 3 droits. Ce qui va nous donner un nombre à 3 chiffre.
