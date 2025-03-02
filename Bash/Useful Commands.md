@@ -17,6 +17,7 @@ Permet d'effectuer des calculs. Si un `(file)` est précisé, alors `bc` rentrer
 > [!CAUTION]
 > Attention, si on définit `ibase` dans une ligne de commande, l'effet sera immédiat, y compris pour la suite de cette même ligne de commande. 
 > Ainsi, si on définit `ibase` puis `obase`, même sur la même ligne, alors la valeur qu'on entrera pour `obase` sera lu dans la base définit juste avant pour `ibase`.<br>
+
 	- `obase` : égal à 10 par défaut. Définit la base numérique dans laquelle il renverra le résultat dans l'**output**.
 	- `last` : égal à 0 par défaut. Est égal à la dernière valeur affichée par `bc`.
 - La syntaxe des opérations que lit `bc` correspond de manière générale à une syntaxe mathématique classique. Pour en vérifier les spécificités, aller voir la section `EXPRESSIONS` du `man bc`.
