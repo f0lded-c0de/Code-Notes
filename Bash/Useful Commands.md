@@ -1,3 +1,8 @@
+> [!WARNING]
+> Cette note a ete ecrite sur Obsidian avec des plugins, et a l'epoque n'avait pas pour vocation de finir sur GitHub.
+> Je n'ai pour le moment pas l'energie ni le temps de la convertir. Je le ferai surement un jour.
+> Les informations qu'elle contient devrait normalement toujours etre valide, mais le formattage... Atroce. Bon courage.
+
 ```bash
 basename [file] (suffix)
 ```

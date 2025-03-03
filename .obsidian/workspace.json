@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C - Overview.md",
-                "mode": "source",
-                "source": true
+                "file": "Bash/Useful Commands.md",
+                "mode": "preview",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "C - Overview"
+              "title": "Useful Commands"
             }
           }
         ]
