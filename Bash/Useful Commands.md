@@ -77,12 +77,12 @@ chmod g-w [file]
 	- On va ensuite additionner pour chacune des 3 entités les 3 chiffres correspondants aux 3 droits. Ce qui va nous donner un nombre à 3 chiffre.
 <details>
     <summary>:clipboard: Example</summary>
-Si l'on veut que les droits soient tel que `rwxr-xr--`, cela donnera le nombre _754_ :<BR>
-<BR>
+Si l'on veut que les droits soient tel que <code>rwxr-xr--</code>, cela donnera le nombre _754_ :<BR>
+
 `rwx` | `r-x` | `r--`
- -- | -- | --
-_421_  | _401_ | _400_
-_7_    |    _5_  |    _4_
+ ---- | ----- | -----
+_421_ | _401_ | _400_
+ _7_  |  _5_  |  _4_
 
 On peut ensuite établir ces droits sur un fichier `[file]` comme suit :<BR>
 
