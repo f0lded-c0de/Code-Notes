@@ -75,18 +75,21 @@ chmod g-w [file]
 - La méthode la plus optimale reste de convertir `rwx` | `rwx` | `rwx` (respectivement `u` | `g` | `o`) en _421_ | _421_ | _421_ (chaque lettre correspondant à un chiffre).
 	- Si un droit n'est pas actif, son chiffre respectif sera _0_.
 	- On va ensuite additionner pour chacune des 3 entités les 3 chiffres correspondants aux 3 droits. Ce qui va nous donner un nombre à 3 chiffre.
-	>[!example]-
-	>Si l'on veut que les droits soient tel que `rwxr-xr--`, cela donnera le nombre _754_ :
-	>
-	>`rwx` | `r-x` | `r--`
-	> -- | -- | --
-	>_421_  | _401_ | _400_
-	>_7_    |    _5_  |    _4_
-	>
-	>On peut ensuite établir ces droits sur un fichier `[file]` comme suit :
-	>```bash
-	>chmod 754 [file]
-	>```
+<details>
+    <summary>:clipboard: Example</summary>
+Si l'on veut que les droits soient tel que `rwxr-xr--`, cela donnera le nombre _754_ :<BR>
+<BR>
+`rwx` | `r-x` | `r--`
+ -- | -- | --
+_421_  | _401_ | _400_
+_7_    |    _5_  |    _4_
+
+On peut ensuite établir ces droits sur un fichier `[file]` comme suit :<BR>
+
+```bash
+chmod 754 [file]
+```
+</details>
 
 <br>
 
